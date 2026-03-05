@@ -4,17 +4,17 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Artevent Studio transformed our annual conference into a cinematic masterpiece. The quality was beyond anything we imagined.",
+    quote: "Artevent Studio ha trasformato la nostra conferenza annuale in un capolavoro cinematografico. La qualità ha superato ogni nostra aspettativa.",
     name: "Sarah Chen",
-    title: "VP of Marketing, TechVault Inc.",
+    title: "VP Marketing, TechVault Inc.",
   },
   {
-    quote: "Their storytelling approach elevated our brand to a level that directly impacted our enterprise sales pipeline.",
+    quote: "Il loro approccio allo storytelling ha elevato il nostro brand a un livello che ha impattato direttamente la nostra pipeline di vendite enterprise.",
     name: "Marcus Reid",
     title: "CEO, Meridian Group",
   },
   {
-    quote: "Professional, creative, and incredibly strategic. Artevent understands how to move audiences through film.",
+    quote: "Professionali, creativi e incredibilmente strategici. Artevent sa come muovere il pubblico attraverso il cinema.",
     name: "Elena Rodriguez",
     title: "CMO, Apex Global",
   },
@@ -44,10 +44,10 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            Client Voices
+            Le Voci dei Clienti
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-16">
-            Trusted by <span className="text-gradient-gold">Industry Leaders</span>
+            Scelti dai <span className="text-gradient-gold">Leader del Settore</span>
           </h2>
         </motion.div>
 

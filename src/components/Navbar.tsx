@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Work", href: "#portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Lavori", href: "#portfolio" },
+  { label: "Servizi", href: "#services" },
+  { label: "Chi Siamo", href: "#about" },
+  { label: "Contatti", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -53,14 +53,14 @@ const Navbar = () => {
           href="#contact"
           className="hidden md:inline-flex px-6 py-2.5 text-sm font-body font-semibold uppercase tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
         >
-          Book a Call
+          Prenota una Call
         </a>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex flex-col gap-1.5"
-          aria-label="Toggle menu"
+          aria-label="Apri menu"
         >
           <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
           <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
@@ -91,7 +91,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className="px-6 py-2.5 text-sm font-body font-semibold uppercase tracking-wider border border-primary text-primary"
             >
-              Book a Call
+              Prenota una Call
             </a>
           </div>
         </motion.div>

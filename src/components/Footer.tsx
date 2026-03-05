@@ -10,7 +10,7 @@ const Footer = () => {
             <span className="text-gradient-gold">vent</span>
           </a>
           <p className="text-muted-foreground font-body text-xs mt-2">
-            Premium Corporate Video Production
+            Produzione Video Corporate Premium
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         <p className="text-muted-foreground font-body text-xs">
-          © 2026 Artevent Studio. All rights reserved.
+          © 2026 Artevent Studio. Tutti i diritti riservati.
         </p>
       </div>
     </footer>

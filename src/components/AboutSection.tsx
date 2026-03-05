@@ -16,21 +16,21 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            About Artevent Studio
+            Chi è Artevent Studio
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Where Vision Meets{" "}
-            <span className="text-gradient-gold">Cinematic Craft</span>
+            Dove la Visione Incontra{" "}
+            <span className="text-gradient-gold">l'Arte Cinematografica</span>
           </h2>
           <div className="w-20 h-0.5 bg-primary mb-8" />
           <p className="text-muted-foreground font-body leading-relaxed mb-6 text-lg">
-            Artevent Studio is a premium video production house trusted by enterprise
-            brands to transform their narratives into powerful visual experiences.
+            Artevent Studio è una casa di produzione video premium, scelta dai brand
+            più prestigiosi per trasformare le loro narrazioni in esperienze visive potenti.
           </p>
           <p className="text-muted-foreground font-body leading-relaxed">
-            With a team of award-winning directors, cinematographers, and editors, we
-            craft every frame with intention — blending artistry with strategic
-            storytelling that elevates your brand above the noise.
+            Con un team di registi, direttori della fotografia e montatori pluripremiati,
+            curiamo ogni singolo fotogramma con intenzione — unendo arte e storytelling
+            strategico per elevare il tuo brand sopra il rumore.
           </p>
         </motion.div>
 
@@ -48,7 +48,7 @@ const AboutSection = () => {
                   <div className="w-0 h-0 border-l-[16px] border-l-primary border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1" />
                 </div>
                 <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
-                  Watch Our Reel
+                  Guarda il Nostro Reel
                 </p>
               </div>
             </div>
