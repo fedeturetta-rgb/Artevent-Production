@@ -23,11 +23,11 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            Start a Project
+            Inizia un Progetto
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold">
-            Let's Create Something{" "}
-            <span className="text-gradient-gold">Powerful</span>
+            Creiamo Qualcosa di{" "}
+            <span className="text-gradient-gold">Potente</span>
           </h2>
         </motion.div>
 
@@ -41,24 +41,24 @@ const ContactSection = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder="Il Tuo Nome"
               required
               className="w-full bg-secondary border border-border px-5 py-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
             />
             <input
               type="text"
-              placeholder="Company"
+              placeholder="Azienda"
               className="w-full bg-secondary border border-border px-5 py-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
             />
           </div>
           <input
             type="email"
-            placeholder="Email Address"
+            placeholder="Indirizzo Email"
             required
             className="w-full bg-secondary border border-border px-5 py-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
           />
           <textarea
-            placeholder="Tell us about your project..."
+            placeholder="Raccontaci del tuo progetto..."
             rows={5}
             required
             className="w-full bg-secondary border border-border px-5 py-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
@@ -67,9 +67,9 @@ const ContactSection = () => {
             type="submit"
             className="w-full sm:w-auto px-12 py-4 bg-primary text-primary-foreground font-body font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors duration-300 flex items-center gap-3 justify-center"
           >
-            {submitted ? "Message Sent ✓" : (
+            {submitted ? "Messaggio Inviato ✓" : (
               <>
-                Let's Create Something Powerful
+                Creiamo Qualcosa di Potente
                 <Send className="w-4 h-4" />
               </>
             )}

@@ -4,34 +4,34 @@ import { X, Play } from "lucide-react";
 
 const projects = [
   {
-    title: "TechVault Brand Launch",
-    category: "Corporate Film",
-    description: "A cinematic reveal for TechVault's global rebrand, shot across three continents.",
+    title: "Lancio Brand TechVault",
+    category: "Film Aziendale",
+    description: "Una rivelazione cinematografica per il rebrand globale di TechVault, girata in tre continenti.",
   },
   {
     title: "Summit 2025 Highlights",
-    category: "Event Coverage",
-    description: "Full multi-day coverage of the annual leadership summit with 5,000+ attendees.",
+    category: "Copertura Evento",
+    description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
   },
   {
-    title: "Nova Product Reveal",
-    category: "Product Video",
-    description: "A sleek product launch video that drove 3M+ views in the first 48 hours.",
+    title: "Lancio Prodotto Nova",
+    category: "Video Prodotto",
+    description: "Un video di lancio prodotto elegante che ha generato oltre 3 milioni di visualizzazioni nelle prime 48 ore.",
   },
   {
-    title: "CEO Vision Series",
-    category: "Executive Interview",
-    description: "A 6-part thought leadership series featuring Fortune 500 executives.",
+    title: "Serie Visione CEO",
+    category: "Intervista Executive",
+    description: "Una serie di thought-leadership in 6 episodi con dirigenti Fortune 500.",
   },
   {
-    title: "Meridian Rebrand Story",
+    title: "Storia Rebrand Meridian",
     category: "Brand Storytelling",
-    description: "Documenting a 100-year-old company's transformation for a new era.",
+    description: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
   },
   {
-    title: "Apex Annual Gala",
-    category: "Event Coverage",
-    description: "Black-tie gala captured with cinematic elegance and real-time editing.",
+    title: "Gala Annuale Apex",
+    category: "Copertura Evento",
+    description: "Gala di gala catturato con eleganza cinematografica e montaggio in tempo reale.",
   },
 ];
 
@@ -50,10 +50,10 @@ const PortfolioSection = () => {
           className="text-center mb-20"
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            Selected Work
+            Lavori Selezionati
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold">
-            Our <span className="text-gradient-gold">Portfolio</span>
+            Il Nostro <span className="text-gradient-gold">Portfolio</span>
           </h2>
         </motion.div>
 

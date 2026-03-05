@@ -25,7 +25,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <p className="font-body text-sm md:text-base tracking-[0.3em] uppercase text-primary mb-6">
-            Premium Corporate Video Production
+            Produzione Video Corporate Premium
           </p>
         </motion.div>
 
@@ -35,9 +35,9 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8"
         >
-          We Don't Just Film.{" "}
-          <span className="text-gradient-gold">We Tell Stories</span>{" "}
-          That Move Brands.
+          Non Giriamo Solo Video.{" "}
+          <span className="text-gradient-gold">Raccontiamo Storie</span>{" "}
+          Che Muovono i Brand.
         </motion.h1>
 
         <motion.div
@@ -50,13 +50,13 @@ const HeroSection = () => {
             href="#portfolio"
             className="px-10 py-4 bg-primary text-primary-foreground font-body font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors duration-300"
           >
-            View Our Work
+            Scopri i Nostri Lavori
           </a>
           <a
             href="#contact"
             className="px-10 py-4 border border-foreground/30 text-foreground font-body font-semibold text-sm uppercase tracking-widest hover:border-primary hover:text-primary transition-all duration-300"
           >
-            Book a Call
+            Prenota una Call
           </a>
         </motion.div>
       </div>

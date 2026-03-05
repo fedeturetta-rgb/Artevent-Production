@@ -5,28 +5,28 @@ import { Film, Camera, Mic, Package, Clapperboard } from "lucide-react";
 const services = [
   {
     icon: Film,
-    title: "Corporate Films",
-    description: "Cinematic brand films that capture your company's essence and values with Hollywood-grade production.",
+    title: "Film Aziendali",
+    description: "Film cinematografici che catturano l'essenza e i valori della tua azienda con una produzione di livello hollywoodiano.",
   },
   {
     icon: Camera,
-    title: "Event Coverage",
-    description: "Multi-camera event documentation that turns conferences and galas into compelling visual narratives.",
+    title: "Copertura Eventi",
+    description: "Documentazione multi-camera che trasforma conferenze e gala in narrazioni visive coinvolgenti.",
   },
   {
     icon: Clapperboard,
     title: "Brand Storytelling",
-    description: "Strategic narrative-driven content that forges emotional connections with your target audience.",
+    description: "Contenuti narrativi strategici che creano connessioni emotive profonde con il tuo pubblico target.",
   },
   {
     icon: Package,
-    title: "Product Videos",
-    description: "Sleek, high-impact product showcases designed to convert viewers into customers.",
+    title: "Video Prodotto",
+    description: "Showcase di prodotto eleganti e ad alto impatto, progettati per convertire gli spettatori in clienti.",
   },
   {
     icon: Mic,
-    title: "Executive Interviews",
-    description: "Professional thought-leadership content that positions your leaders as industry authorities.",
+    title: "Interviste Executive",
+    description: "Contenuti di thought-leadership professionali che posizionano i tuoi leader come autorità del settore.",
   },
 ];
 
@@ -44,10 +44,10 @@ const ServicesSection = () => {
           className="text-center mb-20"
         >
           <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4">
-            What We Do
+            Cosa Facciamo
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold">
-            Our <span className="text-gradient-gold">Services</span>
+            I Nostri <span className="text-gradient-gold">Servizi</span>
           </h2>
         </motion.div>
 
