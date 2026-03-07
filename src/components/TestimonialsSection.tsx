@@ -1,6 +1,3 @@
-.hidden-section {
-    display: none;
-}
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
