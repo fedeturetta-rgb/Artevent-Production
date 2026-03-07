@@ -19,7 +19,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Indirizzo",
     value: "Via Roma 42, 20121 Milano, Italia",
-    href: "https://maps.google.com/?q=Via+Roma+42+Milano",
+    href: "https://maps.app.goo.gl/j3BSYqzer5mX5bsb7",
   },
 ];
 
