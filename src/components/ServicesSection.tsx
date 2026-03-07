@@ -8,6 +8,7 @@ const services = [
     icon: Film,
     title: "Film Aziendali",
     description: "Film cinematografici che catturano l'essenza e i valori della tua azienda con una produzione di livello hollywoodiano.",
+    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Camera,
