@@ -58,7 +58,7 @@ const ContactSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border/30">
+        <div className="grid md:grid-cols-2 gap-px bg-border/30">
           {contactInfo.map((item, i) => (
             <motion.a
               key={i}
