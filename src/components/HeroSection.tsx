@@ -56,9 +56,9 @@ const HeroSection = () => {
           transition={{ duration: 1.2, delay: 0.8 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.1] mb-10 tracking-wide"
         >
-          Tradizione, Innovazione{" "}
-          <br className="hidden md:block" />
-          e <span className="italic text-primary">Qualità</span>
+          Raccontiamo Storie{" "}
+          <br />
+          Che Muovono i Brand
         </motion.h1>
 
         <motion.div
