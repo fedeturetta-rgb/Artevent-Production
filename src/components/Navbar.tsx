@@ -14,7 +14,7 @@ const navLinks = [
 const logoUrl = "src/assets/ARTEVENT2_2.png";
 
 // dimensioni pulsante CTA (mobile + desktop)
-const ctaMobileClass = "text-[10px]"; // esempio: h-6 testo piccolissimo
+const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
 const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per il logo
 
 const Navbar = () => {
