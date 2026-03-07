@@ -1,28 +1,24 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useLanguage } from "@/i18n/LanguageContext";
-import { translations } from "@/i18n/translations";
 
-const navKeys = ["home", "portfolio", "services", "about", "contact"] as const;
-const navHrefs = ["#home", "#portfolio", "#services", "#about", "#contact"];
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Lavori", href: "#portfolio" },
+  { label: "Servizi", href: "#services" },
+  { label: "Chi Siamo", href: "#about" },
+  { label: "Contatti", href: "#contact" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { lang, toggleLang } = useLanguage();
-  const t = translations.nav;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const navLinks = navKeys.map((key, i) => ({
-    label: t[key][lang],
-    href: navHrefs[i],
-  }));
 
   return (
     <motion.nav
@@ -58,21 +54,14 @@ const Navbar = () => {
           </p>
         </a>
 
-        {/* Right side - Language toggle + CTA */}
-        <div className="flex items-center gap-6">
-          <button
-            onClick={toggleLang}
-            className="font-body text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500 border border-border/50 px-3 py-1.5 hover:border-primary/50"
-          >
-            {lang === "it" ? "EN" : "IT"}
-          </button>
-          <a
-            href="#contact"
-            className="hidden md:inline-flex font-body text-[11px] font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500"
-          >
-            {t.cta[lang]}
-          </a>
-        </div>
+        {/* Right side - CTA */}
+        <a
+          href="#contact"
+          className="hidden md:inline-flex font-body text-[11px] font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500"
+        >
+          Contattaci
+        </a>
+        <div className="md:hidden w-5" />
       </div>
 
       {/* Full-screen menu overlay */}
