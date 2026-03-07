@@ -10,12 +10,6 @@ const teamMembers = [
   },
   {
     name: "Nome Cognome",
-    title: "Direttore della Fotografia",
-    description: "Specializzato in cinematografia d'atmosfera, con un occhio unico per luce e composizione.",
-    image: "",
-  },
-  {
-    name: "Nome Cognome",
     title: "Post-Produzione & Montaggio",
     description: "Esperto di color grading e montaggio narrativo per produzioni premium.",
     image: "",
