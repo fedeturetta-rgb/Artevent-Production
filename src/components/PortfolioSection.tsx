@@ -8,8 +8,8 @@ const projects = [
     category: "Film Aziendale",
     description: "Una rivelazione cinematografica per il rebrand globale di TechVault, girata in tre continenti.",
     // sample Vimeo video and a thumbnail image
-    videoUrl: "https://player.vimeo.com/video/123456789",
-    thumbnailUrl: "/videos/project1-thumb.jpg",
+    videoUrl: "public/videos/hero-bg.mov",
+    thumbnailUrl: "src/assets/ARTEVENT22.jpg",
   },
   {
     title: "Summit 2025 Highlights",
