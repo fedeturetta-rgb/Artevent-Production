@@ -11,7 +11,7 @@ const navLinks = [
 ];
 
 // Configura il percorso del logo qui
-const logoUrl = "src/assets/ARTEVENT_logo.png";
+const logoUrl = "src/assets/ARTEVENT2_2.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
