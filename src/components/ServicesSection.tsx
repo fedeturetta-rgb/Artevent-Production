@@ -14,6 +14,7 @@ const services = [
     icon: Camera,
     title: "Copertura Eventi",
     description: "Documentazione multi-camera che trasforma conferenze e gala in narrazioni visive coinvolgenti.",
+    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Clapperboard,
