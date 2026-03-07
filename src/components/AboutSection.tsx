@@ -54,8 +54,9 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              Artevent Studio è una casa di produzione video premium, scelta dai brand
-              più prestigiosi per trasformare le loro narrazioni in esperienze visive potenti.
+              In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. 
+              Ogni fotogramma è costruito per elevare il tuo brand, coinvolgere il tuo pubblico 
+              e lasciare un'impressione duratura.
             </p>
             <p className="text-foreground/50 font-body text-sm leading-[2]">
               Con un team di registi, direttori della fotografia e montatori pluripremiati,
