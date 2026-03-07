@@ -6,7 +6,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Guido",
-    value: "+39 347-1206441,
+    value: "+39 347-1206441",
     href: "tel:+393471206441",
   },
   {
