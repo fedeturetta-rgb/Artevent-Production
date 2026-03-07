@@ -13,6 +13,10 @@ const navLinks = [
 // Configura il percorso del logo qui
 const logoUrl = "src/assets/ARTEVENT2_2.png";
 
+// dimensioni pulsante CTA (mobile + desktop)
+const ctaMobileClass = "text-[10px]"; // esempio: h-6 testo piccolissimo
+const ctaDesktopClass = "md:text-[11px]"; // le stesse regole Tailwind usate per il logo
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -56,7 +60,7 @@ const Navbar = () => {
         {/* Right side - CTA */}
         <a
           href="#contact"
-          className="inline-flex font-body text-[10px] md:text-[11px] font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500"
+          className={`inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
         >
           Contattaci
         </a>
