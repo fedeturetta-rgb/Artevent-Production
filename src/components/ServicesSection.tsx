@@ -20,16 +20,19 @@ const services = [
     icon: Clapperboard,
     title: "Brand Storytelling",
     description: "Contenuti narrativi strategici che creano connessioni emotive profonde con il tuo pubblico target.",
+    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Package,
     title: "Video Prodotto",
     description: "Showcase di prodotto eleganti e ad alto impatto, progettati per convertire gli spettatori in clienti.",
+    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Mic,
     title: "Interviste Executive",
     description: "Contenuti di thought-leadership professionali che posizionano i tuoi leader come autorità del settore.",
+    thumbnailUrl: filmAziendaliThumb,
   },
 ];
 
