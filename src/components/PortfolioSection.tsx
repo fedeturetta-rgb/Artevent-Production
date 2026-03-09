@@ -16,7 +16,7 @@ const projects = [
     category: "Copertura Evento",
     description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
     videoUrl: "https://player.vimeo.com/video/987654321",
-    thumbnailUrl: "/videos/hero-bg.mov",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
   {
     title: "Lancio Prodotto Nova",
