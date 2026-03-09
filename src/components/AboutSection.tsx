@@ -6,29 +6,6 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 
-const photoFeatures = [
-  {
-    icon: Camera,
-    title: "Fotografia d'Autore",
-    description: "Scatti che raccontano storie uniche, con un'estetica cinematografica e una cura maniacale per ogni dettaglio.",
-  },
-  {
-    icon: Aperture,
-    title: "Ritratti & Branding",
-    description: "Ritratti professionali e immagini di brand che comunicano personalità, valori e autenticità.",
-  },
-  {
-    icon: Focus,
-    title: "Eventi & Reportage",
-    description: "Copertura fotografica discreta e raffinata per eventi aziendali, conferenze e occasioni speciali.",
-  },
-  {
-    icon: Sun,
-    title: "Still Life & Prodotto",
-    description: "Fotografia di prodotto con illuminazione studiata per esaltare texture, materiali e design.",
-  },
-];
-
 const AboutSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
