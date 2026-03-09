@@ -16,14 +16,14 @@ const projects = [
     category: "Copertura Evento",
     description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
     videoUrl: "https://player.vimeo.com/video/987654321",
-    thumbnailUrl: "/videos/1.mp4",
+    thumbnailUrl: "/videos/hero-bg.mov",
   },
   {
     title: "Lancio Prodotto Nova",
     category: "Video Prodotto",
     description: "Un video di lancio prodotto elegante che ha generato oltre 3 milioni di visualizzazioni nelle prime 48 ore.",
     videoUrl: "https://player.vimeo.com/video/987654321",
-    thumbnailUrl: "/videos/1.mp4",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
   {
     title: "Serie Visione CEO",
@@ -37,14 +37,14 @@ const projects = [
     category: "Brand Storytelling",
     description: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
     videoUrl: "https://player.vimeo.com/video/111222333",
-    thumbnailUrl: "//videos/1.mp4",
+    thumbnailUrl: "/videos/hero-bg.mov",
   },
   {
     title: "Gala Annuale Apex",
     category: "Copertura Evento",
     description: "Gala catturato con eleganza cinematografica e montaggio in tempo reale.",
     videoUrl: "https://player.vimeo.com/video/222333444",
-    thumbnailUrl: "/videos/1.mp4",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
 ];
 
