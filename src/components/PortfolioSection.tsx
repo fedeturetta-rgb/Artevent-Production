@@ -37,7 +37,7 @@ const projects = [
     category: "Brand Storytelling",
     description: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
     videoUrl: "https://player.vimeo.com/video/111222333",
-    thumbnailUrl: "/videos/hero-bg.mov",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
   {
     title: "Gala Annuale Apex",
