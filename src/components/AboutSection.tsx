@@ -41,30 +41,11 @@ const AboutSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-20 items-center">
-          {/* Text */}
+          {/* Visual */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. 
-              Ogni fotogramma è costruito per elevare il tuo brand, coinvolgere il tuo pubblico 
-              e lasciare un'impressione duratura.
-            </p>
-            <p className="text-foreground/50 font-body text-sm leading-[2]">
-              Con un team di registi, direttori della fotografia e montatori pluripremiati,
-              curiamo ogni singolo fotogramma con intenzione — unendo arte e storytelling
-              strategico per elevare il tuo brand sopra il rumore.
-            </p>
-            <div className="luxwine-line-h mt-10" />
-          </motion.div>
-
-          {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
             <div
@@ -90,6 +71,25 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
+              In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. 
+              Ogni fotogramma è costruito per elevare il tuo brand, coinvolgere il tuo pubblico 
+              e lasciare un'impressione duratura.
+            </p>
+            <p className="text-foreground/50 font-body text-sm leading-[2]">
+              Con un team di registi, direttori della fotografia e montatori pluripremiati,
+              curiamo ogni singolo fotogramma con intenzione — unendo arte e storytelling
+              strategico per elevare il tuo brand sopra il rumore.
+            </p>
+            <div className="luxwine-line-h mt-10" />
           </motion.div>
         </div>
 
@@ -121,8 +121,8 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              L'Arte di Catturare{" "}
-              <span className="italic text-primary">l'Istante Perfetto</span>
+              Dove la Visione Incontra{" "}
+              <span className="italic text-primary">l'Arte Cinematografica</span>
             </h3>
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
               La fotografia è il cuore pulsante della nostra visione creativa. 
