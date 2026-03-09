@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Camera, Aperture, Focus, Sun } from "lucide-react";
 import {
   Dialog,
   DialogContent,
