@@ -120,9 +120,6 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-              Fotografia
-            </p>
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
               L'Arte di Catturare{" "}
               <span className="italic text-primary">l'Istante Perfetto</span>
