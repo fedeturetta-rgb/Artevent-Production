@@ -23,7 +23,7 @@ const AboutCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="relative aspect-[16/9] bg-card border border-border overflow-hidden">
+      <div className="relative aspect-[3/2] bg-card border border-border overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
