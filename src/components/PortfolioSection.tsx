@@ -2,7 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { X, Play } from "lucide-react";
 
-const projects = [
+const projects: { title: string; category: string; description: string; videoUrl: string; thumbnailUrl: string; gallery?: string[] }[] = [
   {
     title: "Lancio Brand TechVault",
     category: "Film Aziendale",
