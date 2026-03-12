@@ -4,12 +4,22 @@ import { X, Play } from "lucide-react";
 
 const projects: { title: string; category: string; description: string; videoUrl: string; thumbnailUrl: string; gallery?: string[] }[] = [
   {
-    title: "Lancio Brand TechVault",
-    category: "Film Aziendale",
-    description: "Una rivelazione cinematografica per il rebrand globale di TechVault, girata in tre continenti.",
-    // sample Vimeo video and a thumbnail image
-    videoUrl: "/videos/1.mp4",
-    thumbnailUrl: "/videos/1.mp4",
+    title: "Summit 2025 Highlights",
+    category: "Copertura Evento",
+    description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+    videoUrl: "",
+    thumbnailUrl: "/videos/2.mp4",
+    gallery: [
+      "/images/ARTEVENT22.jpg",
+      "/images/ARTEVENT2_2.png",
+      "/images/film-aziendali-thumb.jpg",
+      "/images/Fede.JPG",
+      "/images/Guido.JPG",
+      "/images/hero-bg.jpg",
+      "/images/ARTEVENT22.jpg",
+      "/images/ARTEVENT2_2.png",
+      "/images/film-aziendali-thumb.jpg",
+    ],
   },
   {
     title: "Summit 2025 Highlights",
