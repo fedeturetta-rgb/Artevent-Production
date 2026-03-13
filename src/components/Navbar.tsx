@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const logoUrl = "/images/ARTEVENT2_2.png";
 
 // dimensioni pulsante CTA (mobile + desktop)
-const defaultCtaMobileClass = "text-xs tracking-[0.1em]"; // testo più leggibile su mobile
+const defaultCtaMobileClass = "text-xs"; // testo più leggibile su mobile
 const defaultCtaDesktopClass = "md:text-sm"; // testo più grande su desktop
 
 type NavbarProps = {
