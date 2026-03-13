@@ -11,6 +11,10 @@ const navLinks = [
   { label: "Contatti", href: "#contact" },
 ];
 
+// Scegli qui un file presente in public/images.
+// Esempio: "/images/ARTEVENT2_2.png". Lascia stringa vuota per usare il logo SVG.
+const logoImagePath = "/images/ARTEVENT2_2.png";
+
 // dimensioni pulsante CTA (mobile + desktop)
 const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
 const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per il logo
@@ -48,16 +52,15 @@ const Navbar = () => {
 
         {/* Logo - center */}
         <a href="#home" className="absolute left-1/2 -translate-x-1/2 text-center">
-          {/*
-           * Logo size is controlled inside the Logo component via a prop.
-           * Tailwind classes here were not taking effect because the SVG in
-           * Logo has explicit width/height attributes (or a fixed viewBox).
-           *
-           * To resize the logo, change the `size` prop below, or update
-           * `src/components/Logo.tsx` to accept/forward className and be
-           * responsive.
-           */}
-          <Logo size={32} />
+          {logoImagePath ? (
+            <img
+              src={logoImagePath}
+              alt="Artevent logo"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+          ) : (
+            <Logo size={32} />
+          )}
         </a>
 
         {/* Right side - CTA */}
