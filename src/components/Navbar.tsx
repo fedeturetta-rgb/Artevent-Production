@@ -1,16 +1,6 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Lavori", href: "#portfolio" },
-  { label: "Servizi", href: "#services" },
-  { label: "Chi Siamo", href: "#about" },
-  { label: "Contatti", href: "#contact" },
-];
-
-// Configura il percorso del logo qui
 const logoUrl = "/images/ARTEVENT2_2.png";
 
 // dimensioni pulsante CTA (mobile + desktop)
@@ -19,7 +9,6 @@ const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -39,15 +28,6 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
-        {/* Hamburger - left */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="text-foreground/70 hover:text-primary transition-colors"
-          aria-label="Menu"
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-
         {/* Logo - center */}
         <a href="#home" className="absolute left-1/2 -translate-x-1/2 text-center">
           <img
@@ -65,35 +45,6 @@ const Navbar = () => {
           Contattaci
         </a>
       </div>
-
-      {/* Full-screen menu overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-60"
-          >
-            <div className="flex flex-col items-center justify-center h-full gap-10">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  className="font-display text-3xl md:text-4xl font-light tracking-[0.15em] uppercase text-foreground/80 hover:text-primary transition-colors duration-500"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 };
