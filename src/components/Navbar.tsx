@@ -15,6 +15,10 @@ const navLinks = [
 // Esempio: "/images/ARTEVENT2_2.png". Lascia stringa vuota per usare il logo SVG.
 const logoImagePath = "/images/ARTEVENT2_2.png";
 
+// dimensioni logo (mobile + desktop)
+const logoMobileClass = "h-16";
+const logoDesktopClass = "md:h-24";
+
 // dimensioni pulsante CTA (mobile + desktop)
 const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
 const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per il logo
@@ -56,10 +60,13 @@ const Navbar = () => {
             <img
               src={logoImagePath}
               alt="Artevent logo"
-              className="h-80 md:h-36 w-auto object-contain"
+              className={`${logoMobileClass} ${logoDesktopClass} w-auto object-contain`}
             />
           ) : (
-            <Logo size={32} />
+            <Logo
+              size={32}
+              className={`${logoMobileClass} ${logoDesktopClass} w-auto`}
+            />
           )}
         </a>
 
