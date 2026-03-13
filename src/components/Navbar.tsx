@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Logo } from "./Logo";
+import { Logo } from "src/assets/ARTEVENT2_2.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
