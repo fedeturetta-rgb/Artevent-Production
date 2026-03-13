@@ -4,11 +4,20 @@ import { motion } from "framer-motion";
 const logoUrl = "/images/ARTEVENT2_2.png";
 
 // dimensioni pulsante CTA (mobile + desktop)
-const ctaMobileClass = "text-xs"; // testo più leggibile su mobile
-const ctaDesktopClass = "md:text-sm"; // testo più grande su desktop
+const defaultCtaMobileClass = "text-xs"; // testo più leggibile su mobile
+const defaultCtaDesktopClass = "md:text-sm"; // testo più grande su desktop
 
-const Navbar = () => {
+type NavbarProps = {
+  /** Override classes for the CTA button on mobile */
+  ctaMobileClass?: string;
+  /** Override classes for the CTA button on desktop */
+  ctaDesktopClass?: string;
+};
+
+const Navbar = ({ ctaMobileClass, ctaDesktopClass }: NavbarProps = {}) => {
   const [scrolled, setScrolled] = useState(false);
+  const mobileCtaClass = ctaMobileClass ?? defaultCtaMobileClass;
+  const desktopCtaClass = ctaDesktopClass ?? defaultCtaDesktopClass;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -40,7 +49,7 @@ const Navbar = () => {
         {/* Right side - CTA */}
         <a
           href="#contact"
-          className={`ml-auto inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
+          className={`ml-auto inline-flex font-body ${mobileCtaClass} ${desktopCtaClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
         >
           Contattaci
         </a>
