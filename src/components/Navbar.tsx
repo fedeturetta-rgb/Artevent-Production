@@ -58,58 +58,60 @@ const Navbar = () => {
   }, [mobileOpen, closeMobileMenu]);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
-        {/* Hamburger - left */}
-        <div className="relative z-[60]">
-          <button
-            type="button"
-            onClick={toggleMobileMenu}
-            className="p-2 -ml-2 text-foreground/70 hover:text-primary transition-colors"
-            aria-label={mobileOpen ? "Chiudi menu" : "Apri menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-navigation"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+    <>
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-xl border-b border-border"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
+          {/* Hamburger - left */}
+          <div className="relative z-[60]">
+            <button
+              type="button"
+              onClick={toggleMobileMenu}
+              className="p-2 -ml-2 text-foreground/70 hover:text-primary transition-colors"
+              aria-label={mobileOpen ? "Chiudi menu" : "Apri menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
 
-        {/* Logo - center */}
-        <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none">
-          <a href="#home" onClick={closeMobileMenu} className="pointer-events-auto">
-            {logoImagePath ? (
-              <img
-                src={logoImagePath}
-                alt="Artevent logo"
-                className={`${logoMobileClass} ${logoDesktopClass} w-auto object-contain`}
-              />
-            ) : (
-              <Logo
-                size={32}
-                className={`${logoMobileClass} ${logoDesktopClass} w-auto`}
-              />
-            )}
+          {/* Logo - center */}
+          <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none">
+            <a href="#home" onClick={closeMobileMenu} className="pointer-events-auto">
+              {logoImagePath ? (
+                <img
+                  src={logoImagePath}
+                  alt="Artevent logo"
+                  className={`${logoMobileClass} ${logoDesktopClass} w-auto object-contain`}
+                />
+              ) : (
+                <Logo
+                  size={32}
+                  className={`${logoMobileClass} ${logoDesktopClass} w-auto`}
+                />
+              )}
+            </a>
+          </div>
+
+          {/* Right side - CTA */}
+          <a
+            href="#contact"
+            onClick={closeMobileMenu}
+            className={`inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
+          >
+            Contattaci
           </a>
         </div>
-
-        {/* Right side - CTA */}
-        <a
-          href="#contact"
-          onClick={closeMobileMenu}
-          className={`inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
-        >
-          Contattaci
-        </a>
-      </div>
+      </motion.nav>
 
       {/* Full-screen menu overlay */}
       <AnimatePresence>
@@ -119,15 +121,21 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 top-24 bg-background/98 backdrop-blur-2xl z-40"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-2xl pt-24"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-10 -mt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 36 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-center gap-10 px-6"
+            >
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobileMenu}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
@@ -136,11 +144,11 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
 
