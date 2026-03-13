@@ -95,7 +95,7 @@ const Navbar = () => {
                 />
               ) : (
                 <Logo
-                  size={99}
+                  size={32}
                   className={`${logoMobileClass} ${logoDesktopClass} w-auto`}
                 />
               )}
