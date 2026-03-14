@@ -5,9 +5,10 @@ import { Logo } from "./Logo";
 
 const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "Chi Siamo", href: "#about" },
   { label: "Lavori", href: "#portfolio" },
   { label: "Servizi", href: "#services" },
-  { label: "Chi Siamo", href: "#about" },
+  { label: "Il Team", href: "#team" },
   { label: "Contatti", href: "#contact" },
 ];
 
