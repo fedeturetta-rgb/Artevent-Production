@@ -58,6 +58,12 @@ const HeroSection = () => {
             href="#portfolio"
             className="px-10 py-4 bg-primary/90 text-primary-foreground font-body font-medium text-[11px] uppercase tracking-[0.3em] hover:bg-primary transition-all duration-500"
           >
+            Scopri chi siamo
+          </a>
+          <a
+            href="#about"
+            className="px-10 py-4 bg-primary/90 text-primary-foreground font-body font-medium text-[11px] uppercase tracking-[0.3em] hover:bg-primary transition-all duration-500"
+          >
             Scopri i Lavori
           </a>
           <a
