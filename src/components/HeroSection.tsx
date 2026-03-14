@@ -79,7 +79,7 @@ const HeroSection = () => {
         <motion.span
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-          className="font-body text-[21px] tracking-[0.4em] uppercase text-foreground/40"
+          className="font-body text-[13px] tracking-[0.4em] uppercase text-foreground/40"
         >
           Scorri in basso
         </motion.span>
