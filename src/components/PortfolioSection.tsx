@@ -1,12 +1,25 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const projects: { title: string; category: string; description: string; videoUrl: string; thumbnailUrl: string; gallery?: string[] }[] = [
+type Project = {
+  title: string;
+  category: { it: string; en: string };
+  description: { it: string; en: string };
+  videoUrl: string;
+  thumbnailUrl: string;
+  gallery?: string[];
+};
+
+const projects: Project[] = [
   {
     title: "Summit 2025 Highlights",
-    category: "Copertura Evento",
-    description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+    category: { it: "Copertura Evento", en: "Event Coverage" },
+    description: {
+      it: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+      en: "Full multi-day coverage of the annual leadership summit with over 5,000 attendees.",
+    },
     videoUrl: "",
     thumbnailUrl: "/videos/2.mp4",
     gallery: [
@@ -23,8 +36,11 @@ const projects: { title: string; category: string; description: string; videoUrl
   },
   {
     title: "Summit 2025 Highlights",
-    category: "Copertura Evento",
-    description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+    category: { it: "Copertura Evento", en: "Event Coverage" },
+    description: {
+      it: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+      en: "Full multi-day coverage of the annual leadership summit with over 5,000 attendees.",
+    },
     videoUrl: "",
     thumbnailUrl: "/videos/2.mp4",
     gallery: [
@@ -41,8 +57,11 @@ const projects: { title: string; category: string; description: string; videoUrl
   },
    {
     title: "Summit 2025 Highlights",
-    category: "Copertura Evento",
-    description: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+    category: { it: "Copertura Evento", en: "Event Coverage" },
+    description: {
+      it: "Copertura completa multi-giornata del summit annuale di leadership con oltre 5.000 partecipanti.",
+      en: "Full multi-day coverage of the annual leadership summit with over 5,000 attendees.",
+    },
     videoUrl: "",
     thumbnailUrl: "/videos/2.mp4",
     gallery: [
@@ -59,28 +78,38 @@ const projects: { title: string; category: string; description: string; videoUrl
   },
   {
     title: "Serie Visione CEO",
-    category: "Intervista Executive",
-    description: "Una serie di thought-leadership in 6 episodi con dirigenti Fortune 500.",
+    category: { it: "Intervista Executive", en: "Executive Interview" },
+    description: {
+      it: "Una serie di thought-leadership in 6 episodi con dirigenti Fortune 500.",
+      en: "A 6-episode thought-leadership series featuring Fortune 500 executives.",
+    },
     videoUrl: "https://player.vimeo.com/video/555333111",
     thumbnailUrl: "/videos/1.mp4",
   },
   {
     title: "Storia Rebrand Meridian",
-    category: "Brand Storytelling",
-    description: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
+    category: { it: "Brand Storytelling", en: "Brand Storytelling" },
+    description: {
+      it: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
+      en: "Documenting the transformation of a century-old company for a new era.",
+    },
     videoUrl: "https://player.vimeo.com/video/111222333",
     thumbnailUrl: "/videos/1_comp.mp4",
   },
   {
     title: "Gala Annuale Apex",
-    category: "Copertura Evento",
-    description: "Gala catturato con eleganza cinematografica e montaggio in tempo reale.",
+    category: { it: "Copertura Evento", en: "Event Coverage" },
+    description: {
+      it: "Gala catturato con eleganza cinematografica e montaggio in tempo reale.",
+      en: "Gala captured with cinematic elegance and real-time editing.",
+    },
     videoUrl: "https://player.vimeo.com/video/222333444",
     thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
 ];
 
 const PortfolioSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [selected, setSelected] = useState<number | null>(null);
@@ -103,6 +132,12 @@ const PortfolioSection = () => {
     });
   };
 
+  const copy = {
+    sectionLabel: language === "it" ? "Lavori Selezionati" : "Selected Work",
+    headingMain: language === "it" ? "Il Nostro" : "Our",
+    headingAccent: language === "it" ? "Portfolio" : "Portfolio",
+  };
+
   return (
     <section id="portfolio" className="section-padding bg-gradient-dark">
       <div ref={ref} className="max-w-6xl mx-auto">
@@ -120,10 +155,10 @@ const PortfolioSection = () => {
           className="text-center mb-24"
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Lavori Selezionati
+            {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-            Il Nostro <span className="italic text-primary">Portfolio</span>
+            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -171,7 +206,7 @@ const PortfolioSection = () => {
 
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-2">
-                  {project.category}
+                  {project.category[language]}
                 </span>
                 <h3 className="font-display text-xl font-light tracking-wide">{project.title}</h3>
               </div>
@@ -275,13 +310,13 @@ const PortfolioSection = () => {
                 </div>
               )}
               <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-3">
-                {projects[selected].category}
+                {projects[selected].category[language]}
               </p>
               <h3 className="font-display text-3xl font-light mb-4 tracking-wide">
                 {projects[selected].title}
               </h3>
               <p className="text-muted-foreground font-body text-sm leading-[2]">
-                {projects[selected].description}
+                {projects[selected].description[language]}
               </p>
             </motion.div>
           </motion.div>

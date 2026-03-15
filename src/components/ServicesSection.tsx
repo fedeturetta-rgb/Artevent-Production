@@ -2,43 +2,67 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Film, Camera, Mic, Package, Clapperboard } from "lucide-react";
 import filmAziendaliThumb from "@/assets/film-aziendali-thumb.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const services = [
   {
     icon: Film,
-    title: "Film Aziendali",
-    description: "Film cinematografici che catturano l'essenza e i valori della tua azienda con una produzione di livello hollywoodiano.",
+    title: { it: "Film Aziendali", en: "Corporate Films" },
+    description: {
+      it: "Film cinematografici che catturano l'essenza e i valori della tua azienda con una produzione di livello hollywoodiano.",
+      en: "Cinematic films that capture your company's essence and values with Hollywood-level production.",
+    },
     thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Camera,
-    title: "Copertura Eventi",
-    description: "Documentazione multi-camera che trasforma conferenze e gala in narrazioni visive coinvolgenti.",
+    title: { it: "Copertura Eventi", en: "Event Coverage" },
+    description: {
+      it: "Documentazione multi-camera che trasforma conferenze e gala in narrazioni visive coinvolgenti.",
+      en: "Multi-camera documentation that turns conferences and galas into engaging visual narratives.",
+    },
     thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Clapperboard,
-    title: "Brand Storytelling",
-    description: "Contenuti narrativi strategici che creano connessioni emotive profonde con il tuo pubblico target.",
+    title: { it: "Brand Storytelling", en: "Brand Storytelling" },
+    description: {
+      it: "Contenuti narrativi strategici che creano connessioni emotive profonde con il tuo pubblico target.",
+      en: "Strategic narrative content that creates deep emotional connections with your target audience.",
+    },
     thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Package,
-    title: "Video Prodotto",
-    description: "Showcase di prodotto eleganti e ad alto impatto, progettati per convertire gli spettatori in clienti.",
+    title: { it: "Video Prodotto", en: "Product Video" },
+    description: {
+      it: "Showcase di prodotto eleganti e ad alto impatto, progettati per convertire gli spettatori in clienti.",
+      en: "Elegant, high-impact product showcases designed to convert viewers into customers.",
+    },
     thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Mic,
-    title: "Interviste Executive",
-    description: "Contenuti di thought-leadership professionali che posizionano i tuoi leader come autorità del settore.",
+    title: { it: "Interviste Executive", en: "Executive Interviews" },
+    description: {
+      it: "Contenuti di thought-leadership professionali che posizionano i tuoi leader come autorita del settore.",
+      en: "Professional thought-leadership content that positions your leaders as industry authorities.",
+    },
     thumbnailUrl: filmAziendaliThumb,
   },
 ];
 
 const ServicesSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const copy = {
+    sectionLabel: language === "it" ? "Cosa Facciamo" : "What We Do",
+    headingMain: language === "it" ? "I Nostri" : "Our",
+    headingAccent: language === "it" ? "Servizi" : "Services",
+    cta: language === "it" ? "Richiedi un Preventivo" : "Request a Quote",
+  };
 
   return (
     <section id="services" className="section-padding">
@@ -57,10 +81,10 @@ const ServicesSection = () => {
           className="text-center mb-24"
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Cosa Facciamo
+            {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-            I Nostri <span className="italic text-primary">Servizi</span>
+            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -79,10 +103,10 @@ const ServicesSection = () => {
                   <div className="p-10 md:p-12">
                     <service.icon className="w-7 h-7 text-primary/60 mb-8 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
                     <h3 className="font-display text-xl md:text-2xl font-light mb-4 tracking-wide">
-                      {service.title}
+                      {service.title[language]}
                     </h3>
                     <p className="text-muted-foreground font-body text-xs leading-[2] tracking-wide">
-                      {service.description}
+                      {service.description[language]}
                     </p>
                   </div>
                 </div>
@@ -90,10 +114,10 @@ const ServicesSection = () => {
                 <>
                   <service.icon className="w-7 h-7 text-primary/60 mb-8 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
                   <h3 className="font-display text-xl md:text-2xl font-light mb-4 tracking-wide">
-                    {service.title}
+                    {service.title[language]}
                   </h3>
                   <p className="text-muted-foreground font-body text-xs leading-[2] tracking-wide">
-                    {service.description}
+                    {service.description[language]}
                   </p>
                 </>
               )}
@@ -110,7 +134,7 @@ const ServicesSection = () => {
               href="#contact"
               className="font-body text-[11px] tracking-[0.3em] uppercase text-primary/70 hover:text-primary transition-colors duration-500 border-b border-primary/30 pb-1"
             >
-              Richiedi un Preventivo
+              {copy.cta}
             </a>
           </motion.div>
         </div>

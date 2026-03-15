@@ -1,24 +1,39 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const teamMembers = [
   {
     name: "Guido Frigo",
-    title: "Regista & Fondatore",
-    description: "Oltre 15 anni di esperienza nella regia di film aziendali e documentari per brand internazionali.",
+    title: { it: "Regista & Fondatore", en: "Director & Founder" },
+    description: {
+      it: "Oltre 15 anni di esperienza nella regia di film aziendali e documentari per brand internazionali.",
+      en: "Over 15 years of experience directing corporate films and documentaries for international brands.",
+    },
     image: "/images/Guido.JPG", // Inserisci il percorso dell'immagine, es: "/images/team-1.jpg"
   },
   {
     name: "Federico Turetta",
-    title: "Post-Produzione & Montaggio",
-    description: "Esperto di color grading e montaggio narrativo per produzioni premium.",
+    title: { it: "Post-Produzione & Montaggio", en: "Post-Production & Editing" },
+    description: {
+      it: "Esperto di color grading e montaggio narrativo per produzioni premium.",
+      en: "Expert in color grading and narrative editing for premium productions.",
+    },
     image: "/images/Fede.JPG",
   },
 ];
 
 const TeamSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const copy = {
+    sectionLabel: language === "it" ? "Il Nostro Team" : "Our Team",
+    headingMain: language === "it" ? "Le Menti" : "The Creative",
+    headingAccent: language === "it" ? "Creative" : "Minds",
+    photoFallback: language === "it" ? "Foto" : "Photo",
+  };
 
   return (
     <section id="team" className="section-padding bg-gradient-dark">
@@ -37,10 +52,10 @@ const TeamSection = () => {
           className="text-center mb-20"
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Il Nostro Team
+            {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light leading-tight">
-            Le Menti <span className="italic text-primary">Creative</span>
+            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -70,7 +85,7 @@ const TeamSection = () => {
                         </span>
                       </div>
                       <p className="font-body text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
-                        Foto
+                        {copy.photoFallback}
                       </p>
                     </div>
                   </div>
@@ -83,10 +98,10 @@ const TeamSection = () => {
                 {member.name}
               </h3>
               <p className="font-body text-[10px] tracking-[0.3em] uppercase text-primary/70 mb-4">
-                {member.title}
+                {member.title[language]}
               </p>
               <p className="font-body text-sm text-foreground/50 leading-relaxed">
-                {member.description}
+                {member.description[language]}
               </p>
             </motion.div>
           ))}

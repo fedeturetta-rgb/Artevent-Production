@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Video 16:9 usato su desktop (già presente)
 const desktopVideoPath = "/videos/SHOWREEL_homepage_16:9_comp.mp4";
@@ -9,6 +10,17 @@ const desktopVideoPath = "/videos/SHOWREEL_homepage_16:9_comp.mp4";
 const mobileVideoPath = "/videos/SHOWREEL_homepage_9:16_comp.mp4";
 
 const HeroSection = () => {
+  const { language } = useLanguage();
+  const copy = {
+    eyebrow:
+      language === "it"
+        ? "Produzione Foto/Video Corporate"
+        : "Corporate Photo/Video Production",
+    titleLine1: language === "it" ? "Raccontiamo Storie" : "We Tell Stories",
+    titleLine2: language === "it" ? "Che Muovono i Brand" : "That Move Brands",
+    scrollHint: language === "it" ? "Scorri in basso" : "Scroll down",
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background video */}
@@ -59,7 +71,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="font-body text-[11px] md:text-xs tracking-[0.5em] uppercase text-primary/80 mb-8"
         >
-          Produzione Foto/Video Corporate
+          {copy.eyebrow}
         </motion.p>
 
         <motion.h1
@@ -68,9 +80,9 @@ const HeroSection = () => {
           transition={{ duration: 1.2, delay: 0.8 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[1.1] uppercase mb-10 tracking-wide"
         >
-          Raccontiamo Storie{" "}
+          {copy.titleLine1}{" "}
           <br />
-          Che Muovono i Brand
+          {copy.titleLine2}
         </motion.h1>
 
         <motion.div
@@ -112,7 +124,7 @@ const HeroSection = () => {
           transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
           className="font-body text-[13px] tracking-[0.4em] uppercase text-foreground/40"
         >
-          Scorri in basso
+          {copy.scrollHint}
         </motion.span>
         <motion.div
           animate={{ y: [0, 8, 0] }}

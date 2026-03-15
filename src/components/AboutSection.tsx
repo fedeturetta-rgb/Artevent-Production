@@ -6,17 +6,42 @@ import {
   DialogContent,
   DialogClose,
 } from "@/components/ui/dialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const carouselPhotos = [
-  { src: "/images/ARTEVENT22.jpg", title: "Corporate Gala", category: "Eventi" },
-  { src: "/images/ARTEVENT2_2.png", title: "Brand Identity", category: "Branding" },
-  { src: "/images/film-aziendali-thumb.jpg", title: "Set Cinematografico", category: "Behind the Scenes" },
-  { src: "/images/Fede.JPG", title: "Ritratto Creativo", category: "Ritratti" },
-  { src: "/images/Guido.JPG", title: "Ritratto Executive", category: "Ritratti" },
-  { src: "/images/hero-bg.jpg", title: "Location Scouting", category: "Paesaggi" },
+  {
+    src: "/images/ARTEVENT22.jpg",
+    title: { it: "Corporate Gala", en: "Corporate Gala" },
+    category: { it: "Eventi", en: "Events" },
+  },
+  {
+    src: "/images/ARTEVENT2_2.png",
+    title: { it: "Brand Identity", en: "Brand Identity" },
+    category: { it: "Branding", en: "Branding" },
+  },
+  {
+    src: "/images/film-aziendali-thumb.jpg",
+    title: { it: "Set Cinematografico", en: "Cinematic Set" },
+    category: { it: "Dietro le Quinte", en: "Behind the Scenes" },
+  },
+  {
+    src: "/images/Fede.JPG",
+    title: { it: "Ritratto Creativo", en: "Creative Portrait" },
+    category: { it: "Ritratti", en: "Portraits" },
+  },
+  {
+    src: "/images/Guido.JPG",
+    title: { it: "Ritratto Executive", en: "Executive Portrait" },
+    category: { it: "Ritratti", en: "Portraits" },
+  },
+  {
+    src: "/images/hero-bg.jpg",
+    title: { it: "Location Scouting", en: "Location Scouting" },
+    category: { it: "Paesaggi", en: "Landscapes" },
+  },
 ];
 
-const AboutCarousel = () => {
+const AboutCarousel = ({ language }: { language: "it" | "en" }) => {
   const [current, setCurrent] = useState(0);
   const prev = () => setCurrent((c) => (c === 0 ? carouselPhotos.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === carouselPhotos.length - 1 ? 0 : c + 1));
@@ -39,10 +64,10 @@ const AboutCarousel = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-1 block">
-            {carouselPhotos[current].category}
+            {carouselPhotos[current].category[language]}
           </span>
           <h3 className="font-display text-lg font-light tracking-wide">
-            {carouselPhotos[current].title}
+            {carouselPhotos[current].title[language]}
           </h3>
         </div>
       </div>
@@ -74,12 +99,44 @@ const AboutCarousel = () => {
 };
 
 const AboutSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const videoUrl = "https://player.vimeo.com/video/1171592073";
   const thumbnailUrl = "/videos/SHOWREEL_homepage_16:9_comp.mp4";
+  const copy = {
+    sectionLabel: language === "it" ? "Chi e Artevent Studio" : "Who Is Artevent Studio",
+    heading1Line1: language === "it" ? "Dove la Visione Incontra" : "Where Vision Meets",
+    heading1Accent:
+      language === "it" ? "l'Arte Cinematografica" : "Cinematic Art",
+    paragraph1a:
+      language === "it"
+        ? "In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. Ogni fotogramma e costruito per elevare il tuo brand, coinvolgere il tuo pubblico e lasciare un'impressione duratura."
+        : "At Artevent Studio, we blend cinematic craft with strategic storytelling. Every frame is built to elevate your brand, engage your audience, and leave a lasting impression.",
+    paragraph1b:
+      language === "it"
+        ? "Con un team di registi, direttori della fotografia e montatori pluripremiati, curiamo ogni singolo fotogramma con intenzione, unendo arte e storytelling strategico per elevare il tuo brand sopra il rumore."
+        : "With a team of award-winning directors, cinematographers, and editors, we shape every frame with intention, combining art and strategy to lift your brand above the noise.",
+    watchReel: language === "it" ? "Guarda il Nostro Reel" : "Watch Our Reel",
+    heading2Line1:
+      language === "it" ? "L'Arte di Catturare" : "The Art of Capturing",
+    heading2Accent:
+      language === "it" ? "l'Istante Perfetto" : "the Perfect Moment",
+    paragraph2a:
+      language === "it"
+        ? "La fotografia e il cuore pulsante della nostra visione creativa. Ogni scatto nasce dall'unione tra tecnica impeccabile e sensibilita artistica, trasformando momenti fugaci in immagini senza tempo."
+        : "Photography is the heartbeat of our creative vision. Every shot is born from flawless technique and artistic sensitivity, turning fleeting moments into timeless imagery.",
+    paragraph2b:
+      language === "it"
+        ? "Dalla composizione alla post-produzione, ogni fase e curata con la stessa attenzione al dettaglio che contraddistingue il nostro lavoro cinematografico, perche un'immagine straordinaria vale piu di mille parole."
+        : "From composition to post-production, every stage is handled with the same attention to detail that defines our cinematic work, because one outstanding image is worth more than a thousand words.",
+    unsupportedVideo:
+      language === "it"
+        ? "Il tuo browser non supporta il tag video."
+        : "Your browser does not support the video tag.",
+  };
 
   return (
     <section id="about" className="section-padding bg-gradient-dark">
@@ -99,7 +156,7 @@ const AboutSection = () => {
           className="text-center mb-20"
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Chi è Artevent Studio
+            {copy.sectionLabel}
           </p>
         </motion.div>
 
@@ -111,18 +168,14 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              Dove la Visione Incontra{" "}
-              <span className="italic text-primary">l'Arte Cinematografica</span>
+              {copy.heading1Line1}{" "}
+              <span className="italic text-primary">{copy.heading1Accent}</span>
             </h3>
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. 
-              Ogni fotogramma è costruito per elevare il tuo brand, coinvolgere il tuo pubblico 
-              e lasciare un'impressione duratura.
+              {copy.paragraph1a}
             </p>
             <p className="text-foreground/50 font-body text-sm leading-[2]">
-              Con un team di registi, direttori della fotografia e montatori pluripremiati,
-              curiamo ogni singolo fotogramma con intenzione — unendo arte e storytelling
-              strategico per elevare il tuo brand sopra il rumore.
+              {copy.paragraph1b}
             </p>
             <div className="luxwine-line-h mt-10" />
           </motion.div>
@@ -152,7 +205,7 @@ const AboutSection = () => {
                     <div className="w-0 h-0 border-l-[14px] border-l-primary/70 border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent ml-1 group-hover:border-l-primary transition-colors duration-700" />
                   </div>
                   <p className="font-body text-[10px] tracking-[0.4em] uppercase text-muted-foreground">
-                    Guarda il Nostro Reel
+                    {copy.watchReel}
                   </p>
                 </div>
               </div>
@@ -169,7 +222,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative"
           >
-            <AboutCarousel />
+            <AboutCarousel language={language} />
           </motion.div>
 
           {/* Text - right */}
@@ -179,18 +232,14 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              L'Arte di Catturare{" "}
-              <span className="italic text-primary">l'Istante Perfetto</span>
+              {copy.heading2Line1}{" "}
+              <span className="italic text-primary">{copy.heading2Accent}</span>
             </h3>
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              La fotografia è il cuore pulsante della nostra visione creativa. 
-              Ogni scatto nasce dall'unione tra tecnica impeccabile e sensibilità artistica, 
-              trasformando momenti fugaci in immagini senza tempo.
+              {copy.paragraph2a}
             </p>
             <p className="text-foreground/50 font-body text-sm leading-[2]">
-              Dalla composizione alla post-produzione, ogni fase è curata con la stessa 
-              attenzione al dettaglio che contraddistingue il nostro lavoro cinematografico — 
-              perché un'immagine straordinaria vale più di mille parole.
+              {copy.paragraph2b}
             </p>
             <div className="luxwine-line-h mt-10" />
           </motion.div>
@@ -222,7 +271,7 @@ const AboutSection = () => {
                 className="rounded-lg bg-black"
               >
                 <source src={videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
+                {copy.unsupportedVideo}
               </video>
             )}
           </div>

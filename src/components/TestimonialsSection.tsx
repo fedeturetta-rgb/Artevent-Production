@@ -1,28 +1,45 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const testimonials = [
   {
-    quote: "Artevent Studio ha trasformato la nostra conferenza annuale in un capolavoro cinematografico. La qualità ha superato ogni nostra aspettativa.",
+    quote: {
+      it: "Artevent Studio ha trasformato la nostra conferenza annuale in un capolavoro cinematografico. La qualita ha superato ogni nostra aspettativa.",
+      en: "Artevent Studio transformed our annual conference into a cinematic masterpiece. The quality exceeded every expectation.",
+    },
     name: "Sarah Chen",
     title: "VP Marketing, TechVault Inc.",
   },
   {
-    quote: "Il loro approccio allo storytelling ha elevato il nostro brand a un livello che ha impattato direttamente la nostra pipeline di vendite enterprise.",
+    quote: {
+      it: "Il loro approccio allo storytelling ha elevato il nostro brand a un livello che ha impattato direttamente la nostra pipeline di vendite enterprise.",
+      en: "Their storytelling approach elevated our brand in ways that directly impacted our enterprise sales pipeline.",
+    },
     name: "Marcus Reid",
     title: "CEO, Meridian Group",
   },
   {
-    quote: "Professionali, creativi e incredibilmente strategici. Artevent sa come muovere il pubblico attraverso il cinema.",
+    quote: {
+      it: "Professionali, creativi e incredibilmente strategici. Artevent sa come muovere il pubblico attraverso il cinema.",
+      en: "Professional, creative, and incredibly strategic. Artevent knows how to move audiences through cinema.",
+    },
     name: "Elena Rodriguez",
     title: "CMO, Apex Global",
   },
 ];
 
 const TestimonialsSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [current, setCurrent] = useState(0);
+
+  const copy = {
+    sectionLabel: language === "it" ? "Le Voci dei Clienti" : "Client Voices",
+    headingMain: language === "it" ? "Scelti dai" : "Chosen by",
+    headingAccent: language === "it" ? "Leader" : "Leaders",
+  };
 
   const showTestimonials = false;   // 👈 QUI
 
@@ -51,10 +68,10 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Le Voci dei Clienti
+            {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light mb-20">
-            Scelti dai <span className="italic text-primary">Leader</span>
+            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -69,7 +86,7 @@ const TestimonialsSection = () => {
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
               <p className="font-display text-xl md:text-2xl lg:text-3xl font-light leading-relaxed italic text-foreground/80 mb-12 max-w-3xl">
-                "{testimonials[current].quote}"
+                "{testimonials[current].quote[language]}"
               </p>
               <div className="luxwine-line-h mx-auto mb-6" />
               <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground/70">

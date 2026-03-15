@@ -1,37 +1,45 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactInfo = [
   {
     icon: Phone,
-    label: "Guido",
+    label: { it: "Guido", en: "Guido" },
     value: "+39 347 120 64 41",
     href: "tel:+393471206441",
   },
   {
     icon: Phone,
-    label: "Federico",
+    label: { it: "Federico", en: "Federico" },
     value: "+39 349 218 24 79",
     href: "tel:+393492182479",
   },
   {
     icon: Mail,
-    label: "Email",
+    label: { it: "Email", en: "Email" },
     value: "info@arteventstudio.it",
     href: "mailto:info@arteventstudio.it",
   },
   {
     icon: MapPin,
-    label: "Indirizzo",
+    label: { it: "Indirizzo", en: "Address" },
     value: "Via Callesella, 1425, 37040 Zimella VR",
     href: "https://maps.app.goo.gl/j3BSYqzer5mX5bsb7",
   },
 ];
 
 const ContactSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const copy = {
+    sectionLabel: language === "it" ? "Contattaci" : "Contact",
+    headingMain: language === "it" ? "Restiamo in" : "Let's Stay",
+    headingAccent: language === "it" ? "Contatto" : "Connected",
+  };
 
   return (
     <section id="contact" className="section-padding bg-gradient-dark">
@@ -50,11 +58,11 @@ const ContactSection = () => {
           className="text-center mb-20"
         >
           <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
-            Contattaci
+            {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-            Restiamo in{" "}
-            <span className="italic text-primary">Contatto</span>
+            {copy.headingMain}{" "}
+            <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -74,7 +82,7 @@ const ContactSection = () => {
                 <item.icon className="w-5 h-5 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
               </div>
               <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-3">
-                {item.label}
+                {item.label[language]}
               </p>
               <p className="font-body text-sm text-foreground/70 group-hover:text-foreground transition-colors duration-500 leading-relaxed">
                 {item.value}
