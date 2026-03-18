@@ -104,7 +104,7 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  const videoUrl = "https://player.vimeo.com/video/1171592073";
+  const videoUrl = "https://drive.google.com/file/d/1txr3GK9RK6-8h_SVGQV1Llt5DIZPR5KA/view?usp=share_link";
   const thumbnailUrl = "/videos/SHOWREEL_homepage_16:9_comp.mp4";
   const copy = {
     sectionLabel: language === "it" ? "Chi e Artevent Studio" : "Who Is Artevent Studio",
