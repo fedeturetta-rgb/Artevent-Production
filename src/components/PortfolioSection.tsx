@@ -2,6 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
 
 type Project = {
   title: string;
@@ -275,12 +276,12 @@ const PortfolioSection = () => {
                   {projects[selected].videoUrl ? (
                     (() => {
                       const url = projects[selected].videoUrl as string;
-                      if (url.includes("youtube.com") || url.includes("youtu.be") || url.includes("vimeo.com")) {
+                      if (isEmbeddableVideoUrl(url)) {
                         return (
                           <iframe
                             width="100%"
                             height="100%"
-                            src={url}
+                            src={getVideoEmbedUrl(url)}
                             title={projects[selected].title}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

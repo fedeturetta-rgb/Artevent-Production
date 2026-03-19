@@ -7,6 +7,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
 
 const carouselPhotos = [
   {
@@ -53,7 +54,7 @@ const AboutCarousel = ({ language }: { language: "it" | "en" }) => {
           <motion.img
             key={current}
             src={carouselPhotos[current].src}
-            alt={carouselPhotos[current].title}
+            alt={carouselPhotos[current].title[language]}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
@@ -251,11 +252,11 @@ const AboutSection = () => {
         <DialogContent className="max-w-4xl bg-black border-border">
           <DialogClose className="absolute top-4 right-4 z-50" />
           <div className="w-full aspect-video">
-            {videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be") || videoUrl.includes("vimeo.com") ? (
+            {isEmbeddableVideoUrl(videoUrl) ? (
               <iframe
                 width="100%"
                 height="100%"
-                src={videoUrl}
+                src={getVideoEmbedUrl(videoUrl)}
                 title="Artevent Studio Reel"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
