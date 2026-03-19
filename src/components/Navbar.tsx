@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Languages, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -36,20 +36,19 @@ const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
 const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per il logo
 
 const Navbar = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [languageOpen, setLanguageOpen] = useState(false);
-  const languageMenuRef = useRef<HTMLDivElement | null>(null);
 
   const copy = {
     menuOpen: language === "it" ? "Apri menu" : "Open menu",
     menuClose: language === "it" ? "Chiudi menu" : "Close menu",
     contact: language === "it" ? "Contattaci" : "Contact us",
-    language: language === "it" ? "Lingua" : "Language",
-    languageAria: language === "it" ? "Seleziona lingua" : "Select language",
-    italian: "Italiano",
-    english: "English",
+    languageToggle: language === "it" ? "EN" : "IT",
+    languageAria:
+      language === "it"
+        ? "Passa alla lingua inglese"
+        : "Switch to Italian language",
   };
 
   const toggleMobileMenu = useCallback(() => {
@@ -60,36 +59,10 @@ const Navbar = () => {
     setMobileOpen(false);
   }, []);
 
-  const toggleLanguageMenu = useCallback(() => {
-    setLanguageOpen((prev) => !prev);
-  }, []);
-
-  const selectLanguage = useCallback(
-    (nextLanguage: "it" | "en") => {
-      setLanguage(nextLanguage);
-      setLanguageOpen(false);
-    },
-    [setLanguage],
-  );
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        languageMenuRef.current &&
-        !languageMenuRef.current.contains(event.target as Node)
-      ) {
-        setLanguageOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
   useEffect(() => {
@@ -134,58 +107,14 @@ const Navbar = () => {
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
 
-            <div ref={languageMenuRef} className="relative">
-              <button
-                type="button"
-                onClick={toggleLanguageMenu}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-border text-[10px] tracking-[0.18em] uppercase text-foreground/70 hover:text-primary hover:border-primary/50 transition-colors"
-                aria-label={copy.languageAria}
-                aria-expanded={languageOpen}
-                aria-controls="language-menu"
-              >
-                <Languages className="w-3.5 h-3.5" />
-                <span>{language.toUpperCase()}</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform ${languageOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-
-              <AnimatePresence>
-                {languageOpen && (
-                  <motion.div
-                    id="language-menu"
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 min-w-[140px] border border-border bg-background/95 backdrop-blur-xl p-1"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => selectLanguage("it")}
-                      className={`w-full text-left px-3 py-2 text-xs tracking-[0.18em] uppercase transition-colors ${
-                        language === "it"
-                          ? "text-primary bg-primary/10"
-                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
-                      }`}
-                    >
-                      {copy.italian}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => selectLanguage("en")}
-                      className={`w-full text-left px-3 py-2 text-xs tracking-[0.18em] uppercase transition-colors ${
-                        language === "en"
-                          ? "text-primary bg-primary/10"
-                          : "text-foreground/70 hover:text-primary hover:bg-primary/5"
-                      }`}
-                    >
-                      {copy.english}
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="px-2.5 py-1 border border-border text-[10px] tracking-[0.25em] uppercase text-foreground/70 hover:text-primary hover:border-primary/50 transition-colors"
+              aria-label={copy.languageAria}
+            >
+              {copy.languageToggle}
+            </button>
           </div>
 
           {/* Logo - center */}
