@@ -36,6 +36,12 @@ const logoDesktopClass = "lg:h-20";
 const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
 const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per il logo
 
+// altezza navbar separata per mobile, tablet e desktop.
+// Modifica i valori in rem qui sotto: tutto il layout del menu mobile si aggiorna da solo.
+const navbarHeightMobileClass = "[--navbar-height:5rem]";
+const navbarHeightTabletClass = "sm:[--navbar-height:5.5rem] md:[--navbar-height:6rem]";
+const navbarHeightDesktopClass = "lg:[--navbar-height:6.5rem]";
+
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
@@ -84,17 +90,18 @@ const Navbar = () => {
 
   return (
     <>
+      
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navbarHeightMobileClass} ${navbarHeightTabletClass} ${navbarHeightDesktopClass} ${
           scrolled
             ? "bg-background/95 backdrop-blur-xl border-b border-border"
             : "bg-transparent"
         }`}
       >
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
+        <div className="relative max-w-7xl mx-auto flex h-[var(--navbar-height)] items-center justify-between px-6 md:px-12">
           {/* Hamburger - left */}
           <div className="relative z-[60] flex items-center gap-2">
             <button
@@ -155,14 +162,14 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-2xl pt-24"
+            className={`fixed inset-0 z-40 bg-background/98 pt-[var(--navbar-height)] backdrop-blur-2xl ${navbarHeightMobileClass} ${navbarHeightTabletClass} ${navbarHeightDesktopClass}`}
           >
             <motion.div
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-center gap-10 px-6"
+              className="flex min-h-[calc(100vh-var(--navbar-height))] flex-col items-center justify-center gap-10 px-6"
             >
               {navLinks[language].map((link, i) => (
                 <motion.a
