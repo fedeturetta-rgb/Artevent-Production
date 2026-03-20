@@ -28,7 +28,7 @@ const navLinks = {
 const logoImagePath = "/images/Logo_ARTEVENT_PRODUCTION_bianco.png";
 
 // dimensioni logo separate per mobile, tablet e desktop
-const logoMobileClass = "h-10";
+const logoMobileClass = "h-8";
 const logoTabletClass = "sm:h-12 md:h-14";
 const logoDesktopClass = "lg:h-20";
 
