@@ -28,7 +28,7 @@ const navLinks = {
 const logoImagePath = "/images/Logo_ARTEVENT_PRODUCTION_bianco.png";
 
 // dimensioni logo separate per mobile, tablet e desktop
-const logoMobileClass = "h-10";
+const logoMobileClass = "h-8";
 const logoTabletClass = "sm:h-12 md:h-14";
 const logoDesktopClass = "lg:h-20";
 
@@ -38,7 +38,7 @@ const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per
 
 // altezza navbar separata per mobile, tablet e desktop.
 // Modifica i valori in rem qui sotto: tutto il layout del menu mobile si aggiorna da solo.
-const navbarHeightMobileClass = "[--navbar-height:5rem]";
+const navbarHeightMobileClass = "[--navbar-height:4rem]";
 const navbarHeightTabletClass = "sm:[--navbar-height:5.5rem] md:[--navbar-height:6rem]";
 const navbarHeightDesktopClass = "lg:[--navbar-height:6.5rem]";
 
