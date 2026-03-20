@@ -2,9 +2,8 @@ import React from "react";
 
 export type LogoProps = {
   /**
-   * A numeric value in pixels. The SVG is square, so this sets both width/height.
-   *
-   * Defaults to 120 to match the original logo size.
+  * Optional numeric value in pixels. The SVG is square, so this sets both
+  * width and height inline.
    */
   size?: number;
   /**
@@ -14,10 +13,9 @@ export type LogoProps = {
   className?: string;
 };
 
-export const Logo: React.FC<LogoProps> = ({ size = 120, className }) => (
+export const Logo: React.FC<LogoProps> = ({ size, className }) => (
   <svg
-    width={size}
-    height={size}
+    style={size ? { width: `${size}px`, height: `${size}px` } : undefined}
     viewBox="0 0 120 120"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

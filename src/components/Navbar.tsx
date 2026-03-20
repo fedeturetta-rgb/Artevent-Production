@@ -27,9 +27,10 @@ const navLinks = {
 // Esempio: "/images/ARTEVENT2_2.png". Lascia stringa vuota per usare il logo SVG.
 const logoImagePath = "/images/Logo_ARTEVENT_PRODUCTION_bianco.png";
 
-// dimensioni logo (mobile + desktop)
-const logoMobileClass = "h-12";
-const logoDesktopClass = "md:h-20";
+// dimensioni logo separate per mobile, tablet e desktop
+const logoMobileClass = "h-10";
+const logoTabletClass = "sm:h-12 md:h-14";
+const logoDesktopClass = "lg:h-20";
 
 // dimensioni pulsante CTA (mobile + desktop)
 const ctaMobileClass = "text-[8px]"; // esempio: h-6 testo piccolissimo
@@ -124,12 +125,11 @@ const Navbar = () => {
                 <img
                   src={logoImagePath}
                   alt="Artevent logo"
-                  className={`${logoMobileClass} ${logoDesktopClass} w-auto object-contain`}
+                  className={`${logoMobileClass} ${logoTabletClass} ${logoDesktopClass} w-auto object-contain`}
                 />
               ) : (
                 <Logo
-                  size={32}
-                  className={`${logoMobileClass} ${logoDesktopClass} w-auto`}
+                  className={`${logoMobileClass} ${logoTabletClass} ${logoDesktopClass} w-auto`}
                 />
               )}
             </a>
