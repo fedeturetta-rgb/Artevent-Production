@@ -8,8 +8,8 @@ const Footer = () => {
   const { language } = useLanguage();
   const copyright =
     language === "it"
-      ? "© 2026 Artevent Studio. Tutti i diritti riservati."
-      : "© 2026 Artevent Studio. All rights reserved.";
+      ? "© 2026 Artevent Production. Tutti i diritti riservati."
+      : "© 2026 Artevent Production. All rights reserved.";
 
   return (
     <footer className="border-t border-border px-6 md:px-12 py-16">
@@ -20,7 +20,7 @@ const Footer = () => {
             <img
               src={logoUrl}
               alt="Artevent Studio"
-              className="h-40 object-contain"
+              className="h-20 object-contain"
             />
           </a>
 
