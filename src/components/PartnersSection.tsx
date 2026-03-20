@@ -7,7 +7,7 @@ type Partner = {
   logoSrc?: string;
 };
 
-const sharedPartnerLogo = "/images/partners/lidl-logo.svg";
+const sharedPartnerLogo = "/images/partners/Lidl.png";
 
 // Logo unico replicato nei 9 slot della versione griglia.
 const partners: Partner[] = [
