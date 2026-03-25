@@ -14,7 +14,7 @@ type Project = {
 };
 
 const projects: Project[] = [
-  {
+  { //1 VIDEO
     title: "AR-DY Parrucchieri",
     category: { it: "", en: "" },
     description: {
@@ -24,7 +24,7 @@ const projects: Project[] = [
     videoUrl: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
     thumbnailUrl: "/videos/1_comp.mp4",
   },
-  {
+  { //2 FOTO
     title: "Summit 2025 Highlights",
     category: { it: "", en: "" },
     description: {
@@ -45,7 +45,7 @@ const projects: Project[] = [
       "/images/film-aziendali-thumb.jpg",
     ],
   },
-   {
+   { //3 VIDEO
     title: "Summit 2025 Highlights",
     category: { it: "", en: "" },
     description: {
@@ -54,26 +54,15 @@ const projects: Project[] = [
     },
     videoUrl: "",
     thumbnailUrl: "/videos/2.mp4",
-    gallery: [
-      "/images/ARTEVENT22.jpg",
-      "/images/ARTEVENT2_2.png",
-      "/images/film-aziendali-thumb.jpg",
-      "/images/Fede.JPG",
-      "/images/Guido.JPG",
-      "/images/hero-bg.jpg",
-      "/images/ARTEVENT22.jpg",
-      "/images/ARTEVENT2_2.png",
-      "/images/film-aziendali-thumb.jpg",
-    ],
   },
-  {
+  { //4 FOTO
     title: "Serie Visione CEO",
     category: { it: "", en: "" },
     description: {
       it: "",
       en: "",
     },
-    videoUrl: "https://player.vimeo.com/video/555333111",
+    videoUrl: "",
     thumbnailUrl: "/videos/1.mp4",
   },
   {
