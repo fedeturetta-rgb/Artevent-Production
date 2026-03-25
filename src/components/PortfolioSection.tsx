@@ -107,6 +107,26 @@ const projects: Project[] = [
     videoUrl: "https://player.vimeo.com/video/222333444",
     thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
   },
+  {
+    title: "Storia Rebrand Meridian",
+    category: { it: "Brand Storytelling", en: "Brand Storytelling" },
+    description: {
+      it: "Documentare la trasformazione di un'azienda centenaria per una nuova era.",
+      en: "Documenting the transformation of a century-old company for a new era.",
+    },
+    videoUrl: "https://player.vimeo.com/video/111222333",
+    thumbnailUrl: "/videos/1_comp.mp4",
+  },
+  {
+    title: "Gala Annuale Apex",
+    category: { it: "Copertura Evento", en: "Event Coverage" },
+    description: {
+      it: "Gala catturato con eleganza cinematografica e montaggio in tempo reale.",
+      en: "Gala captured with cinematic elegance and real-time editing.",
+    },
+    videoUrl: "https://player.vimeo.com/video/222333444",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
+  },
 ];
 
 const PortfolioSection = () => {
