@@ -69,7 +69,7 @@ const projects: Project[] = [
     videoUrl: "",
     thumbnailUrl: "/images/moda/7.jpeg",
     media: [
-      { type: "image", src: "/images/moda/1.jpeg", alt: "" },
+      { type: "image", src: "/images/moda/7.jpeg", alt: "" },
       { type: "image", src: "/images/moda/2.jpeg", alt: "" },
       { type: "image", src: "/images/moda/3.jpeg", alt: "" },
       { type: "image", src: "/images/moda/4.jpeg", alt: "" },
