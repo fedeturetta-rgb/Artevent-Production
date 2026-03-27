@@ -301,22 +301,14 @@ const PortfolioSection = () => {
                 onClick={() => openProject(i, 0)}
                 className="group cursor-pointer relative aspect-[4/3] bg-gradient-card border border-border overflow-hidden hover-card-lift"
               >
-                {previewMedia?.type === "image" ? (
+                {previewMedia ? (
                   <img
-                    src={previewMedia.src}
-                    alt={previewMedia.alt ?? project.title}
+                    src={getMediaThumbnail(previewMedia, project.thumbnailUrl)}
+                    alt={previewMedia.type === "image" ? previewMedia.alt ?? project.title : project.title}
                     className="absolute inset-0 w-full h-full object-cover"
                     draggable={false}
-                  />
-                ) : previewMedia?.type === "video" ? (
-                  <video
-                    src={previewMedia.src}
-                    poster={previewMedia.poster}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : null}
 
@@ -358,6 +350,8 @@ const PortfolioSection = () => {
                                 alt={`${project.title} preview ${mediaIndex + 1}`}
                                 className="h-full w-full object-cover"
                                 draggable={false}
+                                loading="lazy"
+                                decoding="async"
                               />
                             ) : (
                               <div className="flex h-full w-full items-center justify-center bg-background/70">
@@ -428,6 +422,8 @@ const PortfolioSection = () => {
                                 alt={media.alt ?? `${selectedProject.title} ${index + 1}`}
                                 className="w-full h-full object-contain"
                                 draggable={false}
+                                loading="lazy"
+                                decoding="async"
                               />
                             ) : isEmbeddableVideoUrl(media.src) ? (
                               <iframe
@@ -514,6 +510,8 @@ const PortfolioSection = () => {
                                 alt={`${selectedProject.title} thumbnail ${index + 1}`}
                                 className="h-full w-full object-cover"
                                 draggable={false}
+                                loading="lazy"
+                                decoding="async"
                               />
                             ) : (
                               <div className="flex h-full w-full items-center justify-center bg-background/70">
