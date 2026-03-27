@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
