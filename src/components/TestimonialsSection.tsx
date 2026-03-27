@@ -41,16 +41,22 @@ const TestimonialsSection = () => {
     headingAccent: language === "it" ? "Leader" : "Leaders",
   };
 
-  const showTestimonials = false;   // 👈 QUI
-
-  if (!showTestimonials) return null;   // 👈 QUI
+  const showTestimonials = false;
 
   useEffect(() => {
+    if (!showTestimonials) {
+      return;
+    }
+
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [showTestimonials]);
+
+  if (!showTestimonials) {
+    return null;
+  }
 
   return (
     <section className="section-padding">

@@ -206,7 +206,10 @@ const PortfolioSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const selectedProject = selected !== null ? projects[selected.projectIndex] : null;
+  const selectedProject =
+    selected !== null && selected.projectIndex >= 0 && selected.projectIndex < projects.length
+      ? projects[selected.projectIndex]
+      : null;
   const selectedMedia = selectedProject ? getProjectMedia(selectedProject) : [];
 
   const openProject = (projectIndex: number, mediaIndex = 0) => {
@@ -219,9 +222,10 @@ const PortfolioSection = () => {
       return;
     }
 
-    setActiveSlide(selected.mediaIndex);
-    carouselApi?.scrollTo(selected.mediaIndex, true);
-  }, [selected, carouselApi]);
+    const safeMediaIndex = Math.min(Math.max(selected.mediaIndex, 0), Math.max(selectedMedia.length - 1, 0));
+    setActiveSlide(safeMediaIndex);
+    carouselApi?.scrollTo(safeMediaIndex, true);
+  }, [selected, selectedMedia.length, carouselApi]);
 
   useEffect(() => {
     if (!carouselApi) {
