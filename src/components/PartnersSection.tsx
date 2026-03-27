@@ -46,23 +46,31 @@ const PartnersSection = () => {
 
   const copy = {
     label: language === "it" ? "Collaborazioni" : "Collaborations",
-    heading: language === "it" ? "Ci hanno concesso la loro fiducia" : "Brands we have worked with",
+    headingMain: language === "it" ? "Ci Hanno Concesso La Loro" : "They Have Placed Their",
+    headingAccent: language === "it" ? "Fiducia" : "Trust",
   };
 
   return (
-    <section id="partners" className="bg-gradient-dark pb-20">
+    <section id="partners" className="bg-gradient-dark pt-20 md:pt-32 pb-4 md:pb-6">
       <div ref={ref} className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ height: 0 }}
+          animate={inView ? { height: 60 } : {}}
+          transition={{ duration: 0.8 }}
+          className="w-px bg-primary/30 mx-auto mb-12"
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="px-6 sm:px-0 text-center mb-8"
+          transition={{ duration: 0.8 }}
+          className="px-6 sm:px-0 text-center mb-16 md:mb-20"
         >
-          <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-4">
+          <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
             {copy.label}
           </p>
-          <h2 className="font-display text-2xl md:text-4xl font-light text-foreground/90">
-            {copy.heading}
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
+            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 

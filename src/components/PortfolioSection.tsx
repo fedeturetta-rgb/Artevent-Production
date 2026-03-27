@@ -265,7 +265,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section id="portfolio" className="section-padding bg-gradient-dark">
+    <section id="portfolio" className="section-padding bg-gradient-dark pb-32 md:pb-40">
       <div ref={ref} className="max-w-6xl mx-auto">
         <motion.div
           initial={{ height: 0 }}
