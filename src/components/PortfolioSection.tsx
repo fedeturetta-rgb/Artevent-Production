@@ -291,6 +291,8 @@ const PortfolioSection = () => {
           {projects.map((project, i) => {
             const previewMedia = getPreviewMedia(project);
             const projectMedia = getProjectMedia(project);
+            // For the first project, hide videos in grid preview thumbnails but keep them in modal
+            const gridProjectMedia = i === 0 ? projectMedia.filter((m) => m.type === "image") : projectMedia;
 
             return (
               <motion.div
@@ -330,27 +332,29 @@ const PortfolioSection = () => {
                 </div>
 
                 <div className="absolute right-4 top-4 rounded-full border border-primary/40 bg-background/30 px-3 py-1 text-[10px] tracking-[0.3em] uppercase text-primary/80 backdrop-blur-sm">
-                  {projectMedia.length} media
+                  {gridProjectMedia.length} media
                 </div>
 
-                {projectMedia.length > 1 && (
+                {gridProjectMedia.length > 1 && (
                   <div className="absolute left-4 right-4 bottom-20 z-10">
                     <p className="mb-2 text-[9px] uppercase tracking-[0.3em] text-foreground/60 opacity-90 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
                       {copy.quickOpen}
                     </p>
                     <div className="flex gap-2 overflow-x-auto pb-1 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
-                      {projectMedia.map((media, mediaIndex) => {
+                      {gridProjectMedia.map((media, gridMediaIndex) => {
+                        // Map the grid media index back to the full projectMedia index
+                        const actualMediaIndex = projectMedia.findIndex((m) => m === media);
                         const thumbnailSrc = getMediaThumbnail(media, project.thumbnailUrl);
 
                         return (
                           <button
-                            key={`${project.title}-preview-${mediaIndex}`}
+                            key={`${project.title}-preview-${gridMediaIndex}`}
                             onClick={(event) => {
                               event.stopPropagation();
-                              openProject(i, mediaIndex);
+                              openProject(i, actualMediaIndex);
                             }}
                             className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-border/80 bg-background/70 backdrop-blur-sm transition-colors hover:border-primary"
-                            aria-label={`Open media ${mediaIndex + 1} for ${project.title}`}
+                            aria-label={`Open media ${gridMediaIndex + 1} for ${project.title}`}
                           >
                             {thumbnailSrc ? (
                               <img
