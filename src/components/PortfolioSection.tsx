@@ -165,7 +165,18 @@ function getProjectMedia(project: Project): MediaItem[] {
 
 function getPreviewMedia(project: Project): MediaItem | null {
   if (project.media?.length) {
-    return project.media[0];
+    const firstMedia = project.media[0];
+
+    // Avoid autoplaying non-direct remote URLs (e.g. share pages) inside grid cards.
+    if (firstMedia.type === "video" && !isDirectVideoFile(firstMedia.src)) {
+      const firstImage = project.media.find((media): media is Extract<MediaItem, { type: "image" }> => media.type === "image");
+
+      if (firstImage) {
+        return firstImage;
+      }
+    }
+
+    return firstMedia;
   }
 
   if (project.gallery?.length) {
