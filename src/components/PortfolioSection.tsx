@@ -2,9 +2,9 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "./ui/carousel";
-import { useLanguage } from "../contexts/LanguageContext";
-import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "../lib/video";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
 
 type MediaItem =
   | {
