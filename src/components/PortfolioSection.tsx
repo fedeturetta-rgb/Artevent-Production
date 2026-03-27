@@ -61,7 +61,7 @@ const projects: Project[] = [
   },
   {
     title: "Atelier",
-    category: { it: "Evento", en: "Event" },
+    category: { it: "", en: "" },
     description: {
       it: ".",
       en: "",
