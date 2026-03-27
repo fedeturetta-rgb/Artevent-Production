@@ -81,7 +81,6 @@ const PartnersSection = () => {
           className="mb-10"
         >
           <p className="px-6 sm:px-0 mb-4 font-body text-[10px] tracking-[0.35em] uppercase text-muted-foreground">
-            {copy.sliderLabel}
           </p>
 
           <div className="relative border-y border-border/80 bg-black/25 py-7 overflow-hidden">
