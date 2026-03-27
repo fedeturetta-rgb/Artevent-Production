@@ -43,7 +43,7 @@ const projects: Project[] = [
       en: "",
     },
     videoUrl: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-    thumbnailUrl: "",
+    thumbnailUrl: "/videos/1_comp.mp4",
     media: [
       {
         type: "video",
