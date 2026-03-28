@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 
 const AboutSection = lazy(() => import("@/components/AboutSection"));
-const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
 const PartnersSection = lazy(() => import("@/components/PartnersSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
@@ -20,7 +19,6 @@ const Index = () => {
         <AboutSection />
         <PortfolioSection />
         <PartnersSection />
-        <ServicesSection />
         <TestimonialsSection />
         <TeamSection />
         <ContactSection />
