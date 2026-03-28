@@ -48,7 +48,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-        poster: "/videos/1_comp.mp4",
+        poster: "",
       },
       { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
@@ -97,7 +97,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
-        poster: "/videos/2_comp.mp4",
+        poster: "",
       },
       { type: "image", src: "/images/Castelmani/1.jpg", alt: "" },
       { type: "image", src: "/images/Castelmani/2.jpg", alt: "" },
@@ -118,19 +118,25 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Serie Visione CEO",
-    category: { it: "Ritratti", en: "Portraits" },
+    title: "Serie Visione CEO", //LIDL
+    category: { it: "", en: "" },
     description: {
-      it: "Serie fotografica editoriale con visualizzazione a scorrimento nel lightbox.",
-      en: "Editorial portrait series displayed in a swipeable lightbox.",
+      it: "",
+      en: "",
     },
     videoUrl: "",
     thumbnailUrl: "/videos/1_comp.mp4",
-    gallery: [
-      "/images/Fede.JPG",
-      "/images/Guido.JPG",
-      "/images/hero-bg.jpg",
-      "/images/ARTEVENT2_2.png",
+    media: [
+      {
+        type: "video",
+        src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
+        poster: "",
+      },
+      {
+        type: "video",
+        src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
+        poster: "",
+      },
     ],
   },
   {
