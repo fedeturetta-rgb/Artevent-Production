@@ -43,7 +43,7 @@ const projects: Project[] = [
       en: "",
     },
     videoUrl: "",
-    thumbnailUrl: "dist/videos/1_comp.mp4",
+    thumbnailUrl: "/videos/1_comp.mp4",
     media: [
       {
         type: "video",
@@ -113,7 +113,7 @@ const projects: Project[] = [
       en: "Editorial portrait series displayed in a swipeable lightbox.",
     },
     videoUrl: "",
-    thumbnailUrl: "/videos/1.mp4",
+    thumbnailUrl: "/videos/1_comp.mp4",
     gallery: [
       "/images/Fede.JPG",
       "/images/Guido.JPG",
@@ -139,7 +139,7 @@ const projects: Project[] = [
       en: "Aftermovie and scene content collected in a single project.",
     },
     videoUrl: "https://player.vimeo.com/video/222333444",
-    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16-9_comp.mp4",
   },
   {
     title: "Storia Rebrand Meridian - Archive",
@@ -159,7 +159,7 @@ const projects: Project[] = [
       en: "Archive version with direct modal playback.",
     },
     videoUrl: "https://player.vimeo.com/video/222333444",
-    thumbnailUrl: "/videos/SHOWREEL_homepage_16.9.mp4",
+    thumbnailUrl: "/videos/SHOWREEL_homepage_16-9_comp.mp4",
   },
 ];
 
