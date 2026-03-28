@@ -19,5 +19,11 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
-  },
-}));
+  },  build: {
+    chunkSizeWarningLimit: 600,
+    rolldownOptions: {
+      output: {
+        codeSplitting: true,
+      },
+    },
+  },}));
