@@ -172,7 +172,7 @@ function getProjectMedia(project: Project): MediaItem[] {
     return project.media;
   }
 
-  const media: MediaItem[] = [];
+  const media: MediaItem[] = [];//
 
   if (project.videoUrl) {
     media.push({ type: "video", src: project.videoUrl, poster: project.thumbnailUrl });
