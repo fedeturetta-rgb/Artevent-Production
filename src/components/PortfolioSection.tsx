@@ -57,6 +57,9 @@ const projects: Project[] = [
       { type: "image", src: "/images/Parrucchiere/4.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/5.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/7.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/8.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/9.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/10.jpg", alt: "" },
     ],
   },
   {
