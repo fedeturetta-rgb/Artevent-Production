@@ -106,7 +106,7 @@ const AboutSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const videoUrl = "https://drive.google.com/file/d/1txr3GK9RK6-8h_SVGQV1Llt5DIZPR5KA/view?usp=share_link";
-  const thumbnailUrl = "/videos/SHOWREEL_homepage_16:9_comp.mp4";
+  const thumbnailUrl = "/videos/SHOWREEL_homepage_16-9_comp.mp4";
   const copy = {
     sectionLabel: language === "it" ? "Chi e Artevent Studio" : "Who Is Artevent Studio",
     heading1Line1: language === "it" ? "Dove la Visione Incontra" : "Where Vision Meets",
