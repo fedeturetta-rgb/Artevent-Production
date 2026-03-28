@@ -169,14 +169,14 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              {copy.heading1Line1}{" "}
-              <span className="italic text-primary">{copy.heading1Accent}</span>
+              {copy.heading2Line1}{" "}
+              <span className="italic text-primary">{copy.heading2Accent}</span>
             </h3>
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              {copy.paragraph1a}
+              {copy.paragraph2a}
             </p>
             <p className="text-foreground/50 font-body text-sm leading-[2]">
-              {copy.paragraph1b}
+              {copy.paragraph2b}
             </p>
             <div className="luxwine-line-h mt-10" />
           </motion.div>
@@ -186,6 +186,19 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative"
+          >
+            <AboutCarousel language={language} />
+          </motion.div>
+        </div>
+
+        {/* Photography sub-section — mirrored layout (image left, text right) */}
+        <div className="grid md:grid-cols-2 gap-20 items-center mt-28">
+          {/* Visual - left */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="relative"
           >
             <div
@@ -212,19 +225,6 @@ const AboutSection = () => {
               </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Photography sub-section — mirrored layout (image left, text right) */}
-        <div className="grid md:grid-cols-2 gap-20 items-center mt-28">
-          {/* Visual - left */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative"
-          >
-            <AboutCarousel language={language} />
-          </motion.div>
 
           {/* Text - right */}
           <motion.div
@@ -233,14 +233,14 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
-              {copy.heading2Line1}{" "}
-              <span className="italic text-primary">{copy.heading2Accent}</span>
+              {copy.heading1Line1}{" "}
+              <span className="italic text-primary">{copy.heading1Accent}</span>
             </h3>
             <p className="text-foreground/70 font-body text-sm leading-[2] mb-8">
-              {copy.paragraph2a}
+              {copy.paragraph1a}
             </p>
             <p className="text-foreground/50 font-body text-sm leading-[2]">
-              {copy.paragraph2b}
+              {copy.paragraph1b}
             </p>
             <div className="luxwine-line-h mt-10" />
           </motion.div>

@@ -48,7 +48,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-        poster: "/videos/1_comp.mp4",
+        poster: "/videos/8_comp.mp4",
       },
       { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
