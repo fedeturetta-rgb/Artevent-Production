@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Video 16:9 usato su desktop (già presente)
-const desktopVideoPath = "/videos/2_comp.mp4";
+const desktopVideoPath = "/videos/SHOWREEL_homepage_9-16_comp.mp4";
 
 // Video 9:16 usato su mobile. Inserisci il percorso del tuo file in public/videos/
 // Esempio: "/videos/SHOWREEL_homepage_9.16.mp4"
 // Lascia stringa vuota per usare anche su mobile il video desktop 16:9
-const mobileVideoPath = "/videos/SHOWREEL_homepage_9:16_comp.mp4";
+const mobileVideoPath = "/videos/SHOWREEL_homepage_9-16_comp.mp4";
 
 const HeroSection = () => {
   const { language } = useLanguage();
