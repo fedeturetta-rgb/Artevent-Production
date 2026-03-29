@@ -125,16 +125,16 @@ const projects: Project[] = [
       en: "",
     },
     videoUrl: "",
-    thumbnailUrl: "/videos/1_comp.mp4",
+    thumbnailUrl: "/images/lidl_thumb.jpg",
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
+        src: "https://drive.google.com/file/d/1BDzI9FG54VJiB63BOys2Qy6dLg90RXcR/view?usp=sharing",
         poster: "",
       },
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
+        src: "https://drive.google.com/file/d/1nYpn3L4zZpyhDJWO7AEXR0j8WuTo2N6q/view?usp=sharing",
         poster: "",
       },
     ],
