@@ -118,7 +118,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Serie Visione CEO", //LIDL
+    title: "", //LIDL
     category: { it: "", en: "" },
     description: {
       it: "",
