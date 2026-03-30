@@ -1,6 +1,0 @@
-{
-    "markdown.validate.enabled": true,
-    "chat.tools.terminal.autoApprove": {
-        "npx --yes mp4-faststart": true
-    }
-}
