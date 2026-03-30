@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "npm run build && rm -rf assets images videos index.html && cp -R dist/* . && git add assets images videos index.html favicon.ico robots.txt CNAME && git commit -m \"deploy\" && git push"
+    "deploy": "npm run build && rm -rf assets images videos index.html && cp -R dist/* . && git add assets images videos index.html favicon-v1.ico robots.txt CNAME && git commit -m \"deploy\" && git push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
