@@ -1,0 +1,1 @@
+import{c as e,i as t,o as n,t as r}from"./LanguageContext-BjHOLMWA-CpDDg892-txFKLInE-DiXyJ3iU-DAGkVRCs.js";import{t as i}from"./use-in-view-Blbpw_cF-CDkPbB6H-Cg5trd3P-D2wV-CRf-CxUHlnpn.js";var a=e(n(),1);t();var o=()=>{let{language:e}=r();i((0,a.useRef)(null),{once:!0,margin:`-100px`});let[t,n]=(0,a.useState)(0);return(0,a.useEffect)(()=>{},[!1]),null};export{o as default};
