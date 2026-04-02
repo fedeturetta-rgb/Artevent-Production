@@ -1,5 +1,5 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
@@ -11,34 +11,37 @@ import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
 
 const carouselPhotos = [
   {
-    src: "/images/ARTEVENT22.jpg",
-    title: { it: "Corporate Gala", en: "Corporate Gala" },
-    category: { it: "Eventi", en: "Events" },
+    src: "/images/Acciaio/1.jpg",
   },
   {
-    src: "/images/ARTEVENT2_2.png",
-    title: { it: "Brand Identity", en: "Brand Identity" },
-    category: { it: "Branding", en: "Branding" },
+    src: "/images/Ally/1.jpg",
   },
   {
-    src: "/images/film-aziendali-thumb.jpg",
-    title: { it: "Set Cinematografico", en: "Cinematic Set" },
-    category: { it: "Dietro le Quinte", en: "Behind the Scenes" },
+    src: "/images/CaRugate/1.jpg",
   },
   {
-    src: "/images/Fede.JPG",
-    title: { it: "Ritratto Creativo", en: "Creative Portrait" },
-    category: { it: "Ritratti", en: "Portraits" },
+    src: "/images/Castelmani/5.jpg",
   },
   {
-    src: "/images/Guido.JPG",
-    title: { it: "Ritratto Executive", en: "Executive Portrait" },
-    category: { it: "Ritratti", en: "Portraits" },
+    src: "/images/Dolomiti/1.jpg",
   },
   {
-    src: "/images/hero-bg.jpg",
-    title: { it: "Location Scouting", en: "Location Scouting" },
-    category: { it: "Paesaggi", en: "Landscapes" },
+    src: "/images/Macchine/1.jpg",
+  },
+  {
+    src: "/images/moda/1.jpg",
+  },
+  {
+    src: "/images/Ormaneto/1.jpg",
+  },
+  {
+    src: "/images/Parrucchiere/1.jpg",
+  },
+  {
+    src: "/images/Saracino/1.jpg",
+  },
+  {
+    src: "/images/Velario/3.jpg",
   },
 ];
 
@@ -47,6 +50,16 @@ const AboutCarousel = ({ language }: { language: "it" | "en" }) => {
   const prev = () => setCurrent((c) => (c === 0 ? carouselPhotos.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === carouselPhotos.length - 1 ? 0 : c + 1));
 
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrent((c) => (c === carouselPhotos.length - 1 ? 0 : c + 1));
+    }, 3000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <div className="relative">
       <div className="relative aspect-[3/2] bg-card border border-border overflow-hidden">
@@ -54,7 +67,7 @@ const AboutCarousel = ({ language }: { language: "it" | "en" }) => {
           <motion.img
             key={current}
             src={carouselPhotos[current].src}
-            alt={carouselPhotos[current].title[language]}
+            alt={language === "it" ? `Foto ${current + 1}` : `Photo ${current + 1}`}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
@@ -62,15 +75,6 @@ const AboutCarousel = ({ language }: { language: "it" | "en" }) => {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-1 block">
-            {carouselPhotos[current].category[language]}
-          </span>
-          <h3 className="font-display text-lg font-light tracking-wide">
-            {carouselPhotos[current].title[language]}
-          </h3>
-        </div>
       </div>
       <button
         onClick={prev}
@@ -108,18 +112,18 @@ const AboutSection = () => {
   const videoUrl = "https://drive.google.com/file/d/1txr3GK9RK6-8h_SVGQV1Llt5DIZPR5KA/view?usp=share_link";
   const thumbnailUrl = "/videos/SHOWREEL_homepage_16-9_comp.mp4";
   const copy = {
-    sectionLabel: language === "it" ? "Chi e Artevent Studio" : "Who Is Artevent Studio",
+    sectionLabel: language === "it" ? "Chi è Artevent Production" : "Who Is Artevent Production",
     heading1Line1: language === "it" ? "Dove la Visione Incontra" : "Where Vision Meets",
     heading1Accent:
       language === "it" ? "l'Arte Cinematografica" : "Cinematic Art",
     paragraph1a:
       language === "it"
-        ? "In Artevent Studio, fondiamo arte cinematografica e storytelling strategico. Ogni fotogramma e costruito per elevare il tuo brand, coinvolgere il tuo pubblico e lasciare un'impressione duratura."
-        : "At Artevent Studio, we blend cinematic craft with strategic storytelling. Every frame is built to elevate your brand, engage your audience, and leave a lasting impression.",
+        ? "In Artevent Production, fondiamo arte cinematografica e storytelling strategico. Ogni fotogramma è costruito per elevare il tuo brand, coinvolgere il tuo pubblico e lasciare un'impressione duratura."
+        : "At Artevent Production, we blend cinematic craft with strategic storytelling. Every frame is built to elevate your brand, engage your audience, and leave a lasting impression.",
     paragraph1b:
       language === "it"
-        ? "Con un team di registi, direttori della fotografia e montatori pluripremiati, curiamo ogni singolo fotogramma con intenzione, unendo arte e storytelling strategico per elevare il tuo brand sopra il rumore."
-        : "With a team of award-winning directors, cinematographers, and editors, we shape every frame with intention, combining art and strategy to lift your brand above the noise.",
+        ? "Curiamo ogni singolo fotogramma con intenzione, unendo arte e storytelling strategico per elevare il tuo brand sopra il rumore."
+        : "We shape every frame with intention, combining art and strategy to lift your brand above the noise.",
     watchReel: language === "it" ? "Guarda il Nostro Reel" : "Watch Our Reel",
     heading2Line1:
       language === "it" ? "L'Arte di Catturare" : "The Art of Capturing",
@@ -127,11 +131,11 @@ const AboutSection = () => {
       language === "it" ? "l'Istante Perfetto" : "the Perfect Moment",
     paragraph2a:
       language === "it"
-        ? "La fotografia e il cuore pulsante della nostra visione creativa. Ogni scatto nasce dall'unione tra tecnica impeccabile e sensibilita artistica, trasformando momenti fugaci in immagini senza tempo."
+        ? "La fotografia è il cuore pulsante della nostra visione creativa. Ogni scatto nasce dall'unione tra tecnica impeccabile e sensibilità artistica, trasformando momenti fugaci in immagini senza tempo."
         : "Photography is the heartbeat of our creative vision. Every shot is born from flawless technique and artistic sensitivity, turning fleeting moments into timeless imagery.",
     paragraph2b:
       language === "it"
-        ? "Dalla composizione alla post-produzione, ogni fase e curata con la stessa attenzione al dettaglio che contraddistingue il nostro lavoro cinematografico, perche un'immagine straordinaria vale piu di mille parole."
+        ? "Dalla composizione alla post-produzione, ogni fase è curata con la stessa attenzione al dettaglio che contraddistingue il nostro lavoro cinematografico, perché un'immagine straordinaria vale più di mille parole."
         : "From composition to post-production, every stage is handled with the same attention to detail that defines our cinematic work, because one outstanding image is worth more than a thousand words.",
     unsupportedVideo:
       language === "it"
@@ -161,14 +165,14 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+        <div className="grid sm:grid-cols-2 gap-20 items-center">
           {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
+            <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-light leading-tight mb-8">
               {copy.heading2Line1}{" "}
               <span className="italic text-primary">{copy.heading2Accent}</span>
             </h3>
@@ -193,13 +197,13 @@ const AboutSection = () => {
         </div>
 
         {/* Photography sub-section — mirrored layout (image left, text right) */}
-        <div className="grid md:grid-cols-2 gap-20 items-center mt-28">
+        <div className="grid sm:grid-cols-2 gap-20 items-center mt-28">
           {/* Visual - left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative"
+            className="relative order-2 sm:order-1"
           >
             <div
               onClick={() => setIsVideoOpen(true)}
@@ -212,6 +216,7 @@ const AboutSection = () => {
                 muted
                 loop
                 playsInline
+                preload="metadata"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-700">
                 <div className="text-center">
@@ -231,8 +236,9 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
+            className="order-1 sm:order-2"
           >
-            <h3 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-tight mb-8">
+            <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-light leading-tight mb-8">
               {copy.heading1Line1}{" "}
               <span className="italic text-primary">{copy.heading1Accent}</span>
             </h3>

@@ -4,37 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirectPath = params.get("redirect");
+
+        if (!redirectPath) return;
+
+        var normalizedPath = redirectPath.startsWith("/") ? redirectPath : "/" + redirectPath;
+        window.history.replaceState(null, "", normalizedPath + window.location.hash);
+      })();
+    </script>
+
     <!-- favicon -->
-    <link rel="icon" href="./assets/favicon-v1-BXvkhTWY.ico?v=3" />
+    <link rel="icon" href="/favicon.ico?v=8" />
 
     <!-- SEO -->
-    <title>Artevent Production | Video Corporate Cinematografici</title>
-    <meta name="description" content="Artevent Production realizza video corporate cinematografici di alto livello: eventi aziendali, interviste executive, storytelling e lanci di prodotto." />
+    <title>Produzione Video Corporate Verona | Artevent Production</title>
+
+    <meta name="description" content="Produzione video corporate a Verona: video aziendali, eventi, interviste executive e storytelling cinematografico per aziende." />
     <meta name="author" content="Artevent Production" />
+    <meta name="robots" content="index, follow" /> <!-- 👈 AGGIUNTO -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Artevent Production | Video Corporate Cinematografici" />
+    <meta property="og:title" content="Produzione Video Corporate Verona | Artevent Production" />
     <meta property="og:description" content="Produzione video corporate cinematografica per aziende: eventi, storytelling e contenuti ad alto impatto visivo." />
     <meta property="og:image" content="https://arteventproduction.com/images/og-image.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Artevent Production | Video Corporate Cinematografici" />
+    <meta name="twitter:title" content="Produzione Video Corporate Verona | Artevent Production" />
     <meta name="twitter:description" content="Produzione video corporate cinematografica per aziende: eventi, storytelling e contenuti premium." />
     <meta name="twitter:image" content="https://arteventproduction.com/images/og-image.jpg" />
-    <script type="module" crossorigin src="./assets/index-Fp8oRGx_.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/LanguageContext-BjHOLMWA.js">
-    <link rel="modulepreload" crossorigin href="./assets/resolve-elements-DiuBlfG2.js">
-    <link rel="modulepreload" crossorigin href="./assets/proxy-COMJ37LK.js">
-    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-DcpYEE21.js">
-    <link rel="modulepreload" crossorigin href="./assets/AnimatePresence-NVNqKz3s.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-C20Jy8Ld.css">
+
+    <!-- Hero video preload -->
+    <link
+      rel="preload"
+      as="video"
+      href="/videos/SHOWREEL_homepage_16-9_comp.mp4"
+      type="video/mp4"
+      media="(min-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="video"
+      href="/videos/SHOWREEL_homepage_9-16_comp.mp4"
+      type="video/mp4"
+      media="(max-width: 767px)"
+    />
   </head>
 
   <body>
     <div id="root"></div>
 
-    <!-- SCRIPT GIUSTO (NON TOCCARE) -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

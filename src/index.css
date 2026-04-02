@@ -71,6 +71,18 @@
     font-family: var(--font-body);
   }
 
+  html.has-custom-cursor,
+  html.has-custom-cursor body {
+    cursor: none;
+  }
+
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select,
+  html.has-custom-cursor [contenteditable='true'] {
+    cursor: text;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
@@ -140,6 +152,57 @@
   .letter-wider {
     letter-spacing: 0.5em;
   }
+
+  .custom-cursor-ring,
+  .custom-cursor-dot,
+  .custom-cursor-label {
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 120;
+    translate: -50% -50%;
+    will-change: transform, opacity;
+  }
+
+  .custom-cursor-ring {
+    height: 26px;
+    width: 26px;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--gold) / 0.58);
+    background: transparent;
+    box-shadow:
+      0 0 0 1px hsl(var(--gold) / 0.08),
+      0 0 24px hsl(var(--gold) / 0.14);
+    mix-blend-mode: screen;
+  }
+
+  .custom-cursor-dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 9999px;
+    background: hsl(var(--gold-light));
+    box-shadow: 0 0 14px hsl(var(--gold-light) / 0.34);
+  }
+
+  .custom-cursor-label {
+    padding: 6px 10px;
+    border: 1px solid hsl(var(--gold) / 0.16);
+    border-radius: 9999px;
+    background: hsl(var(--deep-black) / 0.7);
+    color: hsl(var(--gold-light));
+    font-family: var(--font-body);
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+    box-shadow:
+      0 14px 32px hsl(var(--deep-black) / 0.34),
+      0 0 22px hsl(var(--gold) / 0.12);
+    translate: calc(-50% + 22px) calc(-50% - 20px);
+  }
 }
 
 @layer utilities {
@@ -148,4 +211,18 @@
   .animate-delay-300 { animation-delay: 300ms; }
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor summary,
+  html.has-custom-cursor label,
+  html.has-custom-cursor [role='button'],
+  html.has-custom-cursor [data-cursor='interactive'],
+  html.has-custom-cursor .cursor-pointer,
+  html.has-custom-cursor .cursor-grab,
+  html.has-custom-cursor .cursor-grabbing {
+    cursor: none !important;
+  }
 }

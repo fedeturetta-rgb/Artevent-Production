@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: { it: "Email", en: "Email" },
-    value: "info@arteventstudio.it",
-    href: "mailto:info@arteventstudio.it",
+    value: "info@arteventproduction.com",
+    href: "mailto:info@arteventproduction.com",
   },
   {
     icon: MapPin,
@@ -36,10 +36,10 @@ const ContactSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const copy = {
-    sectionLabel: language === "it" ? "Contattaci" : "Contact",
-    headingMain: language === "it" ? "Restiamo in" : "Let's Stay",
-    headingAccent: language === "it" ? "Contatto" : "Connected",
-  };
+    sectionLabel: language === "it" ? "Contatti" : "Contact us",
+    headingMain: language === "it" ? "Portiamo il tuo brand a livello" : "Elevate your brand to a",
+    headingAccent: language === "it" ? "Cinematografico" : "Cinematic Level",
+  }; //Portiamo il tuo brand a livello cinematografico
 
   return (
     <section id="contact" className="section-padding bg-gradient-dark">
@@ -66,7 +66,7 @@ const ContactSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border/30">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
           {contactInfo.map((item, i) => (
             <motion.a
               key={i}
@@ -76,15 +76,15 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: i * 0.15 }}
-              className="bg-background p-10 group hover-card-lift border-glow text-center flex flex-col items-center"
+              className="bg-background px-3 py-4 md:px-5 md:py-6 group hover-card-lift border-glow text-center flex flex-col items-center min-w-0"
             >
-              <div className="w-14 h-14 border border-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:border-primary/50 transition-colors duration-500">
-                <item.icon className="w-5 h-5 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
+              <div className="w-8 h-8 md:w-10 md:h-10 border border-primary/20 rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:border-primary/50 transition-colors duration-500">
+                <item.icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary/60 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
               </div>
-              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-3">
+              <p className="font-body text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.35em] uppercase text-primary/70 mb-2 md:mb-3">
                 {item.label[language]}
               </p>
-              <p className="font-body text-sm text-foreground/70 group-hover:text-foreground transition-colors duration-500 leading-relaxed">
+              <p className="font-body text-xs md:text-sm text-foreground/70 group-hover:text-foreground transition-colors duration-500 leading-relaxed break-words">
                 {item.value}
               </p>
             </motion.a>

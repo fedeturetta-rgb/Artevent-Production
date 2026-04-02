@@ -11,6 +11,7 @@ const mobileVideoPath = "/videos/SHOWREEL_homepage_9-16_comp.mp4";
 
 const HeroSection = () => {
   const { language } = useLanguage();
+  const loadHeroVideo = true;
   const copy = {
     eyebrow:
       language === "it"
@@ -26,25 +27,29 @@ const HeroSection = () => {
       {/* Background video */}
       <div className="absolute inset-0">
         {/* Video 16:9 — desktop; se mobileVideoPath è vuoto, visibile anche su mobile */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`w-full h-full object-cover ${
-            mobileVideoPath ? "hidden md:block" : ""
-          }`}
-        >
-          <source src={desktopVideoPath} type="video/mp4" />
-        </video>
-
-        {/* Video 9:16 — solo mobile */}
-        {mobileVideoPath && (
+        {loadHeroVideo && (
           <video
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
+            className={`w-full h-full object-cover ${
+              mobileVideoPath ? "hidden md:block" : ""
+            }`}
+          >
+            <source src={desktopVideoPath} type="video/mp4" />
+          </video>
+        )}
+
+        {/* Video 9:16 — solo mobile */}
+        {loadHeroVideo && mobileVideoPath && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             className="block md:hidden w-full h-full object-cover"
           >
             <source src={mobileVideoPath} type="video/mp4" />
