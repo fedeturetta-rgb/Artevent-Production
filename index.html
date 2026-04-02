@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script>
       (function () {
         var params = new URLSearchParams(window.location.search);
         var redirectPath = params.get("redirect");
 
-        if (!redirectPath) {
-          return;
-        }
+        if (!redirectPath) return;
 
         var normalizedPath = redirectPath.startsWith("/") ? redirectPath : "/" + redirectPath;
         window.history.replaceState(null, "", normalizedPath + window.location.hash);
@@ -25,6 +24,7 @@
 
     <meta name="description" content="Produzione video corporate a Verona: video aziendali, eventi, interviste executive e storytelling cinematografico per aziende." />
     <meta name="author" content="Artevent Production" />
+    <meta name="robots" content="index, follow" /> <!-- 👈 AGGIUNTO -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -38,7 +38,7 @@
     <meta name="twitter:description" content="Produzione video corporate cinematografica per aziende: eventi, storytelling e contenuti premium." />
     <meta name="twitter:image" content="https://arteventproduction.com/images/og-image.jpg" />
 
-    <!-- Hero video priority (desktop/mobile) -->
+    <!-- Hero video preload -->
     <link
       rel="preload"
       as="video"
@@ -66,6 +66,5 @@
   <body>
     <div id="root"></div>
 
-    <!-- SCRIPT GIUSTO -->
   </body>
 </html>
