@@ -1,16 +1,40 @@
-<!doctype html>
-<html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
-    <script>
-      (function () {
-        var path = window.location.pathname + window.location.search + window.location.hash;
-        var target = "/?redirect=" + encodeURIComponent(path);
-        window.location.replace(target);
-      })();
-    </script>
-  </head>
-  <body></body>
-</html>
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import { ConsentProvider } from "./contexts/ConsentContext";
+import ConsentBanner from "./components/ConsentBanner";
+import CustomCursor from "./components/CustomCursor";
+import PrivacyCookiePolicy from "./pages/PrivacyCookiePolicy";
+import CorporateVerona from "./pages/CorporateVerona";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <LanguageProvider>
+      <ConsentProvider>
+        <TooltipProvider>
+          <CustomCursor />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/privacy-cookie" element={<PrivacyCookiePolicy />} />
+              <Route path="/produzione-video-corporate-verona" element={<CorporateVerona />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <ConsentBanner />
+          </BrowserRouter>
+        </TooltipProvider>
+      </ConsentProvider>
+    </LanguageProvider>
+  </QueryClientProvider>
+);
+
+export default App;
