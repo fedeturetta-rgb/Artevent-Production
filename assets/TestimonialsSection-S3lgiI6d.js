@@ -1,1 +1,0 @@
-import{i as e,l as t,n,r}from"./LanguageContext-BjHOLMWA.js";import{t as i}from"./use-in-view-QIEORb8R.js";var a=t(e(),1);r();var o=()=>{let{language:e}=n();i((0,a.useRef)(null),{once:!0,margin:`-100px`});let[t,r]=(0,a.useState)(0);return(0,a.useEffect)(()=>{},[!1]),null};export{o as default};
