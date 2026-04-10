@@ -231,7 +231,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/13LoXFtySVKui4RwrxGAx2xp7JKJc5P0L/view?usp=sharing",
+        src: "https://drive.google.com/file/d/1rDOBecbkm1_vBHT7SGn8cwsS4rvmFZCS/view?usp=sharing",
         poster: "/videos/9_comp_original.mp4",
       },
     ],
