@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const missionPhoto = {
-  src: "/images/Rinaldi/2.jpg",
+  src: "/images/Rinaldi/sboccatura.jpg",
 };
 
 const MissionSection = () => {
