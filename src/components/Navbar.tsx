@@ -7,14 +7,14 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const navLinks = {
   it: [
     { label: "Home", href: "#home" },
-    { label: "Chi Siamo", href: "#about" },
+    { label: "Mission", href: "#mission" },
     { label: "Lavori", href: "#portfolio" },
     { label: "Il Team", href: "#team" },
     { label: "Contatti", href: "#contact" },
   ],
   en: [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
+    { label: "Mission", href: "#mission" },
     { label: "Work", href: "#portfolio" },
     { label: "Team", href: "#team" },
     { label: "Contact", href: "#contact" },
@@ -39,6 +39,9 @@ const ctaDesktopClass = "md:text-[13px]"; // le stesse regole Tailwind usate per
 const navbarHeightMobileClass = "[--navbar-height:4rem]";
 const navbarHeightTabletClass = "sm:[--navbar-height:5.5rem] md:[--navbar-height:6rem]";
 const navbarHeightDesktopClass = "lg:[--navbar-height:6.5rem]";
+const navbarHeightMobileExpandedClass = "[--navbar-height:5.5rem]";
+const navbarHeightTabletExpandedClass = "sm:[--navbar-height:6.75rem] md:[--navbar-height:7.5rem]";
+const navbarHeightDesktopExpandedClass = "lg:[--navbar-height:8rem]";
 
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -65,7 +68,9 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 0);
+
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -86,6 +91,16 @@ const Navbar = () => {
     };
   }, [mobileOpen, closeMobileMenu]);
 
+  const activeNavbarHeightClass = scrolled || mobileOpen
+    ? `${navbarHeightMobileExpandedClass} ${navbarHeightTabletExpandedClass} ${navbarHeightDesktopExpandedClass}`
+    : `${navbarHeightMobileClass} ${navbarHeightTabletClass} ${navbarHeightDesktopClass}`;
+  const logoOffsetClass = scrolled || mobileOpen
+    ? "-translate-y-3 sm:-translate-y-3.5 md:-translate-y-4"
+    : "translate-y-0";
+  const controlsOffsetClass = scrolled || mobileOpen
+    ? "-translate-y-3 sm:-translate-y-3.5 md:-translate-y-4"
+    : "translate-y-0";
+
   return (
     <>
       
@@ -93,15 +108,15 @@ const Navbar = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navbarHeightMobileClass} ${navbarHeightTabletClass} ${navbarHeightDesktopClass} ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${activeNavbarHeightClass} ${
           scrolled
-            ? "bg-background/95 backdrop-blur-xl border-b border-border"
+            ? "navbar-scroll-surface navbar-soft-edge"
             : "bg-transparent"
         }`}
       >
         <div className="relative max-w-7xl mx-auto flex h-[var(--navbar-height)] items-center justify-between px-6 md:px-12">
           {/* Hamburger - left */}
-          <div className="relative z-[60] flex items-center gap-2">
+          <div className={`relative z-[60] flex items-center gap-2 transition-transform duration-700 ${controlsOffsetClass}`}>
             <button
               type="button"
               onClick={toggleMobileMenu}
@@ -124,7 +139,7 @@ const Navbar = () => {
           </div>
 
           {/* Logo - center */}
-          <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none">
+          <div className={`absolute left-1/2 -translate-x-1/2 text-center pointer-events-none transition-transform duration-700 ${logoOffsetClass}`}>
             <a href="#home" onClick={closeMobileMenu} className="pointer-events-auto">
               {logoImagePath ? (
                 <img
@@ -144,7 +159,7 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={closeMobileMenu}
-            className={`inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-colors duration-500`}
+            className={`inline-flex font-body ${ctaMobileClass} ${ctaDesktopClass} font-medium tracking-[0.3em] uppercase text-muted-foreground hover:text-primary transition-all duration-700 ${controlsOffsetClass}`}
           >
             {copy.contact}
           </a>
@@ -160,7 +175,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className={`fixed inset-0 z-40 bg-background/98 pt-[var(--navbar-height)] backdrop-blur-2xl ${navbarHeightMobileClass} ${navbarHeightTabletClass} ${navbarHeightDesktopClass}`}
+            className={`fixed inset-0 z-40 bg-background/98 pt-[var(--navbar-height)] backdrop-blur-2xl ${activeNavbarHeightClass}`}
           >
             <motion.div
               initial={{ opacity: 0, y: 36 }}

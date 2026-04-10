@@ -36,7 +36,7 @@ const ConsentBanner = () => {
             <p className="font-body text-[10px] uppercase tracking-[0.3em] text-foreground/50">{copy.note}</p>
             <Link
               to="/privacy-cookie"
-              className="mt-4 inline-block font-body text-[10px] uppercase tracking-[0.3em] text-primary/80 transition-colors hover:text-primary"
+              className="mt-4 inline-block font-body text-[10px] uppercase tracking-[0.3em] gold-text-soft transition-colors hover:text-primary"
             >
               {copy.policy}
             </Link>
@@ -44,7 +44,7 @@ const ConsentBanner = () => {
               <button
                 type="button"
                 onClick={closePreferences}
-                className="mt-4 ml-4 font-body text-[10px] uppercase tracking-[0.3em] text-primary/80 transition-colors hover:text-primary"
+                className="mt-4 ml-4 font-body text-[10px] uppercase tracking-[0.3em] gold-text-soft transition-colors hover:text-primary"
               >
                 {copy.close}
               </button>

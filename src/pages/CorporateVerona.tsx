@@ -9,7 +9,7 @@ const CorporateVerona = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl md:text-6xl font-light mb-10"
       >
-        Produzione Video Corporate a Verona
+        Produzione Video Corporate a Verona.
       </motion.h1>
 
       <p className="mb-6 text-foreground/70">

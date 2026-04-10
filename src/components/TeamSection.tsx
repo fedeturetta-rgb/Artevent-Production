@@ -46,7 +46,9 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className="section-padding bg-gradient-dark">
+    <section id="team" className="relative overflow-hidden section-padding bg-gradient-dark">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-28 bg-gradient-to-b from-background via-background/78 to-transparent md:h-36" />
+
       <div ref={ref} className="max-w-6xl mx-auto">
         <motion.div
           initial={{ height: 0 }}
@@ -61,65 +63,78 @@ const TeamSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
             {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light leading-tight">
-            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
+            {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-3 md:gap-4">
-          {teamMembers.map((member, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: i * 0.15 }}
-              className="bg-background p-4 md:p-8 group hover-card-lift border-glow min-w-0"
-            >
-              {/* Photo */}
-              <div className="aspect-[3/4] mb-4 md:mb-8 overflow-hidden bg-gradient-card border border-border">
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="block w-full h-full object-cover transition-all duration-700"
-                    style={{
-                      objectPosition: member.imagePosition ?? "50% 50%",
-                      transform: `translate(${member.imageOffsetX ?? "0%"}, ${member.imageOffsetY ?? "0%"}) scale(${member.imageScale ?? 1})`,
-                      transformOrigin: "center",
-                    }}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 border border-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="font-display text-2xl text-primary/40">
-                          {member.name.split(" ").map(n => n[0]).join("")}
-                        </span>
-                      </div>
-                      <p className="font-body text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
-                        {copy.photoFallback}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
+        <div className="space-y-24 md:space-y-32">
+          {teamMembers.map((member, i) => {
+            const isReversed = i % 2 === 1;
 
-              {/* Info */}
-              <div className="luxwine-line-h mb-4 md:mb-6" />
-              <h3 className="font-display text-base md:text-2xl font-light mb-1 leading-tight">
-                {member.name}
-              </h3>
-              <p className="font-body text-[8px] md:text-[10px] tracking-[0.16em] md:tracking-[0.3em] uppercase text-primary/70 mb-3 md:mb-4">
-                {member.title[language]}
-              </p>
-              <p className="font-body text-xs md:text-sm text-foreground/50 leading-relaxed break-words">
-                {member.description[language]}
-              </p>
-            </motion.div>
-          ))}
+            return (
+              <div key={member.name} className="grid items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
+                <motion.div
+                  initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, delay: i * 0.15 }}
+                  className={isReversed ? "order-2 lg:order-2" : "order-2 lg:order-1"}
+                >
+                  <div className="luxwine-line-h mb-6 md:mb-8" />
+                  <h3 className="font-display text-3xl md:text-5xl font-light mb-3 leading-tight">
+                    {member.name}
+                  </h3>
+                  <p className="font-body text-xs md:text-sm tracking-[0.3em] uppercase gold-text-muted mb-6 md:mb-8">
+                    {member.title[language]}
+                  </p>
+                  <p className="font-body text-base md:text-lg text-foreground/70 leading-[2.2] break-words max-w-xl">
+                    {member.description[language]}
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, delay: i * 0.15 + 0.1 }}
+                  className={isReversed ? "order-1 lg:order-1" : "order-1 lg:order-2"}
+                >
+                  <div className="relative aspect-[3/2] overflow-hidden bg-gradient-card">
+                    {member.image ? (
+                      <>
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="block h-full w-full object-cover transition-all duration-700"
+                          style={{
+                            objectPosition: member.imagePosition ?? "50% 50%",
+                            transform: `translate(${member.imageOffsetX ?? "0%"}, ${member.imageOffsetY ?? "0%"}) scale(${member.imageScale ?? 1})`,
+                            transformOrigin: "center",
+                          }}
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_52%,hsl(var(--deep-black)/0.14)_74%,hsl(var(--deep-black)/0.36)_100%)]" />
+                      </>
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <div className="text-center">
+                          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-primary/20">
+                            <span className="font-display text-2xl text-primary/40">
+                              {member.name.split(" ").map((part) => part[0]).join("")}
+                            </span>
+                          </div>
+                          <p className="font-body text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
+                            {copy.photoFallback}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

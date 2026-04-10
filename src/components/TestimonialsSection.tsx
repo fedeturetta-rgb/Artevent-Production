@@ -73,11 +73,11 @@ const TestimonialsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
             {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light mb-20">
-            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
+            {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 

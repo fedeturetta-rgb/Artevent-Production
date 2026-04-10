@@ -100,17 +100,12 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const ringX = useSpring(cursorX, { stiffness: 500, damping: 38, mass: 0.35 });
-  const ringY = useSpring(cursorY, { stiffness: 500, damping: 38, mass: 0.35 });
-  const dotX = useSpring(cursorX, { stiffness: 900, damping: 45, mass: 0.18 });
-  const dotY = useSpring(cursorY, { stiffness: 900, damping: 45, mass: 0.18 });
   const labelX = useSpring(cursorX, { stiffness: 420, damping: 34, mass: 0.45 });
   const labelY = useSpring(cursorY, { stiffness: 420, damping: 34, mass: 0.45 });
 
   const [isEnabled, setIsEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isInteractive, setIsInteractive] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
   const [cursorLabel, setCursorLabel] = useState("");
 
   useEffect(() => {
@@ -124,12 +119,10 @@ const CustomCursor = () => {
       const nextEnabled = mediaQuery.matches;
 
       setIsEnabled(nextEnabled);
-      document.documentElement.classList.toggle("has-custom-cursor", nextEnabled);
 
       if (!nextEnabled) {
         setIsVisible(false);
         setIsInteractive(false);
-        setIsPressed(false);
         setCursorLabel("");
         cursorX.set(-100);
         cursorY.set(-100);
@@ -142,7 +135,6 @@ const CustomCursor = () => {
 
     return () => {
       mediaQuery.removeEventListener("change", updateAvailability);
-      document.documentElement.classList.remove("has-custom-cursor");
     };
   }, [cursorX, cursorY]);
 
@@ -177,24 +169,21 @@ const CustomCursor = () => {
     };
 
     const handlePointerDown = (event: PointerEvent) => {
-      if (!event.pointerType || event.pointerType === "mouse") {
-        setIsPressed(true);
+      if (event.pointerType && event.pointerType !== "mouse") {
+        return;
       }
     };
 
     const handlePointerUp = () => {
-      setIsPressed(false);
     };
 
     const handlePointerLeave = () => {
       setIsVisible(false);
-      setIsPressed(false);
       setCursorLabel("");
     };
 
     const handleWindowBlur = () => {
       setIsVisible(false);
-      setIsPressed(false);
       setCursorLabel("");
     };
 
@@ -218,40 +207,18 @@ const CustomCursor = () => {
   }
 
   return (
-    <>
-      <motion.div
-        aria-hidden="true"
-        className="custom-cursor-ring"
-        style={{ x: ringX, y: ringY }}
-        animate={{
-          opacity: isVisible ? 1 : 0,
-          scale: isPressed ? 0.82 : isInteractive ? 1.3 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 380, damping: 30, mass: 0.45 }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="custom-cursor-dot"
-        style={{ x: dotX, y: dotY }}
-        animate={{
-          opacity: isVisible ? 1 : 0,
-          scale: isPressed ? 0.72 : isInteractive ? 1.15 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 700, damping: 35, mass: 0.25 }}
-      />
-      <motion.div
-        aria-hidden="true"
-        className="custom-cursor-label"
-        style={{ x: labelX, y: labelY }}
-        animate={{
-          opacity: isVisible && isInteractive && cursorLabel ? 1 : 0,
-          scale: isPressed ? 0.96 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 320, damping: 26, mass: 0.4 }}
-      >
-        {cursorLabel}
-      </motion.div>
-    </>
+    <motion.div
+      aria-hidden="true"
+      className="custom-cursor-label"
+      style={{ x: labelX, y: labelY }}
+      animate={{
+        opacity: isVisible && isInteractive && cursorLabel ? 1 : 0,
+        scale: 1,
+      }}
+      transition={{ type: "spring", stiffness: 320, damping: 26, mass: 0.4 }}
+    >
+      {cursorLabel}
+    </motion.div>
   );
 };
 

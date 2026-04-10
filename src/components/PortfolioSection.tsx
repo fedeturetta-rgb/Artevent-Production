@@ -34,12 +34,12 @@ type SelectedProjectState = {
 const projects: Project[] = [
   {
     videoUrl: "", //PARRUCCHIERE
-    thumbnailUrl: "/videos/1_comp.mp4",
+    thumbnailUrl: "/videos/1_comp_original.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-        poster: "/videos/1_comp.mp4",
+        poster: "/videos/1_comp_original.mp4",
       },
       { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
@@ -55,12 +55,12 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //ORMANETO
-    thumbnailUrl: "/videos/10_comp.mp4",
+    thumbnailUrl: "/videos/10_comp_original.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1G6g3gW0Pooj3EWPSs6cdGjeBdguUPf3L/view?usp=sharing",
-        poster: "/videos/10_comp.mp4",
+        poster: "/videos/10_comp_original.mp4",
       },
       { type: "image", src: "/images/Ormaneto/1.jpg", alt: "" },
       { type: "image", src: "/images/Ormaneto/2.jpg", alt: "" },
@@ -80,12 +80,12 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //CASTELMANI
-    thumbnailUrl: "/videos/2_comp.mp4",
+    thumbnailUrl: "/videos/2_comp_original.mp4",
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1kG-A8hOzd4n9cx3SfKDmO_hFBTjmS-0s/view?usp=sharing",
-        poster: "/videos/2_comp.mp4",
+        src: "https://drive.google.com/file/d/1OeeHNeU1gwGlGViQMcSpNwWywnE34TGF/view?usp=sharing",
+        poster: "/videos/2_comp_original.mp4",
       },
       { type: "image", src: "/images/Castelmani/1.jpg", alt: "" },
       { type: "image", src: "/images/Castelmani/2.jpg", alt: "" },
@@ -107,12 +107,12 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //LIDL
-    thumbnailUrl: "/videos/6_comp.mp4",
+    thumbnailUrl: "/images/LIDL/lidl.jpg",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1BDzI9FG54VJiB63BOys2Qy6dLg90RXcR/view?usp=sharing",
-        poster: "/videos/6_comp.mp4",
+        poster: "/videos/6_comp_original.mp4",
       },
       {
         type: "video",
@@ -166,6 +166,11 @@ const projects: Project[] = [
     videoUrl: "", //MACCHINE
     thumbnailUrl: "/images/Macchine/1.jpg",
     media: [
+      {
+        type: "video",
+        src: "https://drive.google.com/file/d/1Y81YLTmMhbw_Xyylde7SLH3qlzAvkRvO/view?usp=sharing",
+        poster: "/videos/14_comp.mp4",
+      },
       { type: "image", src: "/images/Macchine/1.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/2.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/3.jpg", alt: "" },
@@ -187,12 +192,12 @@ const projects: Project[] = [
   // RIQUADRI NASCOSTI
   {
     videoUrl: "", //SARACINO
-    thumbnailUrl: "/videos/13_comp.mp4",
+    thumbnailUrl: "/videos/13_comp_original.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1XHi_FwnCJhQFpLaliPWhXU1OexbxECdS/view?usp=sharing",
-        poster: "/videos/13_comp.mp4",
+        poster: "/videos/13_comp_original.mp4",
       },
       { type: "image", src: "/images/Saracino/1.jpg", alt: "" },
       { type: "image", src: "/images/Saracino/2.jpg", alt: "" },
@@ -210,34 +215,34 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //RIGHETTO
-    thumbnailUrl: "/videos/12_comp.mp4",
+    thumbnailUrl: "/images/Righetto/Righetto1.jpg",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/13LoXFtySVKui4RwrxGAx2xp7JKJc5P0L/view?usp=sharing",
-        poster: "/videos/12_comp.mp4",
+        poster: "/videos/12_comp_original.mp4",
       },
     ],
   },
   {
     videoUrl: "", //OCSA
-    thumbnailUrl: "/videos/9_comp.mp4",
+    thumbnailUrl: "/images/Ocsa/Ocsa1.jpg",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/13LoXFtySVKui4RwrxGAx2xp7JKJc5P0L/view?usp=sharing",
-        poster: "/videos/9_comp.mp4",
+        poster: "/videos/9_comp_original.mp4",
       },
     ],
   },
   {
     videoUrl: "", //FRANCHIN
-    thumbnailUrl: "/videos/4_comp.mp4",
+    thumbnailUrl: "/images/Franchin/Franchin1.jpg",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/15X-vQL06C_5QsN415ECNac_Pptf80Lvx/view?usp=sharing",
-        poster: "/videos/4_comp.mp4",
+        poster: "/videos/4_comp_original.mp4",
       },
     ],
   },
@@ -277,46 +282,13 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //DOLOMITI
-    thumbnailUrl: "",
+    thumbnailUrl: "/images/Dolomiti/Dolomiti1.jpg",
     media: [
       {
         type: "video",
-        src: "",
-        poster: "",
+        src: "https://drive.google.com/file/d/16ME0EaJ8sI7aqlxoYC2M1nyNMGYef6k5/view?usp=sharing",
+        poster: "/videos/8_comp_original.mp4",
       },
-      { type: "image", src: "/images/Dolomiti/1.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/2.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/3.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/6.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/4.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/5.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/7.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/8.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/9.jpg", alt: "" },
-      { type: "image", src: "/images/Dolomiti/10.jpg", alt: "" },
-      
-    ],
-  },
-  {
-    videoUrl: "", //VILLA RINALDI
-    thumbnailUrl: "/images/Rinaldi/1.jpg",
-    media: [
-      {
-        type: "video",
-        src: "",
-        poster: "",
-      },
-      { type: "image", src: "/images/Rinaldi/1.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/2.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/3.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/6.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/4.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/5.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/7.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/8.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/9.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/10.jpg", alt: "" },
-      
     ],
   },
 ];
@@ -327,9 +299,17 @@ function isDirectVideoFile(src: string): boolean {
   return DIRECT_VIDEO_FILE_PATTERN.test(src);
 }
 
+function isValidMediaItem(media: MediaItem): boolean {
+  if (media.type === "image") {
+    return Boolean(media.src);
+  }
+
+  return Boolean(media.src);
+}
+
 function getProjectMedia(project: Project): MediaItem[] {
   if (project.media?.length) {
-    return project.media;
+    return project.media.filter(isValidMediaItem);
   }
 
   const media: MediaItem[] = [];//
@@ -347,7 +327,13 @@ function getProjectMedia(project: Project): MediaItem[] {
   return media;
 }
 
+function projectHasVideo(project: Project): boolean {
+  return getProjectMedia(project).some((media) => media.type === "video");
+}
+
 function getPreviewMedia(project: Project): MediaItem | null {
+  const projectMedia = getProjectMedia(project);
+
   if (project.thumbnailUrl) {
     if (isDirectVideoFile(project.thumbnailUrl)) {
       return { type: "video", src: project.thumbnailUrl, poster: project.thumbnailUrl };
@@ -356,12 +342,8 @@ function getPreviewMedia(project: Project): MediaItem | null {
     return { type: "image", src: project.thumbnailUrl };
   }
 
-  if (project.media?.length) {
-    return project.media[0];
-  }
-
-  if (project.gallery?.length) {
-    return { type: "image", src: project.gallery[0] };
+  if (projectMedia.length) {
+    return projectMedia[0];
   }
 
   if (project.videoUrl) {
@@ -485,6 +467,30 @@ const PortfolioSection = () => {
   }, [selected?.projectIndex, activeSlide]);
 
   useEffect(() => {
+    if (!selectedProject || selectedMedia.length <= 1) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        carouselApi?.scrollPrev();
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        carouselApi?.scrollNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProject, selectedMedia.length, carouselApi]);
+
+  useEffect(() => {
     const grid = gridRef.current;
     if (!grid) {
       return;
@@ -527,8 +533,109 @@ const PortfolioSection = () => {
     collapse: language === "it" ? "RIDUCI" : "COLLAPSE",
   };
 
+  const renderProjectCard = (project: Project, projectIndex: number, index: number) => {
+    const previewMedia = getPreviewMedia(project);
+    const projectMedia = getProjectMedia(project);
+
+    return (
+      <motion.div
+        key={`portfolio-item-${projectIndex}`}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: index * 0.08 }}
+        onClick={() => openProject(projectIndex, 0)}
+        data-cursor-label="view"
+        className="group cursor-pointer relative aspect-[3/2] bg-gradient-card border border-border overflow-hidden hover-card-lift"
+      >
+        {previewMedia ? (() => {
+          const staticThumbnail = getMediaThumbnailImage(project, previewMedia, project.thumbnailUrl);
+
+          return (
+            <img
+              src={staticThumbnail}
+              alt={previewMedia.type === "image" ? previewMedia.alt ?? getProjectLabel(projectIndex) : getProjectLabel(projectIndex)}
+              className="absolute inset-0 h-full w-full object-cover"
+              draggable={false}
+              loading="lazy"
+              decoding="async"
+            />
+          );
+        })() : null}
+
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_64%,hsl(var(--deep-black)/0.1)_82%,hsl(var(--deep-black)/0.3)_100%)]" />
+
+        <div className="absolute right-2 top-2 sm:right-4 sm:top-4 rounded-full border border-primary/40 bg-background/30 px-2 py-1 sm:px-3 text-[8px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.3em] uppercase text-primary/80 backdrop-blur-sm">
+          {projectMedia.length} media
+        </div>
+
+        {projectMedia.length > 0 && (
+          <div className="hidden sm:block absolute left-2 right-2 bottom-1 z-10 sm:left-4 sm:right-4 sm:bottom-4">
+            <p className="mb-2 text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.3em] text-foreground/60 opacity-90 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
+              {copy.quickOpen}
+            </p>
+            <div className="flex gap-1.5 sm:gap-2 overflow-x-auto opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
+              {projectMedia.map((media, mediaIndex) => {
+                const thumbnailSrc = getMediaThumbnail(media, project.thumbnailUrl);
+
+                return (
+                  <button
+                    key={`portfolio-preview-${projectIndex}-${mediaIndex}`}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      openProject(projectIndex, mediaIndex);
+                    }}
+                    data-cursor-label="open"
+                    className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-border/80 bg-background/70 backdrop-blur-sm transition-colors hover:border-primary"
+                    aria-label={`${language === "it" ? "Apri media" : "Open media"} ${mediaIndex + 1} ${language === "it" ? "per" : "for"} ${getProjectLabel(projectIndex)}`}
+                  >
+                    {thumbnailSrc ? (
+                      isVideoThumbnail(thumbnailSrc) ? (
+                        <video
+                          src={thumbnailSrc}
+                          className="h-full w-full object-cover"
+                          muted
+                          playsInline
+                          loop
+                          autoPlay
+                          preload="metadata"
+                        />
+                      ) : (
+                        <img
+                          src={
+                            isVideoThumbnail(thumbnailSrc)
+                              ? getImageThumbnailFallback(project, media)
+                              : thumbnailSrc
+                          }
+                          alt={`${getProjectLabel(projectIndex)} preview ${mediaIndex + 1}`}
+                          className="h-full w-full object-cover"
+                          draggable={false}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-background/70">
+                        <Play className="h-4 w-4 text-primary" strokeWidth={1.5} />
+                      </div>
+                    )}
+                    {media.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <Play className="h-3.5 w-3.5 text-white" fill="currentColor" strokeWidth={1.5} />
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+      </motion.div>
+    );
+  };
+
   return (
-    <section id="portfolio" className="section-padding bg-gradient-dark pb-12 sm:pb-14">
+    <section id="portfolio" className="relative overflow-hidden bg-gradient-dark px-6 pb-12 pt-16 sm:pb-14 sm:pt-20 md:px-12 lg:px-20 lg:pt-20 xl:px-32">
       <div ref={ref} className="max-w-6xl mx-auto">
         <motion.div
           initial={{ height: 0 }}
@@ -543,11 +650,11 @@ const PortfolioSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
             {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-light">
-            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
+            {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -559,130 +666,8 @@ const PortfolioSection = () => {
               : undefined
           }
         >
-          <div ref={gridRef} className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {projects.map((project, i) => {
-            const previewMedia = getPreviewMedia(project);
-            const projectMedia = getProjectMedia(project);
-            const projectIndex = i;
-
-            return (
-              <motion.div
-                key={`portfolio-item-${i}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                onClick={() => openProject(projectIndex, 0)}
-                data-cursor-label="view"
-                className="group cursor-pointer relative aspect-[4/3] bg-gradient-card border border-border overflow-hidden hover-card-lift"
-              >
-                {previewMedia ? (() => {
-                  const thumbnailSrc = getMediaThumbnail(previewMedia, project.thumbnailUrl);
-
-                  if (thumbnailSrc && isVideoThumbnail(thumbnailSrc)) {
-                    return (
-                      <video
-                        src={thumbnailSrc}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        muted
-                        playsInline
-                        loop
-                        autoPlay
-                        preload="metadata"
-                      />
-                    );
-                  }
-
-                  const staticThumbnail =
-                    thumbnailSrc && isVideoThumbnail(thumbnailSrc)
-                      ? getImageThumbnailFallback(project, previewMedia)
-                      : thumbnailSrc;
-
-                  return (
-                    <img
-                      src={staticThumbnail}
-                      alt={previewMedia.type === "image" ? previewMedia.alt ?? getProjectLabel(projectIndex) : getProjectLabel(projectIndex)}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      draggable={false}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  );
-                })() : null}
-
-                <div className="absolute right-2 top-2 sm:right-4 sm:top-4 rounded-full border border-primary/40 bg-background/30 px-2 py-1 sm:px-3 text-[8px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.3em] uppercase text-primary/80 backdrop-blur-sm">
-                  {projectMedia.length} media
-                </div>
-
-                {projectMedia.length > 0 && (
-                  <div className="absolute left-2 right-2 bottom-1 z-10 sm:left-4 sm:right-4 sm:bottom-4">
-                    <p className="mb-2 text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.3em] text-foreground/60 opacity-90 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
-                      {copy.quickOpen}
-                    </p>
-                    <div className="flex gap-1.5 sm:gap-2 overflow-x-auto opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
-                      {projectMedia.map((media, mediaIndex) => {
-                        const thumbnailSrc = getMediaThumbnail(media, project.thumbnailUrl);
-
-                        return (
-                          <button
-                            key={`portfolio-preview-${i}-${mediaIndex}`}
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              openProject(projectIndex, mediaIndex);
-                            }}
-                            data-cursor-label="open"
-                            className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-border/80 bg-background/70 backdrop-blur-sm transition-colors hover:border-primary"
-                            aria-label={`${language === "it" ? "Apri media" : "Open media"} ${mediaIndex + 1} ${language === "it" ? "per" : "for"} ${getProjectLabel(projectIndex)}`}
-                          >
-                            {thumbnailSrc ? (
-                              isVideoThumbnail(thumbnailSrc) ? (
-                                <video
-                                  src={thumbnailSrc}
-                                  className="h-full w-full object-cover"
-                                  muted
-                                  playsInline
-                                  loop
-                                  autoPlay
-                                  preload="metadata"
-                                />
-                              ) : (
-                                <img
-                                  src={
-                                    isVideoThumbnail(thumbnailSrc)
-                                      ? getImageThumbnailFallback(project, media)
-                                      : thumbnailSrc
-                                  }
-                                  alt={`${getProjectLabel(projectIndex)} preview ${mediaIndex + 1}`}
-                                  className="h-full w-full object-cover"
-                                  draggable={false}
-                                  loading="lazy"
-                                  decoding="async"
-                                />
-                              )
-                            ) : (
-                              <div className="flex h-full w-full items-center justify-center bg-background/70">
-                                <Play className="h-4 w-4 text-primary" strokeWidth={1.5} />
-                              </div>
-                            )}
-                            {media.type === "video" && (
-                              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                                <Play className="h-3.5 w-3.5 text-white" fill="currentColor" strokeWidth={1.5} />
-                              </div>
-                            )}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="w-10 h-10 border border-primary/40 rounded-full flex items-center justify-center bg-background/30 backdrop-blur-sm">
-                    <Play className="w-5 h-5 text-primary ml-0.5" strokeWidth={1} />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div ref={gridRef} className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+            {projects.map((project, index) => renderProjectCard(project, index, index))}
           </div>
 
           {!isExpanded && (
@@ -928,6 +913,8 @@ const PortfolioSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-background/72 to-background" />
     </section>
   );
 };

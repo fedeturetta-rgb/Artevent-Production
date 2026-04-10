@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "rea
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 
-const AboutSection = lazy(() => import("@/components/AboutSection"));
+const MissionSection = lazy(() => import("@/components/MissionSection"));
 const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
 const PartnersSection = lazy(() => import("@/components/PartnersSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
@@ -60,7 +60,7 @@ const Index = () => {
 
       <LazyMount minHeight={500}>
         <Suspense fallback={null}>
-          <AboutSection />
+          <MissionSection />
         </Suspense>
       </LazyMount>
 

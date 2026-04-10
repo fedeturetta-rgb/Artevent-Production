@@ -27,11 +27,11 @@ const GridGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+        <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
           Galleria Fotografica
         </p>
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-          Portfolio <span className="italic text-primary">Fotografico</span>
+          Portfolio <span className="italic gold-text-strong">Fotografico</span>
         </h2>
       </motion.div>
 
@@ -52,7 +52,7 @@ const GridGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-2">
+              <span className="font-body text-[10px] tracking-[0.4em] uppercase gold-text-muted mb-2">
                 {photo.category}
               </span>
               <h3 className="font-display text-xl font-light tracking-wide">{photo.title}</h3>
@@ -79,11 +79,11 @@ const MasonryGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+        <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
           Composizione Dinamica
         </p>
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-          Visione <span className="italic text-primary">Artistica</span>
+          Visione <span className="italic gold-text-strong">Artistica</span>
         </h2>
       </motion.div>
 
@@ -104,7 +104,7 @@ const MasonryGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-1 block">
+              <span className="font-body text-[10px] tracking-[0.4em] uppercase gold-text-muted mb-1 block">
                 {photo.category}
               </span>
               <h3 className="font-display text-lg font-light tracking-wide">{photo.title}</h3>
@@ -133,11 +133,11 @@ const CarouselGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+        <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
           In Evidenza
         </p>
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-          Scatti <span className="italic text-primary">Selezionati</span>
+          Scatti <span className="italic gold-text-strong">Selezionati</span>
         </h2>
       </motion.div>
 
@@ -165,7 +165,7 @@ const CarouselGallery = ({ onSelect }: { onSelect: (i: number) => void }) => {
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-10">
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70 mb-2 block">
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase gold-text-muted mb-2 block">
               {photos[current].category}
             </span>
             <h3 className="font-display text-2xl md:text-3xl font-light tracking-wide">

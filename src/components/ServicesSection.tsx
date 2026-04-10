@@ -80,11 +80,11 @@ const ServicesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <p className="font-body text-[11px] tracking-[0.5em] uppercase text-primary/80 mb-6">
+          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
             {copy.sectionLabel}
           </p>
           <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
-            {copy.headingMain} <span className="italic text-primary">{copy.headingAccent}</span>
+            {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -132,7 +132,7 @@ const ServicesSection = () => {
           >
             <a
               href="#contact"
-              className="font-body text-[11px] tracking-[0.3em] uppercase text-primary/70 hover:text-primary transition-colors duration-500 border-b border-primary/30 pb-1"
+              className="font-body text-[11px] tracking-[0.3em] uppercase gold-text-muted hover:text-primary transition-colors duration-500 border-b border-primary/30 pb-1"
             >
               {copy.cta}
             </a>
