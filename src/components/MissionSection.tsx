@@ -37,13 +37,13 @@ const MissionSection = () => {
       />
       <div className="cinema-overlay absolute inset-0" />
 
-      <div ref={ref} className="relative z-10 mx-auto flex max-w-6xl flex-col justify-center px-6 py-24 translate-y-8 md:min-h-[56.25vw] md:px-12 md:py-28 md:translate-y-10 lg:px-20 lg:py-32 lg:translate-y-12 xl:px-32">
+      <div ref={ref} className="relative z-10 mx-auto flex max-w-6xl flex-col justify-center px-6 py-16 translate-y-4 md:min-h-[56.25vw] md:px-12 md:py-28 md:translate-y-10 lg:px-20 lg:py-32 lg:translate-y-12 xl:px-32">
         {/* Top decorative line */}
         <motion.div
           initial={{ height: 0 }}
           animate={inView ? { height: 60 } : {}}
           transition={{ duration: 0.8 }}
-          className="w-px bg-primary/30 mx-auto mb-12"
+          className="w-px bg-primary/30 mx-auto mb-8 md:mb-12"
         />
 
         <motion.div
@@ -63,17 +63,17 @@ const MissionSection = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-center font-display text-4xl sm:text-6xl lg:text-7xl font-light leading-tight mb-8">
+            <h3 className="text-center font-display text-4xl sm:text-6xl lg:text-7xl font-light leading-tight mb-6 md:mb-8">
               {copy.heading1Line1}{" "}
               <span className="italic gold-text-strong">{copy.heading1Accent}</span>
             </h3>
-            <p className="text-foreground/70 font-body text-base md:text-lg leading-[2.2] mb-8">
+            <p className="text-foreground/70 font-body text-base md:text-lg leading-[1.8] md:leading-[2.2] mb-6 md:mb-8">
               {copy.paragraph1}
             </p>
-            <p className="text-foreground/70 font-body text-base md:text-lg leading-[2.2]">
+            <p className="text-foreground/70 font-body text-base md:text-lg leading-[1.8] md:leading-[2.2]">
               {copy.paragraph2}
             </p>
-            <div className="mt-10 luxwine-line-h" />
+            <div className="mt-8 md:mt-10 luxwine-line-h" />
           </motion.div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "./ui/carousel";
 import { useLanguage } from "../contexts/LanguageContext";
 import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "../lib/video";
+import { cn } from "../lib/utils";
 
 type MediaItem =
   | {
@@ -548,19 +549,37 @@ const PortfolioSection = () => {
     collapse: language === "it" ? "RIDUCI" : "COLLAPSE",
   };
 
-  const renderProjectCard = (project: Project, projectIndex: number, index: number) => {
+  const desktopTailCount = projects.length % 3;
+  const desktopTailStartIndex = desktopTailCount === 0 ? projects.length : projects.length - desktopTailCount;
+
+  const renderProjectCard = (
+    project: Project,
+    projectIndex: number,
+    index: number,
+    options?: {
+      extraClassName?: string;
+      keySuffix?: string;
+    },
+  ) => {
     const previewMedia = getPreviewMedia(project);
     const projectMedia = getProjectMedia(project);
+    const isLastOddMobileCard = projects.length % 2 === 1 && index === projects.length - 1;
+    const isDesktopTailCard = desktopTailCount > 0 && index >= desktopTailStartIndex;
 
     return (
       <motion.div
-        key={`portfolio-item-${projectIndex}`}
+        key={`portfolio-item-${projectIndex}${options?.keySuffix ? `-${options.keySuffix}` : ""}`}
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: index * 0.08 }}
         onClick={() => openProject(projectIndex, 0)}
         data-cursor-label="view"
-        className="group cursor-pointer relative aspect-[3/2] bg-gradient-card border border-border overflow-hidden hover-card-lift"
+        className={cn(
+          "group relative w-full cursor-pointer aspect-[3/2] overflow-hidden border border-border bg-gradient-card hover-card-lift",
+          isLastOddMobileCard && "col-span-2 mx-auto w-[calc((100%-0.75rem)/2)] sm:col-span-1 sm:mx-0 sm:w-auto",
+          isDesktopTailCard && "sm:hidden",
+          options?.extraClassName,
+        )}
       >
         {previewMedia ? (() => {
           const staticThumbnail = getMediaThumbnailImage(project, previewMedia, project.thumbnailUrl);
@@ -683,6 +702,18 @@ const PortfolioSection = () => {
         >
           <div ref={gridRef} className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
             {projects.map((project, index) => renderProjectCard(project, index, index))}
+            {desktopTailCount > 0 && (
+              <div className="hidden sm:col-span-3 sm:flex sm:justify-center sm:gap-4">
+                {projects.slice(desktopTailStartIndex).map((project, tailIndex) => {
+                  const projectIndex = desktopTailStartIndex + tailIndex;
+
+                  return renderProjectCard(project, projectIndex, projectIndex, {
+                    extraClassName: "sm:block sm:w-[calc((100%-2rem)/3)]",
+                    keySuffix: "desktop-tail",
+                  });
+                })}
+              </div>
+            )}
           </div>
 
           {!isExpanded && (
