@@ -9,98 +9,42 @@ const CorporateVicenza = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl md:text-6xl font-light mb-10"
       >
-        Produzione Video Aziendali, Fotografia Corporate e Riprese Drone a Vicenza
+        Produzione Video Corporate a Vicenza.
       </motion.h1>
 
       <p className="mb-6 text-foreground/70">
-        Artevent Production è specializzata nella produzione di video aziendali, fotografia corporate e riprese con drone a Vicenza, aiutando aziende e brand a comunicare con contenuti visivi di alto livello.
+        Offriamo servizi di produzione video corporate a Vicenza per aziende che vogliono distinguersi con contenuti professionali e comunicare in modo efficace.
       </p>
 
-      <p className="text-foreground/70 mb-10">
-        Realizziamo video corporate, shooting fotografici aziendali e video aerei progettati per migliorare la percezione del brand, aumentare la visibilità e rafforzare la comunicazione aziendale.
-      </p>
-
-      <h2 className="text-2xl mb-6">Video aziendali e video corporate a Vicenza</h2>
+      <h2 className="text-2xl mb-6">Video aziendali a Vicenza per il tuo brand</h2>
 
       <p className="text-foreground/70 mb-6">
-        Produciamo video aziendali e corporate a Vicenza per siti web, campagne marketing e comunicazione interna, sviluppando contenuti su misura per ogni brand.
+        I video aziendali a Vicenza sono uno strumento strategico per migliorare la percezione del brand e aumentare la visibilità della tua attività.
       </p>
 
       <p className="text-foreground/70 mb-10">
-        Ogni produzione video è progettata per trasmettere identità, valori e posizionamento in modo chiaro, professionale e coerente.
+        Artevent Production realizza video corporate a Vicenza curando ogni fase: concept creativo, produzione e post-produzione professionale.
       </p>
 
-      <h2 className="text-2xl mb-6">Fotografia aziendale e fotografia corporate a Vicenza</h2>
-
-      <p className="text-foreground/70 mb-6">
-        Realizziamo fotografia aziendale e corporate a Vicenza per creare un’immagine forte e coerente su sito web, social e materiali marketing.
-      </p>
-
-      <p className="text-foreground/70 mb-10">
-        Produciamo ritratti professionali e contenuti visivi progettati per valorizzare l’identità aziendale.
-      </p>
-
-      <h2 className="text-2xl mb-6">Riprese con drone a Vicenza e video aerei</h2>
-
-      <p className="text-foreground/70 mb-6">
-        Le riprese con drone a Vicenza permettono di ottenere immagini ad alto impatto visivo e prospettive uniche per aziende e location.
-      </p>
-
-      <p className="text-foreground/70 mb-10">
-        Utilizziamo droni professionali per realizzare video aerei cinematici e fotografia aerea integrata nelle produzioni corporate.
-      </p>
-
-      <h2 className="text-2xl mb-6">Servizi di produzione video e fotografia aziendale a Vicenza</h2>
+      <h2 className="text-2xl mb-6">Produzione video corporate a Vicenza: cosa realizziamo</h2>
 
       <ul className="space-y-2 text-foreground/70 mb-10">
-        <li>Produzione video aziendali e corporate</li>
-        <li>Fotografia aziendale e ritratti corporate</li>
-        <li>Riprese con drone e video aerei</li>
-        <li>Fotografia aerea professionale</li>
+        <li>Video corporate e istituzionali</li>
+        <li>Video aziendali per siti web e marketing</li>
         <li>Interviste executive</li>
-        <li>Contenuti per marketing e comunicazione</li>
+        <li>Video promozionali e storytelling</li>
       </ul>
-
-      <h2 className="text-2xl mb-6">Metodo di lavoro</h2>
-
-      <p className="text-foreground/70 mb-6">
-        Analizziamo gli obiettivi aziendali per sviluppare un concept visivo efficace e coerente con il brand.
-      </p>
-
-      <p className="text-foreground/70 mb-10">
-        Gestiamo tutte le fasi: ideazione, produzione video, fotografia, drone e post-produzione.
-      </p>
 
       <h2 className="text-2xl mb-6">Perché scegliere Artevent Production a Vicenza</h2>
 
       <p className="text-foreground/70 mb-10">
-        Approccio cinematografico, tecnologie avanzate e attenzione ai dettagli per contenuti visivi distintivi.
+        Offriamo qualità visiva elevata, attenzione ai dettagli e una narrazione pensata per valorizzare il tuo brand in modo concreto.
       </p>
 
-      {/* SERVIZI */}
-      <p className="text-foreground/70 mb-6">
-        Scopri anche i nostri servizi di 
-        <a href="/riprese-drone-vicenza" className="underline"> riprese con drone a Vicenza</a> 
-        e 
-        <a href="/fotografia-aziendale-vicenza" className="underline"> fotografia aziendale a Vicenza</a>.
-      </p>
-
-      {/* INTERLINK COMPLETI */}
-      <p className="text-foreground/70 mb-10">
-        Operiamo anche a 
-        <a href="/produzione-video-corporate-vicenza" className="underline"> Vicenza</a>, 
-        <a href="/produzione-video-corporate-padova" className="underline"> Padova</a>, 
-        <a href="/produzione-video-corporate-treviso" className="underline"> Treviso</a>, 
-        <a href="/produzione-video-corporate-venezia" className="underline"> Venezia</a>, 
-        <a href="/produzione-video-corporate-belluno" className="underline"> Belluno</a>, 
-        <a href="/produzione-video-corporate-rovigo" className="underline"> Rovigo</a>, 
-        <a href="/produzione-video-corporate-asiago" className="underline"> Asiago</a>, 
-        <a href="/produzione-video-corporate-trento" className="underline"> Trento</a> 
-        e 
-        <a href="/produzione-video-corporate-bolzano" className="underline"> Bolzano</a>.
-      </p>
-
-      <a href="/#contact" className="border px-8 py-4 inline-block hover:bg-primary transition">
+      <a
+        href="/#contact"
+        className="border px-8 py-4 inline-block hover:bg-primary transition"
+      >
         Parliamo del tuo progetto
       </a>
 
