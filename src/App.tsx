@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Home from "./pages/Home";
+
 import CorporateVerona from "./pages/CorporateVerona";
 import CorporateVicenza from "./pages/CorporateVicenza";
 import CorporatePadova from "./pages/CorporatePadova";
@@ -27,8 +29,8 @@ function App() {
     <Router>
       <Routes>
 
-        {/* HOME (placeholder come prima) */}
-        <Route path="/" element={<div>HOME</div>} />
+        {/* HOME */}
+        <Route path="/" element={<Home />} />
 
         {/* CORPORATE */}
         <Route path="/produzione-video-corporate-verona" element={<CorporateVerona />} />
