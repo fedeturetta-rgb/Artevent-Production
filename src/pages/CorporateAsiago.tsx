@@ -9,42 +9,98 @@ const CorporateAsiago = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl md:text-6xl font-light mb-10"
       >
-        Produzione Video Corporate ad Asiago.
+        Produzione Video Aziendali, Fotografia Corporate e Riprese Drone ad Asiago
       </motion.h1>
 
       <p className="mb-6 text-foreground/70">
-        Offriamo servizi di produzione video corporate ad Asiago per aziende e attività che vogliono distinguersi con contenuti professionali e valorizzare il proprio brand.
-      </p>
-
-      <h2 className="text-2xl mb-6">Video aziendali ad Asiago per il tuo brand</h2>
-
-      <p className="text-foreground/70 mb-6">
-        I video aziendali ad Asiago sono uno strumento strategico per migliorare la percezione del brand e aumentare la visibilità della tua attività.
+        Artevent Production è specializzata nella produzione di video aziendali, fotografia corporate e riprese con drone ad Asiago, aiutando aziende e brand a comunicare con contenuti visivi di alto livello.
       </p>
 
       <p className="text-foreground/70 mb-10">
-        Artevent Production realizza video corporate ad Asiago curando ogni fase: concept creativo, produzione e post-produzione professionale.
+        Realizziamo video corporate, shooting fotografici aziendali e video aerei progettati per migliorare la percezione del brand, aumentare la visibilità e rafforzare la comunicazione aziendale.
       </p>
 
-      <h2 className="text-2xl mb-6">Produzione video corporate ad Asiago: cosa realizziamo</h2>
+      <h2 className="text-2xl mb-6">Video aziendali e video corporate ad Asiago</h2>
+
+      <p className="text-foreground/70 mb-6">
+        Produciamo video aziendali e corporate ad Asiago per siti web, campagne marketing e comunicazione interna, sviluppando contenuti su misura per ogni brand.
+      </p>
+
+      <p className="text-foreground/70 mb-10">
+        Ogni produzione video è progettata per trasmettere identità, valori e posizionamento in modo chiaro, professionale e coerente.
+      </p>
+
+      <h2 className="text-2xl mb-6">Fotografia aziendale e fotografia corporate ad Asiago</h2>
+
+      <p className="text-foreground/70 mb-6">
+        Realizziamo fotografia aziendale e corporate ad Asiago per creare un’immagine forte e coerente su sito web, social e materiali marketing.
+      </p>
+
+      <p className="text-foreground/70 mb-10">
+        Produciamo ritratti professionali e contenuti visivi progettati per valorizzare l’identità aziendale.
+      </p>
+
+      <h2 className="text-2xl mb-6">Riprese con drone ad Asiago e video aerei</h2>
+
+      <p className="text-foreground/70 mb-6">
+        Le riprese con drone ad Asiago permettono di ottenere immagini ad alto impatto visivo e prospettive uniche per aziende e location.
+      </p>
+
+      <p className="text-foreground/70 mb-10">
+        Utilizziamo droni professionali per realizzare video aerei cinematici e fotografia aerea integrata nelle produzioni corporate.
+      </p>
+
+      <h2 className="text-2xl mb-6">Servizi di produzione video e fotografia aziendale ad Asiago</h2>
 
       <ul className="space-y-2 text-foreground/70 mb-10">
-        <li>Video corporate e istituzionali</li>
-        <li>Video aziendali per siti web e marketing</li>
+        <li>Produzione video aziendali e corporate</li>
+        <li>Fotografia aziendale e ritratti corporate</li>
+        <li>Riprese con drone e video aerei</li>
+        <li>Fotografia aerea professionale</li>
         <li>Interviste executive</li>
-        <li>Video promozionali e storytelling</li>
+        <li>Contenuti per marketing e comunicazione</li>
       </ul>
+
+      <h2 className="text-2xl mb-6">Metodo di lavoro</h2>
+
+      <p className="text-foreground/70 mb-6">
+        Analizziamo gli obiettivi aziendali per sviluppare un concept visivo efficace e coerente con il brand.
+      </p>
+
+      <p className="text-foreground/70 mb-10">
+        Gestiamo tutte le fasi: ideazione, produzione video, fotografia, drone e post-produzione.
+      </p>
 
       <h2 className="text-2xl mb-6">Perché scegliere Artevent Production ad Asiago</h2>
 
       <p className="text-foreground/70 mb-10">
-        Offriamo qualità visiva elevata, attenzione ai dettagli e una narrazione pensata per valorizzare il tuo brand in modo concreto.
+        Approccio cinematografico, tecnologie avanzate e attenzione ai dettagli per contenuti visivi distintivi.
       </p>
 
-      <a
-        href="/#contact"
-        className="border px-8 py-4 inline-block hover:bg-primary transition"
-      >
+      {/* SERVIZI */}
+      <p className="text-foreground/70 mb-6">
+        Scopri anche i nostri servizi di 
+        <a href="/riprese-drone-asiago" className="underline"> riprese con drone ad Asiago</a> 
+        e 
+        <a href="/fotografia-aziendale-asiago" className="underline"> fotografia aziendale ad Asiago</a>.
+      </p>
+
+      {/* INTERLINK COMPLETI */}
+      <p className="text-foreground/70 mb-10">
+        Operiamo anche a 
+        <a href="/produzione-video-corporate-vicenza" className="underline"> Vicenza</a>, 
+        <a href="/produzione-video-corporate-padova" className="underline"> Padova</a>, 
+        <a href="/produzione-video-corporate-treviso" className="underline"> Treviso</a>, 
+        <a href="/produzione-video-corporate-venezia" className="underline"> Venezia</a>, 
+        <a href="/produzione-video-corporate-belluno" className="underline"> Belluno</a>, 
+        <a href="/produzione-video-corporate-rovigo" className="underline"> Rovigo</a>, 
+        <a href="/produzione-video-corporate-asiago" className="underline"> Asiago</a>, 
+        <a href="/produzione-video-corporate-trento" className="underline"> Trento</a> 
+        e 
+        <a href="/produzione-video-corporate-bolzano" className="underline"> Bolzano</a>.
+      </p>
+
+      <a href="/#contact" className="border px-8 py-4 inline-block hover:bg-primary transition">
         Parliamo del tuo progetto
       </a>
 

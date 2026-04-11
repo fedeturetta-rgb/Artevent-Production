@@ -3,10 +3,20 @@ import react from "@vitejs/plugin-react-swc";
 import { fileURLToPath, URL } from "node:url";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: "/",
-  
+
+  plugins: [
+    react(),
+    mode === "development" && componentTagger()
+  ].filter(Boolean),
+
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+
   server: {
     host: "::",
     port: 8080,
@@ -14,16 +24,8 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },  build: {
+
+  build: {
     chunkSizeWarningLimit: 600,
-    rolldownOptions: {
-      output: {
-        codeSplitting: true,
-      },
-    },
-  },}));
+  }
+}));

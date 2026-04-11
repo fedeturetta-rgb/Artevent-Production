@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const CorporatePadova = () => {
+const CorporateBolzano = () => {
   return (
     <section className="min-h-screen px-6 py-32 max-w-5xl mx-auto">
 
@@ -9,48 +9,48 @@ const CorporatePadova = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl md:text-6xl font-light mb-10"
       >
-        Produzione Video Aziendali, Fotografia Corporate e Riprese Drone a Padova
+        Produzione Video Aziendali, Fotografia Corporate e Riprese Drone a Bolzano
       </motion.h1>
 
       <p className="mb-6 text-foreground/70">
-        Artevent Production è specializzata nella produzione di video aziendali, fotografia corporate e riprese con drone a Padova, aiutando aziende e brand a comunicare con contenuti visivi di alto livello.
+        Artevent Production è specializzata nella produzione di video aziendali, fotografia corporate e riprese con drone a Bolzano, aiutando aziende e brand a comunicare con contenuti visivi di alto livello.
       </p>
 
       <p className="text-foreground/70 mb-10">
         Realizziamo video corporate, shooting fotografici aziendali e video aerei progettati per migliorare la percezione del brand, aumentare la visibilità e rafforzare la comunicazione aziendale.
       </p>
 
-      <h2 className="text-2xl mb-6">Video aziendali e video corporate a Padova</h2>
+      <h2 className="text-2xl mb-6">Video aziendali e video corporate a Bolzano</h2>
 
       <p className="text-foreground/70 mb-6">
-        Produciamo video aziendali e corporate a Padova per siti web, campagne marketing e comunicazione interna, sviluppando contenuti su misura per ogni brand.
+        Produciamo video aziendali e corporate a Bolzano per siti web, campagne marketing e comunicazione interna, sviluppando contenuti su misura per ogni brand.
       </p>
 
       <p className="text-foreground/70 mb-10">
         Ogni produzione video è progettata per trasmettere identità, valori e posizionamento in modo chiaro, professionale e coerente.
       </p>
 
-      <h2 className="text-2xl mb-6">Fotografia aziendale e fotografia corporate a Padova</h2>
+      <h2 className="text-2xl mb-6">Fotografia aziendale e fotografia corporate a Bolzano</h2>
 
       <p className="text-foreground/70 mb-6">
-        Realizziamo fotografia aziendale e corporate a Padova per creare un’immagine forte e coerente su sito web, social e materiali marketing.
+        Realizziamo fotografia aziendale e corporate a Bolzano per creare un’immagine forte e coerente su sito web, social e materiali marketing.
       </p>
 
       <p className="text-foreground/70 mb-10">
         Produciamo ritratti professionali e contenuti visivi progettati per valorizzare l’identità aziendale.
       </p>
 
-      <h2 className="text-2xl mb-6">Riprese con drone a Padova e video aerei</h2>
+      <h2 className="text-2xl mb-6">Riprese con drone a Bolzano e video aerei</h2>
 
       <p className="text-foreground/70 mb-6">
-        Le riprese con drone a Padova permettono di ottenere immagini ad alto impatto visivo e prospettive uniche per aziende e location.
+        Le riprese con drone a Bolzano permettono di ottenere immagini ad alto impatto visivo e prospettive uniche per aziende e location.
       </p>
 
       <p className="text-foreground/70 mb-10">
         Utilizziamo droni professionali per realizzare video aerei cinematici e fotografia aerea integrata nelle produzioni corporate.
       </p>
 
-      <h2 className="text-2xl mb-6">Servizi di produzione video e fotografia aziendale a Padova</h2>
+      <h2 className="text-2xl mb-6">Servizi di produzione video e fotografia aziendale a Bolzano</h2>
 
       <ul className="space-y-2 text-foreground/70 mb-10">
         <li>Produzione video aziendali e corporate</li>
@@ -71,7 +71,7 @@ const CorporatePadova = () => {
         Gestiamo tutte le fasi: ideazione, produzione video, fotografia, drone e post-produzione.
       </p>
 
-      <h2 className="text-2xl mb-6">Perché scegliere Artevent Production a Padova</h2>
+      <h2 className="text-2xl mb-6">Perché scegliere Artevent Production a Bolzano</h2>
 
       <p className="text-foreground/70 mb-10">
         Approccio cinematografico, tecnologie avanzate e attenzione ai dettagli per contenuti visivi distintivi.
@@ -80,9 +80,9 @@ const CorporatePadova = () => {
       {/* SERVIZI */}
       <p className="text-foreground/70 mb-6">
         Scopri anche i nostri servizi di 
-        <a href="/riprese-drone-padova" className="underline"> riprese con drone a Padova</a> 
+        <a href="/riprese-drone-bolzano" className="underline"> riprese con drone a Bolzano</a> 
         e 
-        <a href="/fotografia-aziendale-padova" className="underline"> fotografia aziendale a Padova</a>.
+        <a href="/fotografia-aziendale-bolzano" className="underline"> fotografia aziendale a Bolzano</a>.
       </p>
 
       {/* INTERLINK COMPLETI */}
@@ -108,4 +108,4 @@ const CorporatePadova = () => {
   );
 };
 
-export default CorporatePadova;
+export default CorporateBolzano;
