@@ -28,7 +28,7 @@ function App() {
       <Routes>
 
         {/* HOME */}
-        <Route path="/" element={<div>HOME</div>} />
+        <Route path="/" element={<CorporateVerona />} />
 
         {/* CORPORATE */}
         <Route path="/produzione-video-corporate-verona" element={<CorporateVerona />} />
