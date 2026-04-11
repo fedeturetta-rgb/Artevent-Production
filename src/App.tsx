@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
+import Index from "./pages/Index";
 
 import CorporateVerona from "./pages/CorporateVerona";
 import CorporateVicenza from "./pages/CorporateVicenza";
@@ -29,8 +29,8 @@ function App() {
     <Router>
       <Routes>
 
-        {/* HOME */}
-        <Route path="/" element={<Home />} />
+        {/* HOME REALE */}
+        <Route path="/" element={<Index />} />
 
         {/* CORPORATE */}
         <Route path="/produzione-video-corporate-verona" element={<CorporateVerona />} />
