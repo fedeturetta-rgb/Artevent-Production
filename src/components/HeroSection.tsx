@@ -71,6 +71,8 @@ const HeroSection = () => {
             desktopSrc={desktopVideoPath}
             mobileSrc={mobileVideoPath}
             videoRef={heroVideoRef}
+            delayMs={0}
+            showPoster={false}
             className="w-full h-full"
           />
         ) : null}

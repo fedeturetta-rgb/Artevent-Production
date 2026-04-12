@@ -8,6 +8,7 @@ type ResponsiveHeroVideoProps = {
   posterSrc?: string;
   delayMs?: number;
   videoRef?: RefObject<HTMLVideoElement | null>;
+  showPoster?: boolean;
 };
 
 const MOBILE_BREAKPOINT = 768;
@@ -20,6 +21,7 @@ const ResponsiveHeroVideo = ({
   posterSrc = "/images/hero-bg.jpg",
   delayMs = 250,
   videoRef,
+  showPoster = true,
 }: ResponsiveHeroVideoProps) => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
@@ -52,14 +54,16 @@ const ResponsiveHeroVideo = ({
 
   return (
     <>
-      <img
-        src={posterSrc}
-        alt=""
-        aria-hidden="true"
-        loading="eager"
-        decoding="async"
-        className={`absolute inset-0 h-full w-full object-cover ${posterClassName}`.trim()}
-      />
+      {showPoster ? (
+        <img
+          src={posterSrc}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          className={`absolute inset-0 h-full w-full object-cover ${posterClassName}`.trim()}
+        />
+      ) : null}
 
       {shouldLoadVideo && resolvedVideoSrc ? (
         <video
