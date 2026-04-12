@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SeoHead from "@/components/SeoHead";
+import ResponsiveHeroVideo from "@/components/ResponsiveHeroVideo";
 
 const cityLinks = [
   { label: "Verona", to: "/produzione-video-corporate-verona" },
@@ -45,27 +46,10 @@ const CorporateVenetoTrentino = () => {
       <section className="relative min-h-[1400px] overflow-hidden bg-gradient-dark pb-0 pt-0 md:min-h-[1120px] lg:min-h-[1180px]">
         <div className="absolute inset-0">
           <div className="absolute inset-0">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="hidden h-full w-full object-cover md:block"
-            >
-              <source src="/videos/Homepage_16:9_comp.mp4" type="video/mp4" />
-            </video>
-
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="block h-full w-full object-cover md:hidden"
-            >
-              <source src="/videos/Homepage_9:16_comp.mp4" type="video/mp4" />
-            </video>
+            <ResponsiveHeroVideo
+              desktopSrc="/videos/Homepage_16:9_comp.mp4"
+              mobileSrc="/videos/Homepage_9:16_comp.mp4"
+            />
           </div>
         </div>
 

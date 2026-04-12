@@ -35,12 +35,12 @@ type SelectedProjectState = {
 const projects: Project[] = [
   {
     videoUrl: "", //PARRUCCHIERE
-    thumbnailUrl: "/videos/1_comp_original.mp4",
+    thumbnailUrl: "/videos/1_comp.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-        poster: "/videos/1_comp_original.mp4",
+        poster: "/videos/1_comp.mp4",
       },
       { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
       { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
@@ -56,12 +56,12 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //ORMANETO
-    thumbnailUrl: "/videos/10_comp_original.mp4",
+    thumbnailUrl: "/videos/10_comp.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1G6g3gW0Pooj3EWPSs6cdGjeBdguUPf3L/view?usp=sharing",
-        poster: "/videos/10_comp_original.mp4",
+        poster: "/videos/10_comp.mp4",
       },
       { type: "image", src: "/images/Ormaneto/1.jpg", alt: "" },
       { type: "image", src: "/images/Ormaneto/2.jpg", alt: "" },
@@ -81,12 +81,12 @@ const projects: Project[] = [
   },
   {
     videoUrl: "", //CASTELMANI
-    thumbnailUrl: "/videos/2_comp_original.mp4",
+    thumbnailUrl: "/videos/2_comp.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1OeeHNeU1gwGlGViQMcSpNwWywnE34TGF/view?usp=sharing",
-        poster: "/videos/2_comp_original.mp4",
+        poster: "/videos/2_comp.mp4",
       },
       { type: "image", src: "/images/Castelmani/1.jpg", alt: "" },
       { type: "image", src: "/images/Castelmani/2.jpg", alt: "" },
@@ -113,7 +113,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1BDzI9FG54VJiB63BOys2Qy6dLg90RXcR/view?usp=sharing",
-        poster: "/videos/6_comp_original.mp4",
+        poster: "/videos/6_comp.mp4",
       },
       {
         type: "video",
@@ -194,12 +194,12 @@ const projects: Project[] = [
   // RIQUADRI NASCOSTI
   {
     videoUrl: "", //SARACINO
-    thumbnailUrl: "/videos/13_comp_original.mp4",
+    thumbnailUrl: "/videos/13_comp.mp4",
     media: [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1XHi_FwnCJhQFpLaliPWhXU1OexbxECdS/view?usp=sharing",
-        poster: "/videos/13_comp_original.mp4",
+        poster: "/videos/13_comp.mp4",
       },
       { type: "image", src: "/images/Saracino/1.jpg", alt: "" },
       { type: "image", src: "/images/Saracino/2.jpg", alt: "" },
@@ -222,7 +222,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/13LoXFtySVKui4RwrxGAx2xp7JKJc5P0L/view?usp=sharing",
-        poster: "/videos/12_comp_original.mp4",
+        poster: "/videos/12_comp.mp4",
       },
     ],
   },
@@ -233,7 +233,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/1rDOBecbkm1_vBHT7SGn8cwsS4rvmFZCS/view?usp=sharing",
-        poster: "/videos/9_comp_original.mp4",
+        poster: "/videos/9_comp.mp4",
       },
     ],
   },
@@ -244,7 +244,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/15X-vQL06C_5QsN415ECNac_Pptf80Lvx/view?usp=sharing",
-        poster: "/videos/4_comp_original.mp4",
+        poster: "/videos/4_comp.mp4",
       },
     ],
   },
@@ -289,7 +289,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://drive.google.com/file/d/16ME0EaJ8sI7aqlxoYC2M1nyNMGYef6k5/view?usp=sharing",
-        poster: "/videos/8_comp_original.mp4",
+        poster: "/videos/8_comp.mp4",
       },
       { type: "image", src: "/images/Dolomiti/1.jpg", alt: "" },
       { type: "image", src: "/images/Dolomiti/2.jpg", alt: "" },

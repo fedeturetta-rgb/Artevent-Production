@@ -4,44 +4,42 @@ import { useRef, useState } from "react";
 import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
+import ResponsiveHeroVideo from "@/components/ResponsiveHeroVideo";
 
 // Video 16:9 usato su desktop (già presente)
-const desktopVideoPath = "/videos/Homepage_16:9_comp.mp4";
+const desktopVideoPath = "/videos/Homepage_16:9_finale_comp.mp4";
 
 // Video 9:16 usato su mobile. Inserisci il percorso del tuo file in public/videos/
 // Esempio: "/videos/SHOWREEL_homepage_9.16.mp4"
 // Lascia stringa vuota per usare anche su mobile il video desktop 16:9
-const mobileVideoPath = "/videos/Homepage_9:16_comp.mp4";
+const mobileVideoPath = "/videos/Homepage_9:16_finale_comp.mp4";
 
 const HeroSection = () => {
   const { language } = useLanguage();
   const loadHeroVideo = true;
-  const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
-  const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isHeroVideoPlaying, setIsHeroVideoPlaying] = useState(true);
   const videoUrl = "https://drive.google.com/file/d/1txr3GK9RK6-8h_SVGQV1Llt5DIZPR5KA/view?usp=share_link";
 
   const toggleHeroVideoPlayback = async () => {
-    const videos = [desktopVideoRef.current, mobileVideoRef.current].filter(
-      (video): video is HTMLVideoElement => video !== null,
-    );
+    const video = heroVideoRef.current;
+
+    if (!video) {
+      return;
+    }
 
     if (isHeroVideoPlaying) {
-      videos.forEach((video) => video.pause());
+      video.pause();
       setIsHeroVideoPlaying(false);
       return;
     }
 
-    await Promise.all(
-      videos.map(async (video) => {
-        try {
-          await video.play();
-        } catch {
-          // Ignore playback rejections from inactive/hidden video elements.
-        }
-      }),
-    );
+    try {
+      await video.play();
+    } catch {
+      return;
+    }
 
     setIsHeroVideoPlaying(true);
   };
@@ -68,37 +66,14 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background video */}
       <div className="absolute inset-0">
-        {/* Video 16:9 — desktop; se mobileVideoPath è vuoto, visibile anche su mobile */}
-        {loadHeroVideo && (
-          <video
-            ref={desktopVideoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className={`w-full h-full object-cover ${
-              mobileVideoPath ? "hidden md:block" : ""
-            }`}
-          >
-            <source src={desktopVideoPath} type="video/mp4" />
-          </video>
-        )}
-
-        {/* Video 9:16 — solo mobile */}
-        {loadHeroVideo && mobileVideoPath && (
-          <video
-            ref={mobileVideoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="block md:hidden w-full h-full object-cover"
-          >
-            <source src={mobileVideoPath} type="video/mp4" />
-          </video>
-        )}
+        {loadHeroVideo ? (
+          <ResponsiveHeroVideo
+            desktopSrc={desktopVideoPath}
+            mobileSrc={mobileVideoPath}
+            videoRef={heroVideoRef}
+            className="w-full h-full"
+          />
+        ) : null}
 
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--deep-black))_0%,hsl(var(--deep-black)/0.5)_14%,hsl(var(--deep-black)/0.08)_34%,hsl(var(--deep-black)/0.01)_58%,hsl(var(--deep-black)/0.46)_76%,hsl(var(--deep-black)/0.72)_90%,hsl(var(--deep-black))_100%)]" />
       </div>
