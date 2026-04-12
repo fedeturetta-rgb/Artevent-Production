@@ -1,0 +1,149 @@
+import { Link } from "react-router-dom";
+import SeoHead from "@/components/SeoHead";
+
+const cityLinks = [
+  { label: "Verona", to: "/produzione-video-corporate-verona" },
+  { label: "Vicenza", to: "/produzione-video-corporate-vicenza" },
+  { label: "Asiago", to: "/produzione-video-corporate-asiago" },
+  { label: "Padova", to: "/produzione-video-corporate-padova" },
+  { label: "Treviso", to: "/produzione-video-corporate-treviso" },
+  { label: "Venezia", to: "/produzione-video-corporate-venezia" },
+  { label: "Belluno", to: "/produzione-video-corporate-belluno" },
+  { label: "Rovigo", to: "/produzione-video-corporate-rovigo" },
+  { label: "Trento", to: "/produzione-video-corporate-trento" },
+  { label: "Bolzano", to: "/produzione-video-corporate-bolzano" },
+];
+
+const sections = [
+  {
+    title: "Produzione video corporate per aziende e brand",
+    body: "Sviluppiamo video aziendali, branded content, interviste e contenuti istituzionali per raccontare processi, persone e posizionamento del marchio con un linguaggio visivo coerente e contemporaneo.",
+  },
+  {
+    title: "Fotografia aziendale e contenuti editoriali",
+    body: "Affianchiamo alla produzione video servizi fotografici corporate, reportage di location, ritratti professionali e immagini per sito, social, press kit e materiali commerciali.",
+  },
+  {
+    title: "Riprese drone in Veneto e Trentino",
+    body: "Le riprese aeree completano la narrazione con inquadrature d'impatto per aziende, hospitality, real estate, architettura, manifattura e destinazioni che vogliono valorizzare contesto e scala.",
+  },
+  {
+    title: "Aree operative",
+    body: "Operiamo in modo continuativo tra Veneto e Trentino, coordinando produzioni snelle o set piu articolati in base a obiettivi, location e piano di distribuzione dei contenuti.",
+  },
+];
+
+const CorporateVenetoTrentino = () => {
+  return (
+    <div>
+      <SeoHead
+        title="Produzione Video Corporate in Veneto e Trentino | Artevent Production"
+        description="Artevent Production realizza video corporate, fotografia aziendale e riprese drone in Veneto e Trentino, con operativita a Verona, Vicenza, Asiago, Padova, Treviso, Venezia, Belluno, Rovigo, Trento e Bolzano."
+        canonicalPath="/produzione-video-corporate-veneto-trentino"
+      />
+
+      <section className="relative min-h-[1400px] overflow-hidden bg-gradient-dark pb-0 pt-0 md:min-h-[1120px] lg:min-h-[1180px]">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="hidden h-full w-full object-cover md:block"
+            >
+              <source src="/videos/Homepage_16:9_comp.mp4" type="video/mp4" />
+            </video>
+
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="block h-full w-full object-cover md:hidden"
+            >
+              <source src="/videos/Homepage_9:16_comp.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div className="cinema-overlay absolute inset-0" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,3,3,0.5)_0%,rgba(3,3,3,0.36)_28%,rgba(3,3,3,0.62)_68%,rgba(3,3,3,0.82)_100%)]" />
+        <div className="absolute inset-0 z-10 bg-black/22 backdrop-blur-[3px]" />
+
+        <div className="relative z-20 mx-auto flex max-w-7xl flex-col gap-10 px-5 py-12 text-white md:min-h-[1120px] md:pl-8 md:pr-4 md:py-16 lg:min-h-[1180px] lg:gap-12 lg:pl-10 lg:pr-5 lg:py-20 xl:pl-12 xl:pr-4">
+          <div className="w-full max-w-none">
+            <p className="mb-6 font-body text-sm uppercase tracking-[0.5em] gold-text-soft md:text-base">
+              Veneto e Trentino
+            </p>
+
+            <h1 className="max-w-none text-4xl font-light leading-tight md:max-w-[97%] md:text-6xl lg:max-w-[98%] lg:text-7xl">
+              Produzione Video Corporate,
+              <br />
+              Fotografia e Riprese Drone in Veneto e Trentino
+            </h1>
+
+            <div className="mb-2 mt-12 flex flex-wrap justify-center gap-4 md:mb-3 md:mt-14">
+              <Link
+                to="/"
+                className="inline-block border border-white/20 px-8 py-4 text-white/80 transition hover:border-primary hover:text-primary"
+              >
+                Visita il sito
+              </Link>
+            </div>
+          </div>
+
+          <div className="w-full">
+            <p className="mb-5 text-xl text-white/90 md:text-2xl">
+              Una pagina hub per collegare in modo chiaro le aree operative e le landing locali piu rilevanti.
+            </p>
+
+            <p className="mb-10 w-full max-w-none text-base leading-8 text-white/80 md:max-w-[94%] md:text-lg">
+              Artevent Production segue produzioni corporate tra Veneto e Trentino per aziende, hospitality, manifattura, real estate ed eventi. Qui trovi una panoramica delle citta coperte e dei servizi attivi, con collegamenti diretti alle landing dedicate per intercettare ricerche locali e offrire un percorso di navigazione piu pulito anche agli utenti.
+            </p>
+
+            <div className="grid gap-x-16 gap-y-10 md:grid-cols-2 xl:grid-cols-2">
+              {sections.map((section) => (
+                <div key={section.title}>
+                  <h2 className="mb-3 text-3xl font-light text-white">
+                    {section.title}
+                  </h2>
+
+                  <p className="text-base leading-8 text-white/80 md:text-lg">
+                    {section.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 border-t border-white/10 pt-10">
+              <h2 className="mb-3 text-3xl font-light text-white">
+                Citta servite
+              </h2>
+
+              <p className="mb-6 max-w-4xl text-base leading-8 text-white/80 md:text-lg">
+                Approfondisci ogni area con le landing dedicate a Verona, Vicenza, Asiago, Padova, Treviso, Venezia, Belluno, Rovigo, Trento e Bolzano.
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                {cityLinks.map(({ label, to }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="border border-white/15 px-4 py-3 font-body text-[11px] uppercase tracking-[0.28em] text-white/80 transition-all duration-500 hover:border-primary hover:text-primary"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default CorporateVenetoTrentino;

@@ -1,54 +1,37 @@
-import { motion } from "framer-motion";
+import CorporateLanding from "@/components/CorporateLanding";
 
 const CorporateVicenza = () => {
   return (
-    <section className="min-h-screen px-6 py-32 max-w-5xl mx-auto">
-
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-6xl font-light mb-10"
-      >
-        Produzione Video Corporate a Vicenza.
-      </motion.h1>
-
-      <p className="mb-6 text-foreground/70">
-        Offriamo servizi di produzione video corporate a Vicenza per aziende che vogliono distinguersi con contenuti professionali e comunicare in modo efficace.
-      </p>
-
-      <h2 className="text-2xl mb-6">Video aziendali a Vicenza per il tuo brand</h2>
-
-      <p className="text-foreground/70 mb-6">
-        I video aziendali a Vicenza sono uno strumento strategico per migliorare la percezione del brand e aumentare la visibilità della tua attività.
-      </p>
-
-      <p className="text-foreground/70 mb-10">
-        Artevent Production realizza video corporate a Vicenza curando ogni fase: concept creativo, produzione e post-produzione professionale.
-      </p>
-
-      <h2 className="text-2xl mb-6">Produzione video corporate a Vicenza: cosa realizziamo</h2>
-
-      <ul className="space-y-2 text-foreground/70 mb-10">
-        <li>Video corporate e istituzionali</li>
-        <li>Video aziendali per siti web e marketing</li>
-        <li>Interviste executive</li>
-        <li>Video promozionali e storytelling</li>
-      </ul>
-
-      <h2 className="text-2xl mb-6">Perché scegliere Artevent Production a Vicenza</h2>
-
-      <p className="text-foreground/70 mb-10">
-        Offriamo qualità visiva elevata, attenzione ai dettagli e una narrazione pensata per valorizzare il tuo brand in modo concreto.
-      </p>
-
-      <a
-        href="/#contact"
-        className="border px-8 py-4 inline-block hover:bg-primary transition"
-      >
-        Parliamo del tuo progetto
-      </a>
-
-    </section>
+    <CorporateLanding
+      city="Vicenza"
+      seoTitle="Produzione Video Aziendali a Vicenza | Artevent Production"
+      heroLine1="Produzione Video Aziendali,"
+      heroLine2="Fotografia e Riprese Drone a Vicenza"
+      introLead="Video corporate, fotografia aziendale e riprese aeree professionali per aziende e brand a Vicenza."
+      introBody="Offriamo servizi di produzione video corporate a Vicenza per aziende che vogliono distinguersi con contenuti professionali, valorizzare il proprio posizionamento e comunicare in modo efficace."
+      seoDescription="Produzione video corporate a Vicenza, fotografia aziendale e riprese drone per aziende e brand che vogliono migliorare posizionamento, visibilita e comunicazione."
+      sections={[
+        {
+          title: "Video aziendali e video corporate a Vicenza",
+          body: "I video aziendali a Vicenza sono uno strumento strategico per migliorare la percezione del brand e aumentare la visibilità della tua attività.",
+        },
+        {
+          title: "Fotografia aziendale",
+          body: "Realizziamo servizi fotografici corporate per siti web, social e materiali di comunicazione, con uno stile coerente e professionale.",
+        },
+        {
+          title: "Riprese drone e video aerei a Vicenza",
+          body: "Artevent Production realizza riprese aeree e video corporate a Vicenza curando ogni fase: concept creativo, produzione e post-produzione professionale.",
+        },
+      ]}
+      services={[
+        "Video corporate e istituzionali",
+        "Video aziendali per siti web e marketing",
+        "Interviste executive",
+        "Video promozionali e storytelling",
+      ]}
+      relatedCitiesLine="Operiamo anche a"
+    />
   );
 };
 

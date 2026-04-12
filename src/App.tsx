@@ -14,6 +14,13 @@ import CorporateVerona from "./pages/CorporateVerona";
 import CorporateVicenza from "./pages/CorporateVicenza";
 import CorporateAsiago from "./pages/CorporateAsiago";
 import CorporatePadova from "./pages/CorporatePadova";
+import CorporateTreviso from "./pages/CorporateTreviso";
+import CorporateVenezia from "./pages/CorporateVenezia";
+import CorporateBelluno from "./pages/CorporateBelluno";
+import CorporateRovigo from "./pages/CorporateRovigo";
+import CorporateTrento from "./pages/CorporateTrento";
+import CorporateBolzano from "./pages/CorporateBolzano";
+import CorporateVenetoTrentino from "./pages/CorporateVenetoTrentino";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +32,7 @@ const App = () => (
           <CustomCursor />
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/privacy-cookie" element={<PrivacyCookiePolicy />} />
@@ -33,6 +40,13 @@ const App = () => (
               <Route path="/produzione-video-corporate-vicenza" element={<CorporateVicenza />} />
               <Route path="/produzione-video-corporate-asiago" element={<CorporateAsiago />} />
               <Route path="/produzione-video-corporate-padova" element={<CorporatePadova />} />
+              <Route path="/produzione-video-corporate-treviso" element={<CorporateTreviso />} />
+              <Route path="/produzione-video-corporate-venezia" element={<CorporateVenezia />} />
+              <Route path="/produzione-video-corporate-belluno" element={<CorporateBelluno />} />
+              <Route path="/produzione-video-corporate-rovigo" element={<CorporateRovigo />} />
+              <Route path="/produzione-video-corporate-trento" element={<CorporateTrento />} />
+              <Route path="/produzione-video-corporate-bolzano" element={<CorporateBolzano />} />
+              <Route path="/produzione-video-corporate-veneto-trentino" element={<CorporateVenetoTrentino />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <ConsentBanner />

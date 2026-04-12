@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SeoHead from "@/components/SeoHead";
 
 const PrivacyCookiePolicy = () => {
   const { language } = useLanguage();
@@ -69,6 +70,16 @@ const PrivacyCookiePolicy = () => {
 
   return (
     <main className="min-h-screen bg-gradient-dark px-6 py-16 md:px-12">
+      <SeoHead
+        title={language === "it" ? "Privacy e Cookie Policy | Artevent Production" : "Privacy and Cookie Policy | Artevent Production"}
+        description={
+          language === "it"
+            ? "Informativa sintetica su privacy, cookie, preferenze consenso e analytics del sito Artevent Production."
+            : "Summary of privacy, cookie, consent preferences and analytics information for the Artevent Production website."
+        }
+        canonicalPath="/privacy-cookie"
+      />
+
       <div className="mx-auto max-w-4xl">
         <Link
           to="/"

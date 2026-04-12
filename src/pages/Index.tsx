@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import SeoHead from "@/components/SeoHead";
 
 const MissionSection = lazy(() => import("@/components/MissionSection"));
 const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
@@ -55,6 +56,12 @@ const LazyMount = ({ children, rootMargin = "300px 0px", minHeight = 120 }: Lazy
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SeoHead
+        title="Artevent Production | Video Corporate, Riprese Drone e Fotografia"
+        description="Artevent Production realizza video corporate, riprese drone e fotografia professionale per aziende, brand, hospitality ed eventi."
+        canonicalPath="/"
+      />
+
       <Navbar />
       <HeroSection />
 

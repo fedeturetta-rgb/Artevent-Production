@@ -12,6 +12,21 @@ const socialLinks = {
   youtube: "https://youtube.com/@artevent_production",
 };
 
+const cityLinks = [
+  { label: "Verona", to: "/produzione-video-corporate-verona" },
+  { label: "Vicenza", to: "/produzione-video-corporate-vicenza" },
+  { label: "Asiago", to: "/produzione-video-corporate-asiago" },
+  { label: "Padova", to: "/produzione-video-corporate-padova" },
+  { label: "Treviso", to: "/produzione-video-corporate-treviso" },
+  { label: "Venezia", to: "/produzione-video-corporate-venezia" },
+  { label: "Belluno", to: "/produzione-video-corporate-belluno" },
+  { label: "Rovigo", to: "/produzione-video-corporate-rovigo" },
+  { label: "Trento", to: "/produzione-video-corporate-trento" },
+  { label: "Bolzano", to: "/produzione-video-corporate-bolzano" },
+];
+
+const regionalHubPath = "/produzione-video-corporate-veneto-trentino";
+
 const Footer = () => {
   const { language } = useLanguage();
   const { openPreferences } = useConsent();
@@ -21,6 +36,14 @@ const Footer = () => {
       : "© 2026 Artevent Production. All rights reserved.";
   const preferencesLabel = language === "it" ? "Preferenze Privacy" : "Privacy Preferences";
   const policyLabel = language === "it" ? "Privacy e Cookie Policy" : "Privacy and Cookie Policy";
+  const cityLinksLabel =
+    language === "it" ? "Video corporate in Veneto e Trentino" : "Corporate video production in Veneto and Trentino";
+  const cityLinksDescription =
+    language === "it"
+      ? "Operiamo tra Veneto e Trentino con produzioni video corporate, fotografia aziendale e riprese drone per brand, imprese, hospitality ed eventi."
+      : "We work across Veneto and Trentino producing corporate videos, photography, and drone footage for brands, businesses, hospitality, and events.";
+  const hubLabel =
+    language === "it" ? "Panoramica sedi e aree operative" : "View coverage and locations";
   const availableSocialLinks = [
     {
       name: "Instagram",
@@ -82,6 +105,34 @@ const Footer = () => {
                 </a>
               );
             })}
+          </div>
+
+          <div className="w-full max-w-4xl border-t border-foreground/10 pt-8">
+            <p className="mb-5 font-body text-[10px] uppercase tracking-[0.32em] text-muted-foreground/70">
+              {cityLinksLabel}
+            </p>
+            <p className="mx-auto mb-6 max-w-3xl text-sm leading-7 text-foreground/60 md:text-[15px]">
+              {cityLinksDescription}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+              {cityLinks.map(({ label, to }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className="font-body text-[11px] uppercase tracking-[0.24em] text-foreground/65 transition-colors duration-500 hover:text-primary"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-7 flex justify-center">
+              <Link
+                to={regionalHubPath}
+                className="border border-primary/25 px-5 py-3 font-body text-[10px] uppercase tracking-[0.3em] text-foreground/72 transition-all duration-500 hover:border-primary hover:text-primary"
+              >
+                {hubLabel}
+              </Link>
+            </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-5">

@@ -1,54 +1,38 @@
-import { motion } from "framer-motion";
+import CorporateLanding from "@/components/CorporateLanding";
 
 const CorporateVerona = () => {
   return (
-    <section className="min-h-screen px-6 py-32 max-w-5xl mx-auto">
-
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-6xl font-light mb-10"
-      >
-        Produzione Video Corporate a Verona.
-      </motion.h1>
-
-      <p className="mb-6 text-foreground/70">
-        Offriamo servizi di produzione video corporate a Verona per aziende che vogliono distinguersi con contenuti cinematici e comunicare in modo efficace.
-      </p>
-
-      <h2 className="text-2xl mb-6">Video aziendali a Verona per il tuo brand</h2>
-
-      <p className="text-foreground/70 mb-6">
-        I video aziendali a Verona sono uno strumento strategico per migliorare la percezione del brand e aumentare la visibilità della tua attività.
-      </p>
-
-      <p className="text-foreground/70 mb-10">
-        Artevent Production realizza video corporate a Verona curando ogni fase: concept creativo, produzione e post-produzione professionale.
-      </p>
-
-      <h2 className="text-2xl mb-6">Produzione video corporate a Verona: cosa realizziamo</h2>
-
-      <ul className="space-y-2 text-foreground/70 mb-10">
-        <li>Video corporate e istituzionali</li>
-        <li>Video aziendali per siti web e marketing</li>
-        <li>Interviste executive</li>
-        <li>Video promozionali e storytelling</li>
-      </ul>
-
-      <h2 className="text-2xl mb-6">Perché scegliere Artevent Production a Verona</h2>
-
-      <p className="text-foreground/70 mb-10">
-        Offriamo qualità visiva elevata, attenzione ai dettagli e una narrazione pensata per valorizzare il tuo brand in modo concreto.
-      </p>
-
-      <a
-        href="/#contact"
-        className="border px-8 py-4 inline-block hover:bg-primary transition"
-      >
-        Parliamo del tuo progetto
-      </a>
-
-    </section>
+    <CorporateLanding
+      city="Verona"
+      seoTitle="Video Corporate e Riprese Drone a Verona | Artevent Production"
+      heroLine1="Produzione Video Aziendali,"
+      heroLine2="Fotografia e Riprese Drone a Verona"
+      introLead="Video corporate, fotografia aziendale e riprese aeree professionali per aziende e brand."
+      introBody="Realizziamo contenuti visivi pensati per raccontare identita, processi e valore dell'azienda con un linguaggio contemporaneo e una produzione curata in ogni dettaglio."
+      seoDescription="Produzione video corporate a Verona, fotografia aziendale e riprese drone per brand, aziende e hospitality. Artevent Production realizza contenuti visivi professionali per marketing e comunicazione."
+      sections={[
+        {
+          title: "Video aziendali e video corporate a Verona",
+          body: "Produciamo video aziendali per siti web, marketing e comunicazione interna, progettati per raccontare identità e valori del brand.",
+        },
+        {
+          title: "Fotografia aziendale",
+          body: "Realizziamo fotografia corporate per siti web, social e materiali marketing, creando un’immagine coerente e professionale.",
+        },
+        {
+          title: "Riprese drone e video aerei a Verona",
+          body: "Le riprese con drone permettono di ottenere immagini ad alto impatto visivo, ideali per aziende, strutture e progetti architettonici.",
+        },
+      ]}
+      services={[
+        "Produzione video aziendali e corporate",
+        "Fotografia aziendale e ritratti professionali",
+        "Riprese drone e video aerei",
+        "Fotografia aerea",
+        "Interviste executive",
+      ]}
+      relatedCitiesLine="Operiamo anche a"
+    />
   );
 };
 
