@@ -592,7 +592,7 @@ const PortfolioSection = () => {
               className="absolute inset-0 h-full w-full object-cover"
               draggable={false}
               loading={shouldPrioritizePreview ? "eager" : "lazy"}
-              fetchPriority={shouldPrioritizePreview ? "high" : "auto"}
+              fetchpriority={shouldPrioritizePreview ? "high" : "auto"}
               decoding="async"
             />
           );

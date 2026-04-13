@@ -64,8 +64,8 @@ const CorporateLanding = ({
         <div className="absolute inset-0">
           <div className="absolute inset-0">
             <ResponsiveHeroVideo
-              desktopSrc="/videos/Homepage_16:9_comp.mp4"
-              mobileSrc="/videos/Homepage_9:16_comp.mp4"
+              desktopSrc="/videos/Homepage_16:9_finale_comp.mp4"
+              mobileSrc="/videos/Homepage_9:16_finale_comp.mp4"
             />
           </div>
         </div>
