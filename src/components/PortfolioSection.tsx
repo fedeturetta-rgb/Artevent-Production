@@ -565,6 +565,7 @@ const PortfolioSection = () => {
     const projectMedia = getProjectMedia(project);
     const isLastOddMobileCard = projects.length % 2 === 1 && index === projects.length - 1;
     const isDesktopTailCard = desktopTailCount > 0 && index >= desktopTailStartIndex;
+    const shouldPrioritizePreview = index < 6;
 
     return (
       <motion.div
@@ -590,7 +591,8 @@ const PortfolioSection = () => {
               alt={previewMedia.type === "image" ? previewMedia.alt ?? getProjectLabel(projectIndex) : getProjectLabel(projectIndex)}
               className="absolute inset-0 h-full w-full object-cover"
               draggable={false}
-              loading="lazy"
+              loading={shouldPrioritizePreview ? "eager" : "lazy"}
+              fetchPriority={shouldPrioritizePreview ? "high" : "auto"}
               decoding="async"
             />
           );

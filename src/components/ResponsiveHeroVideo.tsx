@@ -73,7 +73,7 @@ const ResponsiveHeroVideo = ({
           loop
           playsInline
           preload="metadata"
-          poster={posterSrc}
+          poster={showPoster ? posterSrc : undefined}
           aria-hidden="true"
           className={`absolute inset-0 h-full w-full object-cover ${className}`.trim()}
         >
