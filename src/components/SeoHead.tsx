@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://arteventproduction.com";
-const DEFAULT_IMAGE_PATH = "/images/hero-bg.jpg";
+const DEFAULT_IMAGE_PATH = "/images/og-share-card.png";
 
 const toAbsoluteUrl = (pathOrUrl: string) => {
   if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) {
