@@ -66,6 +66,8 @@ const CorporateLanding = ({
             <ResponsiveHeroVideo
               desktopSrc="/videos/Homepage_16:9_finale_comp.mp4"
               mobileSrc="/videos/Homepage_9:16_finale_comp.mp4"
+              delayMs={0}
+              showPoster={false}
             />
           </div>
         </div>
