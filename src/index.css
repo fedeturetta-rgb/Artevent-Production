@@ -234,3 +234,35 @@
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
 }
+
+@media (max-width: 639px) and (orientation: landscape) {
+  .portfolio-modal-shell {
+    padding: 0.625rem;
+  }
+
+  .portfolio-modal-nav {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .portfolio-modal-footer {
+    margin-top: 0.5rem;
+  }
+
+  .portfolio-modal-hint {
+    display: none;
+  }
+
+  .portfolio-thumbnail-strip {
+    gap: 0.25rem;
+    padding-left: 0.125rem;
+    padding-right: 0.125rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .portfolio-thumbnail {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.375rem;
+  }
+}
