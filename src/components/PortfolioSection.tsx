@@ -741,7 +741,7 @@ const PortfolioSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/95 p-2 pb-3 pt-10 backdrop-blur-2xl sm:items-center sm:p-6"
             onClick={() => setSelected(null)}
           >
             <button
@@ -757,10 +757,10 @@ const PortfolioSection = () => {
               initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.96, opacity: 0 }}
-              className="w-full max-w-6xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)]"
+              className="my-auto w-full max-w-6xl max-h-[calc(100dvh-0.75rem)] sm:max-h-[calc(100dvh-3rem)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="relative flex max-h-full flex-col overflow-hidden rounded-[28px] border border-border bg-card/80 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.35)] sm:p-6">
+              <div className="relative flex max-h-full flex-col overflow-hidden rounded-[28px] border border-border bg-card/80 p-3 shadow-[0_30px_120px_rgba(0,0,0,0.35)] sm:p-6">
                 <div className="relative min-h-0 flex-1">
                   <Carousel
                     setApi={setCarouselApi}
@@ -770,12 +770,12 @@ const PortfolioSection = () => {
                     <CarouselContent className="-ml-0">
                       {selectedMedia.map((media, index) => (
                         <CarouselItem key={`selected-project-media-${selected.projectIndex}-${index}`} className="pl-0">
-                          <div className="aspect-[16/10] max-h-[58vh] overflow-hidden rounded-[22px] border border-border bg-background/70 flex items-center justify-center sm:max-h-[72vh]">
+                          <div className="flex h-[min(56dvh,calc(100dvh-10.5rem))] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-[22px] border border-border bg-background/70 sm:h-[min(72dvh,calc(100dvh-14rem))]">
                             {media.type === "image" ? (
                               <img
                                 src={media.src}
                                 alt={media.alt ?? `${getProjectLabel(selected.projectIndex)} ${index + 1}`}
-                                className="w-full h-full object-contain"
+                                className="block max-h-full max-w-full object-contain"
                                 draggable={false}
                                 loading="lazy"
                                 decoding="async"
@@ -826,7 +826,7 @@ const PortfolioSection = () => {
                                         <img
                                           src={thumbnailSrc}
                                           alt={`${getProjectLabel(selected.projectIndex)} ${index + 1}`}
-                                          className="pointer-events-none h-full w-full object-contain"
+                                          className="pointer-events-none block max-h-full max-w-full object-contain"
                                           draggable={false}
                                           loading="lazy"
                                           decoding="async"
@@ -889,17 +889,17 @@ const PortfolioSection = () => {
                   )}
                 </div>
 
-                <div className="mt-4 min-w-0 sm:mt-6 sm:flex sm:justify-end">
+                <div className="mt-3 min-w-0 sm:mt-6 sm:flex sm:justify-end">
                   <div className="min-w-0 sm:text-right">
-                    <p className="font-body text-[10px] tracking-[0.35em] uppercase text-foreground/50 mb-3">
+                    <p className="mb-2 font-body text-[9px] tracking-[0.28em] uppercase text-foreground/50 sm:mb-3 sm:text-[10px] sm:tracking-[0.35em]">
                       {copy.dragHint}
                     </p>
                     <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-card/90 to-transparent" />
-                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-card/90 to-transparent" />
+                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-8 bg-gradient-to-r from-card/90 to-transparent sm:block" />
+                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-8 bg-gradient-to-l from-card/90 to-transparent sm:block" />
                       <div
                         ref={thumbnailStripRef}
-                        className="flex w-full max-w-full items-center gap-2 overflow-x-auto px-1 pb-2"
+                        className="flex w-full max-w-full items-center gap-1.5 overflow-x-auto px-1 pb-1.5 sm:gap-2 sm:pb-2"
                       >
                         {selectedMedia.map((_, index) => (
                           <button
@@ -907,7 +907,7 @@ const PortfolioSection = () => {
                             onClick={() => carouselApi?.scrollTo(index)}
                             data-thumbnail-index={index}
                             data-cursor-label="open"
-                            className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border transition-all duration-300 sm:h-14 sm:w-14 ${
+                            className={`relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border transition-all duration-300 min-[480px]:h-11 min-[480px]:w-11 sm:h-14 sm:w-14 ${
                               index === activeSlide
                                 ? "border-primary shadow-[0_0_0_1px_rgba(212,175,55,0.45)]"
                                 : "border-border hover:border-primary/50"
