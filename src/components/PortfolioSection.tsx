@@ -115,11 +115,6 @@ const projects: Project[] = [
         src: "https://drive.google.com/file/d/1BDzI9FG54VJiB63BOys2Qy6dLg90RXcR/view?usp=sharing",
         poster: "/videos/6_comp.mp4",
       },
-      {
-        type: "video",
-        src: "https://drive.google.com/file/d/1nYpn3L4zZpyhDJWO7AEXR0j8WuTo2N6q/view?usp=sharing",
-        poster: "",
-      },
     ],
   },
   {
