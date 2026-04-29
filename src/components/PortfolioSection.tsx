@@ -34,24 +34,17 @@ type SelectedProjectState = {
 
 const projects: Project[] = [
   {
-    videoUrl: "", //PARRUCCHIERE
-    thumbnailUrl: "/videos/1_comp.mp4",
+    videoUrl: "", //RINALDI
+    thumbnailUrl: "",
     media: [
-      {
-        type: "video",
-        src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
-        poster: "/videos/1_comp.mp4",
-      },
-      { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/3.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/6.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/4.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/5.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/7.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/8.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/9.jpg", alt: "" },
-      { type: "image", src: "/images/Parrucchiere/10.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/1.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/2.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/3.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/4.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/5.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/6.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/7.jpg", alt: "" },
+      { type: "image", src: "/images/Rinaldi/7.jpg", alt: "" },
     ],
   },
   {
@@ -130,36 +123,6 @@ const projects: Project[] = [
     ],
   },
   {
-    videoUrl: "", //RINALDI
-    thumbnailUrl: "",
-    media: [
-      { type: "image", src: "/images/Rinaldi/1.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/2.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/3.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/4.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/5.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/6.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/7.jpg", alt: "" },
-      { type: "image", src: "/images/Rinaldi/7.jpg", alt: "" },
-    ],
-  },
-  {
-    videoUrl: "", //MODA
-    thumbnailUrl: "",
-    media: [
-      { type: "image", src: "/images/moda/1.jpg", alt: "" },
-      { type: "image", src: "/images/moda/2.jpg", alt: "" },
-      { type: "image", src: "/images/moda/3.jpg", alt: "" },
-      { type: "image", src: "/images/moda/4.jpg", alt: "" },
-      { type: "image", src: "/images/moda/5.jpg", alt: "" },
-      { type: "image", src: "/images/moda/6.jpg", alt: "" },
-      { type: "image", src: "/images/moda/7.jpg", alt: "" },
-      { type: "image", src: "/images/moda/8.jpg", alt: "" },
-      { type: "image", src: "/images/moda/9.jpg", alt: "" },
-      { type: "image", src: "/images/moda/10.jpg", alt: "" },
-    ],
-  },
-  {
     videoUrl: "", //MACCHINE
     thumbnailUrl: "/images/Macchine/1.jpg",
     media: [
@@ -182,7 +145,43 @@ const projects: Project[] = [
       { type: "image", src: "/images/Macchine/12.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/13.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/14.jpg", alt: "" },
-
+    ],
+  },
+  {
+    videoUrl: "", //MODA
+    thumbnailUrl: "",
+    media: [
+      { type: "image", src: "/images/moda/1.jpg", alt: "" },
+      { type: "image", src: "/images/moda/2.jpg", alt: "" },
+      { type: "image", src: "/images/moda/3.jpg", alt: "" },
+      { type: "image", src: "/images/moda/4.jpg", alt: "" },
+      { type: "image", src: "/images/moda/5.jpg", alt: "" },
+      { type: "image", src: "/images/moda/6.jpg", alt: "" },
+      { type: "image", src: "/images/moda/7.jpg", alt: "" },
+      { type: "image", src: "/images/moda/8.jpg", alt: "" },
+      { type: "image", src: "/images/moda/9.jpg", alt: "" },
+      { type: "image", src: "/images/moda/10.jpg", alt: "" },
+    ],
+  },
+  {
+    videoUrl: "", //PARRUCCHIERE
+    thumbnailUrl: "/videos/1_comp.mp4",
+    media: [
+      {
+        type: "video",
+        src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
+        poster: "/videos/1_comp.mp4",
+      },
+      { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/2.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/3.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/6.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/4.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/5.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/7.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/8.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/9.jpg", alt: "" },
+      { type: "image", src: "/images/Parrucchiere/10.jpg", alt: "" },
     ],
   },
 

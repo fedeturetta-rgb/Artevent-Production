@@ -37,7 +37,7 @@ const Footer = () => {
   const preferencesLabel = language === "it" ? "Preferenze Privacy" : "Privacy Preferences";
   const policyLabel = language === "it" ? "Privacy e Cookie Policy" : "Privacy and Cookie Policy";
   const cityLinksLabel =
-    language === "it" ? "Video corporate in Veneto e Trentino" : "Corporate video production in Veneto and Trentino";
+    language === "it" ? "Foto e Video aziendali in Veneto e Trentino" : "Corporate video production in Veneto and Trentino";
   const cityLinksDescription =
     language === "it"
       ? "Operiamo tra Veneto e Trentino con produzioni video corporate, fotografia aziendale e riprese drone per brand, imprese, hospitality ed eventi."

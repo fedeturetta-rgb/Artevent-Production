@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import SeoHead from "@/components/SeoHead";
 
 const MissionSection = lazy(() => import("@/components/MissionSection"));
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
 const PartnersSection = lazy(() => import("@/components/PartnersSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
@@ -74,6 +75,12 @@ const Index = () => {
       <LazyMount rootMargin="1200px 0px" minHeight={700}>
         <Suspense fallback={null}>
           <PortfolioSection />
+        </Suspense>
+      </LazyMount>
+
+      <LazyMount minHeight={520}>
+        <Suspense fallback={null}>
+          <ServicesSection />
         </Suspense>
       </LazyMount>
 

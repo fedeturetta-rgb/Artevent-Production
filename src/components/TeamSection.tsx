@@ -10,7 +10,7 @@ const teamMembers = [
       it: "Oltre 25 anni di esperienza nel mondo della fotografia corporate per brand internazionali e di reportage.",
       en: "Over 25 years of experience in corporate photography for international brands and reportage.",
     },
-    image: "/images/Guido.JPG", // Inserisci il percorso dell'immagine, es: "/images/team-1.jpg"
+    image: "/images/Guido_mod.jpg", // Inserisci il percorso dell'immagine, es: "/images/team-1.jpg"
     imagePosition: "75% 100%", // Modifica qui per riposizionare la foto //"50% 50%" centro, "50% 20%" più in alto, "40% 35%" un po’ a sinistra, "60% 30%" un po’ a destra
     imageScale: 1.00, // Modifica qui per ingrandire/ridurre la foto
     imageOffsetX: "0%", // Offset reale orizzontale: es. "-8%", "10%"
@@ -61,36 +61,36 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
+          <p className="font-body text-[10px] md:text-sm tracking-[0.38em] md:tracking-[0.5em] uppercase gold-text-soft mb-4 md:mb-6">
             {copy.sectionLabel}
           </p>
-          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light leading-tight">
+          <h2 className="font-display text-2xl md:text-5xl lg:text-6xl font-light leading-tight">
             {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-16 md:space-y-20 lg:space-y-32">
           {teamMembers.map((member, i) => {
             const isReversed = i % 2 === 1;
 
             return (
-              <div key={member.name} className="grid items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
+              <div key={member.name} className="grid grid-cols-2 items-center gap-4 md:gap-8 lg:gap-20">
                 <motion.div
                   initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: i * 0.15 }}
-                  className={isReversed ? "order-2 lg:order-2" : "order-2 lg:order-1"}
+                  className={isReversed ? "order-2" : "order-1"}
                 >
-                  <div className="luxwine-line-h mb-6 md:mb-8" />
-                  <h3 className="font-display text-3xl md:text-5xl font-light mb-3 leading-tight">
+                  <div className="luxwine-line-h mb-3 md:mb-8" />
+                  <h3 className="font-display text-xl sm:text-2xl md:text-5xl font-light mb-2 md:mb-3 leading-tight">
                     {member.name}
                   </h3>
-                  <p className="font-body text-xs md:text-sm tracking-[0.3em] uppercase gold-text-muted mb-6 md:mb-8">
+                  <p className="font-body text-[9px] sm:text-[10px] md:text-sm tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.3em] uppercase gold-text-muted mb-3 md:mb-8">
                     {member.title[language]}
                   </p>
-                  <p className="font-body text-base md:text-lg text-foreground/70 leading-[2.2] break-words max-w-xl">
+                  <p className="font-body text-[9px] sm:text-[10px] md:text-sm lg:text-base text-foreground/70 leading-[1.35] sm:leading-[1.5] md:leading-[1.75] lg:leading-[1.95] break-words max-w-xl">
                     {member.description[language]}
                   </p>
                 </motion.div>
@@ -99,7 +99,7 @@ const TeamSection = () => {
                   initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, delay: i * 0.15 + 0.1 }}
-                  className={isReversed ? "order-1 lg:order-1" : "order-1 lg:order-2"}
+                  className={isReversed ? "order-1" : "order-2"}
                 >
                   <div className="relative aspect-[3/2] overflow-hidden bg-gradient-card">
                     {member.image ? (

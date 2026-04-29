@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Film, Camera, Mic, Package, Clapperboard } from "lucide-react";
-import filmAziendaliThumb from "@/assets/film-aziendali-thumb.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const services = [
@@ -12,7 +11,6 @@ const services = [
       it: "Film cinematografici che catturano l'essenza e i valori della tua azienda con una produzione di livello hollywoodiano.",
       en: "Cinematic films that capture your company's essence and values with Hollywood-level production.",
     },
-    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Camera,
@@ -21,7 +19,6 @@ const services = [
       it: "Documentazione multi-camera che trasforma conferenze e gala in narrazioni visive coinvolgenti.",
       en: "Multi-camera documentation that turns conferences and galas into engaging visual narratives.",
     },
-    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Clapperboard,
@@ -30,7 +27,6 @@ const services = [
       it: "Contenuti narrativi strategici che creano connessioni emotive profonde con il tuo pubblico target.",
       en: "Strategic narrative content that creates deep emotional connections with your target audience.",
     },
-    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Package,
@@ -39,7 +35,6 @@ const services = [
       it: "Showcase di prodotto eleganti e ad alto impatto, progettati per convertire gli spettatori in clienti.",
       en: "Elegant, high-impact product showcases designed to convert viewers into customers.",
     },
-    thumbnailUrl: filmAziendaliThumb,
   },
   {
     icon: Mic,
@@ -48,7 +43,6 @@ const services = [
       it: "Contenuti di thought-leadership professionali che posizionano i tuoi leader come autorita del settore.",
       en: "Professional thought-leadership content that positions your leaders as industry authorities.",
     },
-    thumbnailUrl: filmAziendaliThumb,
   },
 ];
 
@@ -65,62 +59,45 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="px-4 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
       <div ref={ref} className="max-w-6xl mx-auto">
         <motion.div
           initial={{ height: 0 }}
-          animate={inView ? { height: 60 } : {}}
+          animate={inView ? { height: 36 } : {}}
           transition={{ duration: 0.8 }}
-          className="w-px bg-primary/30 mx-auto mb-12"
+          className="w-px bg-primary/30 mx-auto mb-6"
         />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24"
+          className="text-center mb-8 md:mb-10"
         >
-          <p className="font-body text-xs md:text-sm tracking-[0.5em] uppercase gold-text-soft mb-6">
+          <p className="font-body text-[10px] md:text-xs tracking-[0.42em] uppercase gold-text-soft mb-3">
             {copy.sectionLabel}
           </p>
-          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-light">
+          <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-none">
             {copy.headingMain} <span className="italic gold-text-strong">{copy.headingAccent}</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {services.map((service, i) => (
             <motion.div
               key={service.title.en}
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`bg-background group cursor-pointer hover:bg-card transition-colors duration-700 overflow-hidden ${service.thumbnailUrl ? '' : 'p-10 md:p-12'}`}
+              className="bg-background group cursor-pointer hover:bg-card transition-colors duration-700 overflow-hidden p-5 md:p-6"
             >
-              {service.thumbnailUrl ? (
-                <div className="relative">
-                  <img src={service.thumbnailUrl} alt={service.title[language]} className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="p-10 md:p-12">
-                    <service.icon className="w-7 h-7 text-primary/60 mb-8 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
-                    <h3 className="font-display text-xl md:text-2xl font-light mb-4 tracking-wide">
-                      {service.title[language]}
-                    </h3>
-                    <p className="text-muted-foreground font-body text-xs leading-[2] tracking-wide">
-                      {service.description[language]}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <service.icon className="w-7 h-7 text-primary/60 mb-8 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
-                  <h3 className="font-display text-xl md:text-2xl font-light mb-4 tracking-wide">
-                    {service.title[language]}
-                  </h3>
-                  <p className="text-muted-foreground font-body text-xs leading-[2] tracking-wide">
-                    {service.description[language]}
-                  </p>
-                </>
-              )}
+              <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary/60 mb-3 group-hover:text-primary transition-colors duration-500" strokeWidth={1} />
+              <h3 className="font-display text-base md:text-xl font-light mb-2 tracking-wide leading-tight">
+                {service.title[language]}
+              </h3>
+              <p className="text-muted-foreground font-body text-[11px] md:text-xs leading-[1.55] md:leading-[1.7] tracking-[0.02em]">
+                {service.description[language]}
+              </p>
             </motion.div>
           ))}
           {/* Empty cell to complete the grid */}
@@ -128,7 +105,7 @@ const ServicesSection = () => {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-background p-10 md:p-12 flex items-center justify-center"
+            className="bg-background p-5 md:p-6 flex items-center justify-center"
           >
             <a
               href="#contact"
