@@ -7,11 +7,8 @@ type Partner = {
   logoSrc?: string;
 };
 
-const sharedPartnerLogo = "/images/partners/Lidl.png";
-
 // Logo unico replicato nei 9 slot della versione griglia.
 const partners: Partner[] = [
-  { name: "Lidl", logoSrc: "/images/partners/Lidl.png" },
   { name: "Franchin", logoSrc: "/images/partners/franchin.png" },
   { name: "Toyota", logoSrc: "/images/partners/toyota.png" },
   { name: "Castelmani", logoSrc: "/images/partners/castelmani.png" },

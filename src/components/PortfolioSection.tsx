@@ -25,6 +25,7 @@ type Project = {
   thumbnailUrl: string;
   gallery?: string[];
   media?: MediaItem[];
+  hidden?: boolean;
 };
 
 type SelectedProjectState = {
@@ -102,6 +103,7 @@ const projects: Project[] = [
   {
     videoUrl: "", //LIDL
     thumbnailUrl: "/images/LIDL/lidl.jpg",
+    hidden: true,
     media: [
       {
         type: "video",
@@ -419,9 +421,10 @@ const PortfolioSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [collapsedGridHeight, setCollapsedGridHeight] = useState<number | null>(null);
   const [playingMediaKey, setPlayingMediaKey] = useState<string | null>(null);
+  const visibleProjects = projects.filter((project) => !project.hidden);
   const selectedProject =
-    selected !== null && selected.projectIndex >= 0 && selected.projectIndex < projects.length
-      ? projects[selected.projectIndex]
+    selected !== null && selected.projectIndex >= 0 && selected.projectIndex < visibleProjects.length
+      ? visibleProjects[selected.projectIndex]
       : null;
   const selectedMedia = selectedProject ? getProjectMedia(selectedProject) : [];
   const getProjectLabel = (projectIndex: number) =>
@@ -543,8 +546,8 @@ const PortfolioSection = () => {
     collapse: language === "it" ? "RIDUCI" : "COLLAPSE",
   };
 
-  const desktopTailCount = projects.length % 3;
-  const desktopTailStartIndex = desktopTailCount === 0 ? projects.length : projects.length - desktopTailCount;
+  const desktopTailCount = visibleProjects.length % 3;
+  const desktopTailStartIndex = desktopTailCount === 0 ? visibleProjects.length : visibleProjects.length - desktopTailCount;
 
   const renderProjectCard = (
     project: Project,
@@ -557,7 +560,7 @@ const PortfolioSection = () => {
   ) => {
     const previewMedia = getPreviewMedia(project);
     const projectMedia = getProjectMedia(project);
-    const isLastOddMobileCard = projects.length % 2 === 1 && index === projects.length - 1;
+    const isLastOddMobileCard = visibleProjects.length % 2 === 1 && index === visibleProjects.length - 1;
     const isDesktopTailCard = desktopTailCount > 0 && index >= desktopTailStartIndex;
     const shouldPrioritizePreview = index < 6;
 
@@ -697,10 +700,10 @@ const PortfolioSection = () => {
           }
         >
           <div ref={gridRef} className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-            {projects.map((project, index) => renderProjectCard(project, index, index))}
+            {visibleProjects.map((project, index) => renderProjectCard(project, index, index))}
             {desktopTailCount > 0 && (
               <div className="hidden sm:col-span-3 sm:flex sm:justify-center sm:gap-4">
-                {projects.slice(desktopTailStartIndex).map((project, tailIndex) => {
+                {visibleProjects.slice(desktopTailStartIndex).map((project, tailIndex) => {
                   const projectIndex = desktopTailStartIndex + tailIndex;
 
                   return renderProjectCard(project, projectIndex, projectIndex, {
