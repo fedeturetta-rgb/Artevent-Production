@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { ConsentProvider } from "./contexts/ConsentContext";
 import ConsentBanner from "./components/ConsentBanner";
 import CustomCursor from "./components/CustomCursor";
+import { Analytics } from "@vercel/analytics/react";
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -55,6 +56,7 @@ const App = () => (
             </Suspense>
             <ConsentBanner />
           </BrowserRouter>
+          <Analytics />
         </TooltipProvider>
       </ConsentProvider>
     </LanguageProvider>
