@@ -1,8 +1,48 @@
 {
   "rewrites": [
     {
+      "source": "/produzione-video-corporate-verona",
+      "destination": "/produzione-video-corporate-verona/index.html"
+    },
+    {
       "source": "/produzione-video-corporate-vicenza",
       "destination": "/produzione-video-corporate-vicenza/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-asiago",
+      "destination": "/produzione-video-corporate-asiago/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-padova",
+      "destination": "/produzione-video-corporate-padova/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-treviso",
+      "destination": "/produzione-video-corporate-treviso/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-venezia",
+      "destination": "/produzione-video-corporate-venezia/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-belluno",
+      "destination": "/produzione-video-corporate-belluno/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-rovigo",
+      "destination": "/produzione-video-corporate-rovigo/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-trento",
+      "destination": "/produzione-video-corporate-trento/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-bolzano",
+      "destination": "/produzione-video-corporate-bolzano/index.html"
+    },
+    {
+      "source": "/produzione-video-corporate-veneto-trentino",
+      "destination": "/produzione-video-corporate-veneto-trentino/index.html"
     },
     { "source": "/(.*)", "destination": "/" }
   ]
