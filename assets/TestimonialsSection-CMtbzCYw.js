@@ -1,0 +1,1 @@
+import{e as t,r as e}from"./index-8TzasWXq.js";import{u as n}from"./use-in-view-C5v9tWSh.js";const l=()=>{const{language:r}=t(),s=e.useRef(null);n(s,{once:!0,margin:"-100px"});const[o,a]=e.useState(0);return e.useEffect(()=>{},[!1]),null};export{l as default};
