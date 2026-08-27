@@ -72,7 +72,7 @@ const Index = () => {
         </Suspense>
       </LazyMount>
 
-      <LazyMount rootMargin="1200px 0px" minHeight={700}>
+      <LazyMount rootMargin="300px 0px" minHeight={700}>
         <Suspense fallback={null}>
           <PortfolioSection />
         </Suspense>

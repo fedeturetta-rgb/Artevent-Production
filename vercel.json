@@ -1,5 +1,9 @@
 {
   "rewrites": [
+    {
+      "source": "/produzione-video-corporate-vicenza",
+      "destination": "/produzione-video-corporate-vicenza/index.html"
+    },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
