@@ -10,7 +10,7 @@ const route = "/produzione-video-corporate-vicenza";
 const title = "Produzione Video Aziendali a Vicenza | Artevent Production";
 const description =
   "Produzione video corporate a Vicenza, fotografia aziendale e riprese drone per aziende e brand che vogliono migliorare posizionamento, visibilita e comunicazione.";
-const canonical = `https://arteventproduction.com${route}`;
+const canonical = `https://www.arteventproduction.com${route}`;
 
 const escapeAttribute = (value) =>
   value

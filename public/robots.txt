@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://arteventproduction.com/sitemap.xml
+Sitemap: https://www.arteventproduction.com/sitemap.xml

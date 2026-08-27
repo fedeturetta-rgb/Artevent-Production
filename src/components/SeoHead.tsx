@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://arteventproduction.com";
+const SITE_URL = "https://www.arteventproduction.com";
 const DEFAULT_IMAGE_PATH = "/images/og-share-card.png";
 
 const toAbsoluteUrl = (pathOrUrl: string) => {

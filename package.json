@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://arteventproduction.com",
+  "homepage": "https://www.arteventproduction.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/prerender-vicenza.mjs",
