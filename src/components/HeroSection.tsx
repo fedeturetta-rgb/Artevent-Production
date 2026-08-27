@@ -20,7 +20,7 @@ const HeroSection = () => {
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isHeroVideoPlaying, setIsHeroVideoPlaying] = useState(true);
-  const videoUrl = "https://drive.google.com/file/d/1cFvjbFU-88XCysLPdhjdyBtQ2e0e58yE/view";
+  const videoUrl = "https://youtu.be/rxcujt0RAzk";
 
   const toggleHeroVideoPlayback = async () => {
     const video = heroVideoRef.current;
