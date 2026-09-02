@@ -182,7 +182,7 @@ const HeroSection = () => {
             <iframe
               width="100%"
               height="100%"
-              src="https://player.mux.com/hicynfVFWpt4zzaLWySboVk01hDGj5hGdITQZ3p9inqU?metadata-video-title=SHOWREEL_HQ&video-title=SHOWREEL_HQ&thumbnail-time=2&accent-color=%238d8600"
+              src="https://player.mux.com/hicynfVFWpt4zzaLWySboVk01hDGj5hGdITQZ3p9inqU?metadata-video-title=SHOWREEL_HQ&video-title=SHOWREEL_HQ&thumbnail-time=2&accent-color=%23a98860"
               title="Artevent Studio Reel"
               frameBorder="0"
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
