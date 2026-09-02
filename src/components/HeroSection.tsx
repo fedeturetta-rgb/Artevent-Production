@@ -3,7 +3,6 @@ import { Pause, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
 import ResponsiveHeroVideo from "@/components/ResponsiveHeroVideo";
 
 // Video 16:9 usato su desktop (già presente)
@@ -20,7 +19,6 @@ const HeroSection = () => {
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isHeroVideoPlaying, setIsHeroVideoPlaying] = useState(true);
-  const videoUrl = "https://www.youtube.com/embed/rxcujt0RAzk";
 
   const toggleHeroVideoPlayback = async () => {
     const video = heroVideoRef.current;
@@ -56,10 +54,6 @@ const HeroSection = () => {
     playCursorLabel: language === "it" ? "riproduci" : "play",
     pauseHeroVideo: language === "it" ? "Metti in pausa il video" : "Pause background video",
     playHeroVideo: language === "it" ? "Riproduci il video" : "Play background video",
-    unsupportedVideo:
-      language === "it"
-        ? "Il tuo browser non supporta il tag video."
-        : "Your browser does not support the video tag.",
   };
 
   return (
@@ -185,29 +179,16 @@ const HeroSection = () => {
         <DialogContent className="max-w-4xl border-border bg-black">
           <DialogClose className="absolute right-4 top-4 z-50" />
           <div className="w-full aspect-video">
-            {isEmbeddableVideoUrl(videoUrl) ? (
-              <iframe
-                width="100%"
-                height="100%"
-                src={getVideoEmbedUrl(videoUrl)}
-                title="Artevent Studio Reel"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="rounded-lg"
-              />
-            ) : (
-              <video
-                width="100%"
-                height="100%"
-                controls
-                autoPlay
-                className="rounded-lg bg-black"
-              >
-                <source src={videoUrl} type="video/mp4" />
-                {copy.unsupportedVideo}
-              </video>
-            )}
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://player.mux.com/hicynfVFWpt4zzaLWySboVk01hDGj5hGdITQZ3p9inqU?metadata-video-title=SHOWREEL_HQ&video-title=SHOWREEL_HQ&thumbnail-time=2"
+              title="Artevent Studio Reel"
+              frameBorder="0"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              className="rounded-lg"
+            />
           </div>
         </DialogContent>
       </Dialog>
