@@ -1,4 +1,4 @@
-const EMBED_VIDEO_HOSTS = ["youtube.com", "youtu.be", "vimeo.com", "drive.google.com"];
+const EMBED_VIDEO_HOSTS = ["youtube.com", "youtu.be", "vimeo.com", "drive.google.com", "player.mux.com"];
 
 function normalizeGoogleDriveUrl(url: string): string {
   try {
@@ -23,7 +23,23 @@ function normalizeGoogleDriveUrl(url: string): string {
 }
 
 export function getVideoEmbedUrl(url: string): string {
-  return normalizeGoogleDriveUrl(url);
+  const normalizedUrl = normalizeGoogleDriveUrl(url);
+
+  try {
+    const parsedUrl = new URL(normalizedUrl);
+
+    if (parsedUrl.hostname === "player.mux.com") {
+      parsedUrl.searchParams.set("autoplay", "true");
+    }
+
+    if (parsedUrl.hostname === "drive.google.com") {
+      parsedUrl.searchParams.set("autoplay", "1");
+    }
+
+    return parsedUrl.toString();
+  } catch {
+    return normalizedUrl;
+  }
 }
 
 export function isEmbeddableVideoUrl(url: string): boolean {

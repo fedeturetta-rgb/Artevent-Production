@@ -54,7 +54,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1G6g3gW0Pooj3EWPSs6cdGjeBdguUPf3L/view?usp=sharing",
+        src: "https://player.mux.com/b9nLfsHy2F3oZGr401An2wutsijFwPXsWTI8gbOVgFdU?metadata-video-title=Villa_Ormaneto&video-title=Villa_Ormaneto&thumbnail-time=2&accent-color=%23a98860",
         poster: "/videos/10_comp.mp4",
       },
       { type: "image", src: "/images/Ormaneto/1.jpg", alt: "" },

@@ -172,6 +172,9 @@ const CustomCursor = () => {
       if (event.pointerType && event.pointerType !== "mouse") {
         return;
       }
+
+      setIsInteractive(false);
+      setCursorLabel("");
     };
 
     const handlePointerUp = () => {
