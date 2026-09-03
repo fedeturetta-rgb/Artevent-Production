@@ -54,7 +54,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://player.mux.com/vLaqjKFJz2Opq5kOumK00TmsHQHRM00eyv01502M00sg9VWQ?metadata-video-title=Villa_Ormaneto&video-title=Villa_Ormaneto&accent-color=%23a98860",
+        src: "https://player.mux.com/vLaqjKFJz2Opq5kOumK00TmsHQHRM00eyv01502M00sg9VWQ?metadata-video-title=Villa_Ormaneto&video-title=Villa_Ormaneto&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/10_comp.mp4",
       },
       { type: "image", src: "/images/Ormaneto/1.jpg", alt: "" },
@@ -79,7 +79,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://player.mux.com/MFVl8gTZwV02ZzjbeAxYorTIcRk7bwJeSXeB00NaHBGN4?metadata-video-title=Castelmani_Storia&video-title=Castelmani_Storia&accent-color=%23a98860",
+        src: "https://player.mux.com/MFVl8gTZwV02ZzjbeAxYorTIcRk7bwJeSXeB00NaHBGN4?metadata-video-title=Castelmani_Storia&video-title=Castelmani_Storia&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/2_comp.mp4",
       },
       { type: "image", src: "/images/Castelmani/1.jpg", alt: "" },
