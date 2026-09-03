@@ -42,6 +42,31 @@ export function getVideoEmbedUrl(url: string): string {
   }
 }
 
+export function getVideoPreloadUrl(url: string): string {
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname !== "player.mux.com") {
+      return url;
+    }
+
+    parsedUrl.searchParams.delete("autoplay");
+    parsedUrl.searchParams.set("preload", "auto");
+
+    return parsedUrl.toString();
+  } catch {
+    return url;
+  }
+}
+
+export function isMuxVideoUrl(url: string): boolean {
+  try {
+    return new URL(url).hostname === "player.mux.com";
+  } catch {
+    return false;
+  }
+}
+
 export function isEmbeddableVideoUrl(url: string): boolean {
   return EMBED_VIDEO_HOSTS.some((host) => url.includes(host));
 }

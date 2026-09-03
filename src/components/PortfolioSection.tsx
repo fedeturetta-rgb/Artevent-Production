@@ -5,7 +5,7 @@ import { X, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "./ui/carousel";
 import { useLanguage } from "../contexts/LanguageContext";
-import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "../lib/video";
+import { getVideoEmbedUrl, getVideoPreloadUrl, isEmbeddableVideoUrl, isMuxVideoUrl } from "../lib/video";
 import { cn } from "../lib/utils";
 
 type MediaItem =
@@ -808,6 +808,18 @@ const PortfolioSection = () => {
 
                                 return (
                                   <div className="relative h-full w-full">
+                                    {index === activeSlide && isMuxVideoUrl(media.src) ? (
+                                      <iframe
+                                        src={getVideoPreloadUrl(media.src)}
+                                        title=""
+                                        aria-hidden="true"
+                                        tabIndex={-1}
+                                        className="pointer-events-none absolute inset-0 h-full w-full opacity-0"
+                                        frameBorder="0"
+                                        allow="autoplay; encrypted-media"
+                                      />
+                                    ) : null}
+
                                     {thumbnailSrc ? (
                                       isVideoThumbnail(thumbnailSrc) ? (
                                         <video

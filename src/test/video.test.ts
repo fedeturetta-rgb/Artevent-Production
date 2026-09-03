@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { getVideoEmbedUrl, isEmbeddableVideoUrl } from "@/lib/video";
+import { getVideoEmbedUrl, getVideoPreloadUrl, isEmbeddableVideoUrl, isMuxVideoUrl } from "@/lib/video";
 
 describe("video helpers", () => {
   it("detects embeddable providers including Google Drive", () => {
@@ -23,6 +23,14 @@ describe("video helpers", () => {
     expect(getVideoEmbedUrl("https://player.mux.com/abc123?thumbnail-time=2")).toBe(
       "https://player.mux.com/abc123?thumbnail-time=2&autoplay=true",
     );
+  });
+
+  it("preloads Mux embeds without autoplay", () => {
+    expect(getVideoPreloadUrl("https://player.mux.com/abc123?autoplay=true")).toBe(
+      "https://player.mux.com/abc123?preload=auto",
+    );
+    expect(isMuxVideoUrl("https://player.mux.com/abc123")).toBe(true);
+    expect(isMuxVideoUrl("https://drive.google.com/file/d/abc123/preview")).toBe(false);
   });
 
   it("preserves non-Google Drive URLs", () => {
