@@ -124,7 +124,7 @@ const projects: Project[] = [
       {
         type: "video",
         src: "https://player.mux.com/aZAAJXqK5wIbVjRASonLm3cG7z3K00S9juojlpicFwuo?metadata-video-title=Ram_Cremona&video-title=Ram_Cremona&thumbnail-time=0&accent-color=%23a98860",
-        poster: "/videos/14_comp.mp4",
+        poster: "/videos/anteprima_Cremona.mp4",
       },
       { type: "image", src: "/images/Macchine/1.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/2.jpg", alt: "" },
