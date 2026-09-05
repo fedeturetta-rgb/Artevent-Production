@@ -19,8 +19,8 @@ describe("video helpers", () => {
     ).toBe("https://drive.google.com/file/d/1txr3GK9RK6-8h_SVGQV1Llt5DIZPR5KA/preview?autoplay=1");
   });
 
-  it("enables autoplay for Mux embeds", () => {
-    expect(getVideoEmbedUrl("https://player.mux.com/abc123?thumbnail-time=2")).toBe(
+  it("enables autoplay for Mux embeds without showing a video title", () => {
+    expect(getVideoEmbedUrl("https://player.mux.com/abc123?video-title=Demo&thumbnail-time=2")).toBe(
       "https://player.mux.com/abc123?thumbnail-time=2&autoplay=true",
     );
   });

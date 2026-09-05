@@ -29,6 +29,7 @@ export function getVideoEmbedUrl(url: string): string {
     const parsedUrl = new URL(normalizedUrl);
 
     if (parsedUrl.hostname === "player.mux.com") {
+      parsedUrl.searchParams.delete("video-title");
       parsedUrl.searchParams.set("autoplay", "true");
     }
 
