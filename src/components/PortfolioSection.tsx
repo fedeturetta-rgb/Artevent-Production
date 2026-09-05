@@ -101,18 +101,6 @@ const projects: Project[] = [
     ],
   },
   {
-    videoUrl: "", //LIDL
-    thumbnailUrl: "/images/LIDL/lidl.jpg",
-    hidden: true,
-    media: [
-      {
-        type: "video",
-        src: "https://drive.google.com/file/d/1BDzI9FG54VJiB63BOys2Qy6dLg90RXcR/view?usp=sharing",
-        poster: "/videos/6_comp.mp4",
-      },
-    ],
-  },
-  {
     videoUrl: "", //FORNI
     thumbnailUrl: "/images/Acciaio/5.jpg",
     media: [
@@ -130,7 +118,12 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1Y81YLTmMhbw_Xyylde7SLH3qlzAvkRvO/view?usp=sharing",
+        src: "https://player.mux.com/O3pJYulzwxJMgcEyjRebgnZdUwvteBp5M00hN02XwPzZY?metadata-video-title=Chronos_Savona&video-title=Chronos_Savona&thumbnail-time=0&accent-color=%23a98860",
+        poster: "/videos/14_comp.mp4",
+      },
+      {
+        type: "video",
+        src: "https://player.mux.com/aZAAJXqK5wIbVjRASonLm3cG7z3K00S9juojlpicFwuo?metadata-video-title=Ram_Cremona&video-title=Ram_Cremona&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/14_comp.mp4",
       },
       { type: "image", src: "/images/Macchine/1.jpg", alt: "" },
