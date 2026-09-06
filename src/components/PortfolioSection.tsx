@@ -121,11 +121,6 @@ const projects: Project[] = [
         src: "https://player.mux.com/O3pJYulzwxJMgcEyjRebgnZdUwvteBp5M00hN02XwPzZY?metadata-video-title=Chronos_Savona&video-title=Chronos_Savona&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/14_comp.mp4",
       },
-      {
-        type: "video",
-        src: "https://player.mux.com/aZAAJXqK5wIbVjRASonLm3cG7z3K00S9juojlpicFwuo?metadata-video-title=Ram_Cremona&video-title=Ram_Cremona&thumbnail-time=0&accent-color=%23a98860",
-        poster: "/videos/anteprima_Cremona.mp4",
-      },
       { type: "image", src: "/images/Macchine/1.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/2.jpg", alt: "" },
       { type: "image", src: "/images/Macchine/3.jpg", alt: "" },
@@ -164,7 +159,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1T4l5_xxfhaF2RuGplF5Jk3qaNkx9LzC6/view?usp=sharing",
+        src: "https://player.mux.com/ktIP7huC3Gy8cIjistc4nXCLBd95nIjiAxDTIH31gvU?metadata-video-title=Tex&video-title=Tex&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/1_comp.mp4",
       },
       { type: "image", src: "/images/Parrucchiere/1.jpg", alt: "" },
@@ -187,7 +182,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1XHi_FwnCJhQFpLaliPWhXU1OexbxECdS/view?usp=sharing",
+        src: "https://player.mux.com/vuvuTHheU00rK02GOI00Din02KtwSzci7pKvQf66l6YRRJs?metadata-video-title=Saracino&video-title=Saracino&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/13_comp.mp4",
       },
       { type: "image", src: "/images/Saracino/1.jpg", alt: "" },
@@ -210,7 +205,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/13LoXFtySVKui4RwrxGAx2xp7JKJc5P0L/view?usp=sharing",
+        src: "https://player.mux.com/l2eUYI2InSlzQSu4901Inj5hSphgZ01MVAYyD9A5U3UpQ?metadata-video-title=Righetto_Serbatoi&video-title=Righetto_Serbatoi&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/12_comp.mp4",
       },
     ],
@@ -221,7 +216,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/1rDOBecbkm1_vBHT7SGn8cwsS4rvmFZCS/view?usp=sharing",
+        src: "https://player.mux.com/HiTRYcGUBvqsUGI7Y6KQYiLPyBoVkuW013iBPy00EE97o?metadata-video-title=Ocsa&video-title=Ocsa&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/9_comp.mp4",
       },
     ],
@@ -232,7 +227,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/15X-vQL06C_5QsN415ECNac_Pptf80Lvx/view?usp=sharing",
+        src: "https://player.mux.com/602TVPc2ys02c2GoViH00o9UFwBYnykLtl48PKloxj1FfU?metadata-video-title=Franchin&video-title=Franchin&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/4_comp.mp4",
       },
     ],
@@ -277,7 +272,7 @@ const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "https://drive.google.com/file/d/16ME0EaJ8sI7aqlxoYC2M1nyNMGYef6k5/view?usp=sharing",
+        src: "https://player.mux.com/uehvL1Y02Xui00VXzrjd31cN1qqT37GmME5kqix7gxE5Y?metadata-video-title=Dolomiti&video-title=Dolomiti&thumbnail-time=0&accent-color=%23a98860",
         poster: "/videos/8_comp.mp4",
       },
       { type: "image", src: "/images/Dolomiti/1.jpg", alt: "" },
